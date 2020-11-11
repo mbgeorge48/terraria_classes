@@ -1,75 +1,159 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import Slider from "@material-ui/core/Slider";
 
-class Weapons extends React.Component{
+import "bootstrap/dist/css/bootstrap.css";
+import "./index.css";
+
+class Weapons extends Component {
+  render() {
+    return <h4>Weapons</h4>;
+  }
+}
+
+class Armor extends Component {
+  render() {
+    return <h4>Armor</h4>;
+  }
+}
+
+class Accessories extends Component {
+  render() {
+    return <h4>Accessories</h4>;
+  }
+}
+
+class Buffs extends Component {
+  render() {
+    return <h4>Buffs</h4>;
+  }
+}
+
+class Mounts extends Component {
+  render() {
+    return <h4>Mounts</h4>;
+  }
+}
+
+class Light extends Component {
+  render() {
+    return <h4>Light</h4>;
+  }
+}
+
+function PageHeading() {
+  return (
+    <header class="header text-center">
+      <h1>Terraria Classes Guide</h1>
+      <p>
+        You can use this to find the ultimate class for each stage in the game!
+      </p>
+    </header>
+  );
+}
+
+class ProgressBar extends Component {
+  marks = [
+    {
+      value: 0,
+      label: "Pre-bosses",
+    },
+    {
+      value: 1,
+      label: "Pre-Hardmode",
+    },
+    {
+      value: 2,
+      label: "Pre-mechanical bosses",
+    },
+    {
+      value: 3,
+      label: "Pre-Plantera",
+    },
+    {
+      value: 4,
+      label: "Pre-Golem",
+    },
+    {
+      value: 5,
+      label: "Pre-Lunar Events",
+    },
+    {
+      value: 6,
+      label: "Endgame",
+    },
+  ];
+
   render() {
     return (
-      <p>Weapons</p>
+      <div>
+        <h4>Select what stage of the game you're on</h4>
+        <Slider
+          defaultValue={0}
+          valueLabelDisplay="auto"
+          step={1}
+          marks={this.marks}
+          min={0}
+          max={6}
+        />
+      </div>
     );
   }
 }
 
-class Armor extends React.Component{
+class Equipment extends Component {
   render() {
     return (
-      <p>Armor</p>
-    );
-  }
-}
-
-class Accessories extends React.Component{
-  render() {
-    return (
-      <p>Accessories</p>
-    );
-  }
-}
-
-class Buffs extends React.Component{
-  render() {
-    return (
-      <p>Buffs</p>
-    );
-  }
-}
-
-class Mounts extends React.Component{
-  render() {
-    return (
-      <p>Mounts</p>
-    );
-  }
-}
-
-class Light extends React.Component{
-  render() {
-    return (
-      <p>Light</p>
-    );
-  }
-}
-
-class TerrariaClasses extends React.Component {
-  render() {
-    return (
-      <div className="game">
-        <div className="game-board">
-          <Weapons />
-          <Armor />
-          <Accessories />
-          <Buffs />
-          <Mounts />
-          <Light />
+      <div className="equipment">
+        <div class="row top-buffer">
+          <div class="col">
+            <Weapons />
+          </div>
+          <div class="col">
+            <Armor />
+          </div>
+        </div>
+        <div class="row top-buffer">
+          <div class="col">
+            <Accessories />
+          </div>
+          <div class="col">
+            <Buffs />
+          </div>
+        </div>
+        <div class="row top-buffer">
+          <div class="col">
+            <Mounts />
+          </div>
+          <div class="col">
+            <Light />
+          </div>
         </div>
       </div>
     );
   }
 }
 
-// ========================================
+class TerrariaClasses extends Component {
+  componentDidMount() {
+    document.title = "Terraria Classes Guide";
+  }
 
-ReactDOM.render(
-  <TerrariaClasses />,
-  document.getElementById('root')
-);
+  render() {
+    return (
+      <div class="container">
+        <PageHeading />
+        <div class="row top-buffer">
+          <div class="col">
+            <ProgressBar />
+          </div>
+        </div>
+        <div class="row top-buffer">
+          <Equipment />
+        </div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<TerrariaClasses />, document.getElementById("root"));
