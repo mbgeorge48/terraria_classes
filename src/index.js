@@ -35,9 +35,9 @@ class Mounts extends Component {
   }
 }
 
-class Light extends Component {
+class Lights extends Component {
   render() {
-    return <h4>Light</h4>;
+    return <h4>Lights</h4>;
   }
 }
 
@@ -106,27 +106,27 @@ class Equipment extends Component {
     return (
       <div className="equipment">
         <div class="row top-buffer">
-          <div class="col">
+          <div class="col weapons">
             <Weapons />
           </div>
-          <div class="col">
+          <div class="col armor">
             <Armor />
           </div>
         </div>
         <div class="row top-buffer">
-          <div class="col">
+          <div class="col accessories">
             <Accessories />
           </div>
-          <div class="col">
+          <div class="col buffs">
             <Buffs />
           </div>
         </div>
         <div class="row top-buffer">
-          <div class="col">
+          <div class="col mounts">
             <Mounts />
           </div>
-          <div class="col">
-            <Light />
+          <div class="col lights">
+            <Lights />
           </div>
         </div>
       </div>
