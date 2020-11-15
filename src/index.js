@@ -67,12 +67,9 @@ class Lights extends Component {
 
 function PageHeading() {
   return (
-    <header class="header text-center">
-      <h1>Terraria Classes Guide</h1>
-      <p>
-        You can use this to find the ultimate class for each stage in the game!
-      </p>
-    </header>
+    <nav class="navbar navbar-dark bg-dark">
+      <span class="navbar-brand mb-0 h1">Terraria Classes Guide</span>
+    </nav>
   );
 }
 
@@ -128,29 +125,54 @@ class ProgressBar extends Component {
   }
 }
 
-class Category extends Component {
+class Role extends Component {
   render() {
     return (
-      <div class="top-buffer">
-        <h4>Select your current class</h4>
-        <div class="row ">
-          <div class="col-md">
-            <button class="btn btn-dark btn-lg btn-block">Melee</button>
-          </div>
-          <div class="col-md">
-            <button class="btn btn-dark btn-lg btn-block">Ranged</button>
-          </div>
-          <div class="col-md">
-            <button class="btn btn-dark btn-lg btn-block">Magic</button>
-          </div>
-          <div class="col-md">
-            <button class="btn btn-dark btn-lg btn-block">Summoner</button>
-          </div>
-        </div>
+      <div>
+                <nav class="nav nav-pills navbar-dark">
+        <span class="navbar-text">
+        Select your current class
+</span>
+          <a href="" class="nav-link">
+            Melee
+          </a>
+          <a href="" class="nav-link">
+            Ranged
+          </a>
+          <a href="" class="nav-link">
+            Magic
+          </a>
+          <a href="" class="nav-link">
+            Summoner
+          </a>
+        </nav>
       </div>
     );
   }
 }
+// }class Role extends Component {
+//   render() {
+//     return (
+//       <div class="top-buffer">
+//         <h4>Select your current class</h4>
+//         <div class="row ">
+//           <div class="col-md">
+//             <button class="btn btn-dark btn-lg btn-block">Melee</button>
+//           </div>
+//           <div class="col-md">
+//             <button class="btn btn-dark btn-lg btn-block">Ranged</button>
+//           </div>
+//           <div class="col-md">
+//             <button class="btn btn-dark btn-lg btn-block">Magic</button>
+//           </div>
+//           <div class="col-md">
+//             <button class="btn btn-dark btn-lg btn-block">Summoner</button>
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   }
+// }
 
 class Equipment extends Component {
   render() {
@@ -180,12 +202,15 @@ class TerrariaClasses extends Component {
 
   render() {
     return (
-      <div class="container">
+      <div>
         <PageHeading />
-        <ProgressBar />
-        <Category />
-        <div class="row top-buffer">
-          <Equipment />
+        <div class="container">
+        <Role />
+          <ProgressBar />
+          
+          <div class="row top-buffer">
+            <Equipment />
+          </div>
         </div>
       </div>
     );
