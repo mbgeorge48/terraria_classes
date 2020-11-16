@@ -8,8 +8,11 @@ import "./index.scss";
 class Weapons extends Component {
   render() {
     return (
-      <div class="col-md weapons">
-        <h4>Weapons</h4>
+      <div class="card bg-primary">
+        <div class="card-header">Weapons</div>
+        <div class="card-body">
+          <h6 class="card-text">Point Stick</h6>
+        </div>
       </div>
     );
   }
@@ -18,8 +21,11 @@ class Weapons extends Component {
 class Armor extends Component {
   render() {
     return (
-      <div class="col-md armor">
-        <h4>Armor</h4>
+      <div class="card bg-secondary">
+        <div class="card-header">Armor</div>
+        <div class="card-body">
+          <h6 class="card-text">Gold</h6>
+        </div>
       </div>
     );
   }
@@ -28,8 +34,11 @@ class Armor extends Component {
 class Accessories extends Component {
   render() {
     return (
-      <div class="col-md accessories">
-        <h4>Accessories</h4>
+      <div class="card bg-success">
+        <div class="card-header">Accessories</div>
+        <div class="card-body">
+          <h6 class="card-text">Ranger Emblem</h6>
+        </div>
       </div>
     );
   }
@@ -38,8 +47,11 @@ class Accessories extends Component {
 class Buffs extends Component {
   render() {
     return (
-      <div class="col-md buffs">
-        <h4>Buffs</h4>
+      <div class="card bg-danger">
+        <div class="card-header">Buffs</div>
+        <div class="card-body">
+          <h6 class="card-text">Ironskin</h6>
+        </div>
       </div>
     );
   }
@@ -48,8 +60,11 @@ class Buffs extends Component {
 class Mounts extends Component {
   render() {
     return (
-      <div class="col-md mounts">
-        <h4>Mounts</h4>
+      <div class="card bg-warning">
+        <div class="card-header">Mounts</div>
+        <div class="card-body">
+          <h6 class="card-text">Horse</h6>
+        </div>
       </div>
     );
   }
@@ -58,8 +73,11 @@ class Mounts extends Component {
 class Lights extends Component {
   render() {
     return (
-      <div class="col-md lights">
-        <h4>Lights</h4>
+      <div class="card bg-info">
+        <div class="card-header">Light Pets</div>
+        <div class="card-body">
+          <h6 class="card-text">Torch</h6>
+        </div>
       </div>
     );
   }
@@ -68,57 +86,39 @@ class Lights extends Component {
 function PageHeading() {
   return (
     <nav class="navbar navbar-dark bg-dark">
-      <span class="navbar-brand mb-0 h1">Terraria Classes Guide</span>
+      <div class="container">
+        <span class="navbar-brand mb-0 h1">Terraria Classes Guide</span>
+      </div>
     </nav>
   );
 }
 
 class ProgressBar extends Component {
-  marks = [
-    {
-      value: 0,
-      label: "Pre-bosses",
-    },
-    {
-      value: 1,
-      label: "Pre-Hardmode",
-    },
-    {
-      value: 2,
-      label: "Pre-mechanical bosses",
-    },
-    {
-      value: 3,
-      label: "Pre-Plantera",
-    },
-    {
-      value: 4,
-      label: "Pre-Golem",
-    },
-    {
-      value: 5,
-      label: "Pre-Lunar Events",
-    },
-    {
-      value: 6,
-      label: "Endgame",
-    },
-  ];
-
   render() {
     return (
-      <div class="top-buffer">
-        <h4>Select what stage of the game you're on</h4>
-
+      <div class="container">
         <div class="row">
-          <Slider
-            defaultValue={0}
-            valueLabelDisplay="auto"
-            step={1}
-            marks={this.marks}
-            min={0}
-            max={6}
-          />
+          <div class="card-body">
+            <h5 class="card-title col">Select your game stage</h5>
+              <div class="container card-text">
+                <div class="row">
+                  <div class="col">
+                    <input
+                      type="range"
+                      class="custom-range"
+                      min="0"
+                      max="6"
+                      step="1"
+                      value="0"
+                      // id="customRange3"
+                    ></input>
+                  </div>
+                  <div class="col-3">
+                    <h6>Pre-mechanical bosses</h6>
+                  </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -128,67 +128,58 @@ class ProgressBar extends Component {
 class Role extends Component {
   render() {
     return (
-      <div>
-                <nav class="nav nav-pills navbar-dark">
-        <span class="navbar-text">
-        Select your current class
-</span>
-          <a href="" class="nav-link">
-            Melee
-          </a>
-          <a href="" class="nav-link">
-            Ranged
-          </a>
-          <a href="" class="nav-link">
-            Magic
-          </a>
-          <a href="" class="nav-link">
-            Summoner
-          </a>
-        </nav>
+      <div class="container">
+        <div class="row">
+          <div class="card-body">
+            <h5 class="card-title col">Select your class</h5>
+            <div class="btn-group card-text col" role="group" aria-label="Role">
+              <button type="button" class="btn btn-success">
+                Melee
+              </button>
+              <button type="button" class="btn btn-success">
+                Ranged
+              </button>
+              <button type="button" class="btn btn-success">
+                Magic
+              </button>
+              <button type="button" class="btn btn-success">
+                Summoner
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
 }
-// }class Role extends Component {
-//   render() {
-//     return (
-//       <div class="top-buffer">
-//         <h4>Select your current class</h4>
-//         <div class="row ">
-//           <div class="col-md">
-//             <button class="btn btn-dark btn-lg btn-block">Melee</button>
-//           </div>
-//           <div class="col-md">
-//             <button class="btn btn-dark btn-lg btn-block">Ranged</button>
-//           </div>
-//           <div class="col-md">
-//             <button class="btn btn-dark btn-lg btn-block">Magic</button>
-//           </div>
-//           <div class="col-md">
-//             <button class="btn btn-dark btn-lg btn-block">Summoner</button>
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
 
 class Equipment extends Component {
   render() {
     return (
-      <div className="equipment" class="container top-buffer">
+      <div className="equipment">
         <div class="row">
-          <Weapons />
-          <Armor />
+          <div class="col">
+            <Weapons />
+          </div>
+          <div class="col">
+            <Armor />
+          </div>
         </div>
-        <div class="row">
-          <Accessories />
-          <Buffs />
+        <div class="row mt-4">
+          <div class="col">
+            <Accessories />
+          </div>
+          <div class="col">
+            <Buffs />
+          </div>
         </div>
-        <div class="row">
-          <Mounts />
-          <Lights />
+        <div class="row mt-4">
+          <div class="col">
+            <Mounts />
+          </div>
+          <div class="col">
+            <Lights />
+          </div>
         </div>
       </div>
     );
@@ -205,10 +196,11 @@ class TerrariaClasses extends Component {
       <div>
         <PageHeading />
         <div class="container">
-        <Role />
-          <ProgressBar />
-          
-          <div class="row top-buffer">
+          <div class="card text-white bg-dark mb-3 mt-3">
+            <ProgressBar />
+            <Role />
+          </div>
+          <div class="card text-white bg-dark pb-3 mt-3">
             <Equipment />
           </div>
         </div>
