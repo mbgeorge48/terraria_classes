@@ -8,7 +8,7 @@ import "./index.scss";
 class Weapons extends Component {
   render() {
     return (
-      <div class="card bg-primary">
+      <div class="card bg-secondary text-light">
         <div class="card-header">Weapons</div>
         <div class="card-body">
           <h6 class="card-text">Point Stick</h6>
@@ -21,7 +21,7 @@ class Weapons extends Component {
 class Armor extends Component {
   render() {
     return (
-      <div class="card bg-secondary">
+      <div class="card bg-secondary text-light">
         <div class="card-header">Armor</div>
         <div class="card-body">
           <h6 class="card-text">Gold</h6>
@@ -34,7 +34,7 @@ class Armor extends Component {
 class Accessories extends Component {
   render() {
     return (
-      <div class="card bg-success">
+      <div class="card bg-secondary text-light">
         <div class="card-header">Accessories</div>
         <div class="card-body">
           <h6 class="card-text">Ranger Emblem</h6>
@@ -47,7 +47,7 @@ class Accessories extends Component {
 class Buffs extends Component {
   render() {
     return (
-      <div class="card bg-danger">
+      <div class="card bg-secondary text-light">
         <div class="card-header">Buffs</div>
         <div class="card-body">
           <h6 class="card-text">Ironskin</h6>
@@ -60,7 +60,7 @@ class Buffs extends Component {
 class Mounts extends Component {
   render() {
     return (
-      <div class="card bg-warning">
+      <div class="card bg-secondary text-light">
         <div class="card-header">Mounts</div>
         <div class="card-body">
           <h6 class="card-text">Horse</h6>
@@ -73,7 +73,7 @@ class Mounts extends Component {
 class Lights extends Component {
   render() {
     return (
-      <div class="card bg-info">
+      <div class="card bg-secondary text-light">
         <div class="card-header">Light Pets</div>
         <div class="card-body">
           <h6 class="card-text">Torch</h6>
@@ -103,15 +103,7 @@ class ProgressBar extends Component {
               <div class="container card-text">
                 <div class="row">
                   <div class="col">
-                    <input
-                      type="range"
-                      class="custom-range"
-                      min="0"
-                      max="6"
-                      step="1"
-                      value="0"
-                      // id="customRange3"
-                    ></input>
+                    <input type="range" class="custom-range" min="0" max="6" step="1" id="customRange3"></input>
                   </div>
                   <div class="col-3">
                     <h6>Pre-mechanical bosses</h6>
@@ -133,16 +125,16 @@ class Role extends Component {
           <div class="card-body">
             <h5 class="card-title col">Select your class</h5>
             <div class="btn-group card-text col" role="group" aria-label="Role">
-              <button type="button" class="btn btn-success">
+              <button type="button" class="btn btn-danger">
                 Melee
               </button>
               <button type="button" class="btn btn-success">
                 Ranged
               </button>
-              <button type="button" class="btn btn-success">
+              <button type="button" class="btn btn-warning">
                 Magic
               </button>
-              <button type="button" class="btn btn-success">
+              <button type="button" class="btn btn-primary">
                 Summoner
               </button>
             </div>
