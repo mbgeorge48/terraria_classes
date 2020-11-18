@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Slider from "@material-ui/core/Slider";
 
-import "bootstrap/dist/css/bootstrap.css";
-import "./index.scss";
+import "./scss/index.scss";
 
 class Weapons extends Component {
   render() {
@@ -100,14 +98,21 @@ class ProgressBar extends Component {
         <div class="row">
           <div class="card-body">
             <h5 class="card-title col">Select your game stage</h5>
-              <div class="container card-text">
-                <div class="row">
-                  <div class="col">
-                    <input type="range" class="custom-range" min="0" max="6" step="1" id="customRange3"></input>
-                  </div>
-                  <div class="col-3">
-                    <h6>Pre-mechanical bosses</h6>
-                  </div>
+            <div class="container card-text">
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="range"
+                    min="0"
+                    max="6"
+                    steps="1"
+                    class="slider"
+                    id="myRange"
+                  />
+                </div>
+                <div class="col-3">
+                  <h6>Pre-mechanical bosses</h6>
+                </div>
               </div>
             </div>
           </div>
@@ -118,6 +123,22 @@ class ProgressBar extends Component {
 }
 
 class Role extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { isToggleOn: true };
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    // This will notice which button clicked it and then do change the currrent state to the role
+    this.setState((state) => ({
+      isToggleOn: !state.isToggleOn,
+    }));
+    console.log();
+  }
+
   render() {
     return (
       <div class="container">
@@ -125,16 +146,25 @@ class Role extends Component {
           <div class="card-body">
             <h5 class="card-title col">Select your class</h5>
             <div class="btn-group card-text col" role="group" aria-label="Role">
-              <button type="button" class="btn btn-danger">
+              <button
+                type="button"
+                class="btn btn-melee"
+                id="melee-button"
+                onClick={this.handleClick}
+              >
                 Melee
               </button>
-              <button type="button" class="btn btn-success">
+              <button type="button" class="btn btn-ranged" id="ranged-button">
                 Ranged
               </button>
-              <button type="button" class="btn btn-warning">
+              <button type="button" class="btn btn-magic" id="magic-button">
                 Magic
               </button>
-              <button type="button" class="btn btn-primary">
+              <button
+                type="button"
+                class="btn btn-summoner"
+                id="summoner-button"
+              >
                 Summoner
               </button>
             </div>
