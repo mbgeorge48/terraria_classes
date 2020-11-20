@@ -44,3 +44,16 @@ body {
   background: color("green");
   cursor: pointer;
 }
+
+.equipment-melee {
+  background-color: theme-color("melee") !important;
+}
+.equipment-ranged {
+  background-color: theme-color("ranged") !important;
+}
+.equipment-magic {
+  background-color: theme-color("magic") !important;
+}
+.equipment-summoner {
+  background-color: theme-color("summoner") !important;
+}

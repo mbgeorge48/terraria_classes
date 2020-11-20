@@ -32,10 +32,10 @@ class Armor extends Component {
 class Accessories extends Component {
   render() {
     return (
-      <div class="card bg-secondary text-light">
-        <div class="card-header">Accessories</div>
-        <div class="card-body">
-          <h6 class="card-text">Ranger Emblem</h6>
+      <div className="card bg-secondary text-light">
+        <div className="card-header">Accessories</div>
+        <div className="card-body">
+          <h6 className="card-text">Ranger Emblem</h6>
         </div>
       </div>
     );
@@ -45,10 +45,10 @@ class Accessories extends Component {
 class Buffs extends Component {
   render() {
     return (
-      <div class="card bg-secondary text-light">
-        <div class="card-header">Buffs</div>
-        <div class="card-body">
-          <h6 class="card-text">Ironskin</h6>
+      <div className="card bg-secondary text-light">
+        <div className="card-header">Buffs</div>
+        <div className="card-body">
+          <h6 className="card-text">Ironskin</h6>
         </div>
       </div>
     );
@@ -58,10 +58,12 @@ class Buffs extends Component {
 class Mounts extends Component {
   render() {
     return (
-      <div class="card bg-secondary text-light">
-        <div class="card-header">Mounts</div>
-        <div class="card-body">
-          <h6 class="card-text">Horse</h6>
+      <div className="card bg-secondary text-light">
+        <div className="card-header" id="equipment">
+          Mounts
+        </div>
+        <div className="card-body">
+          <h6 className="card-text">Horse</h6>
         </div>
       </div>
     );
@@ -71,10 +73,12 @@ class Mounts extends Component {
 class Lights extends Component {
   render() {
     return (
-      <div class="card bg-secondary text-light">
-        <div class="card-header">Light Pets</div>
-        <div class="card-body">
-          <h6 class="card-text">Torch</h6>
+      <div className="card bg-secondary text-light">
+        <div className="card-header" id="equipment">
+          Light Pets
+        </div>
+        <div className="card-body">
+          <h6 className="card-text">Torch</h6>
         </div>
       </div>
     );
@@ -121,22 +125,25 @@ class ProgressBar extends Component {
     );
   }
 }
-
 class Role extends Component {
   constructor(props) {
     super(props);
-    this.state = { isToggleOn: true };
-
-    // This binding is necessary to make `this` work in the callback
+    this.state = {
+      currentRole: null,
+    };
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
-    // This will notice which button clicked it and then do change the currrent state to the role
-    this.setState((state) => ({
-      isToggleOn: !state.isToggleOn,
-    }));
-    console.log();
+  handleClick(e) {
+    if (e.target.id === "melee-button") {
+      //html change class of all child elements
+      document.getElementById("equipment").classList.add("equipment-melee");
+      document.getElementById("equipment").classList.remove("equipment-ranged");
+      document.getElementById("equipment").classList.remove("equipment-magic");
+      document
+        .getElementById("equipment")
+        .classList.remove("equipment-summoner");
+    }
   }
 
   render() {
@@ -154,16 +161,27 @@ class Role extends Component {
               >
                 Melee
               </button>
-              <button type="button" class="btn btn-ranged" id="ranged-button">
+              <button
+                type="button"
+                class="btn btn-ranged"
+                id="ranged-button"
+                onClick={this.handleClick}
+              >
                 Ranged
               </button>
-              <button type="button" class="btn btn-magic" id="magic-button">
+              <button
+                type="button"
+                class="btn btn-magic"
+                id="magic-button"
+                onClick={this.handleClick}
+              >
                 Magic
               </button>
               <button
                 type="button"
                 class="btn btn-summoner"
                 id="summoner-button"
+                onClick={this.handleClick}
               >
                 Summoner
               </button>
@@ -215,7 +233,7 @@ class TerrariaClasses extends Component {
 
   render() {
     return (
-      <div>
+      <div className="test">
         <PageHeading />
         <div class="container">
           <div class="card text-white bg-dark mb-3 mt-3">
