@@ -1,39 +1,39 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
 import "./scss/index.scss";
 
-class Weapons extends Component {
-  render() {
-    return (
-      <div class="card bg-secondary text-light">
-        <div class="card-header">Weapons</div>
-        <div class="card-body">
-          <h6 class="card-text">Point Stick</h6>
-        </div>
-      </div>
-    );
-  }
-}
-
-class Armor extends Component {
-  render() {
-    return (
-      <div class="card bg-secondary text-light">
-        <div class="card-header">Armor</div>
-        <div class="card-body">
-          <h6 class="card-text">Gold</h6>
-        </div>
-      </div>
-    );
-  }
-}
-
-class Accessories extends Component {
+class Weapons extends React.Component {
   render() {
     return (
       <div className="card bg-secondary text-light">
-        <div className="card-header">Accessories</div>
+        <div className={this.props.classStyles}>Weapons</div>
+        <div className="card-body">
+          <h6 className="card-text">Point Stick</h6>
+        </div>
+      </div>
+    );
+  }
+}
+
+class Armor extends React.Component {
+  render() {
+    return (
+      <div className="card bg-secondary text-light">
+        <div className={this.props.classStyles}>Armor</div>
+        <div className="card-body">
+          <h6 className="card-text">Gold</h6>
+        </div>
+      </div>
+    );
+  }
+}
+
+class Accessories extends React.Component {
+  render() {
+    return (
+      <div className="card bg-secondary text-light">
+        <div className={this.props.classStyles}>Accessories</div>
         <div className="card-body">
           <h6 className="card-text">Ranger Emblem</h6>
         </div>
@@ -42,11 +42,11 @@ class Accessories extends Component {
   }
 }
 
-class Buffs extends Component {
+class Buffs extends React.Component {
   render() {
     return (
       <div className="card bg-secondary text-light">
-        <div className="card-header">Buffs</div>
+        <div className={this.props.classStyles}>Buffs</div>
         <div className="card-body">
           <h6 className="card-text">Ironskin</h6>
         </div>
@@ -55,13 +55,11 @@ class Buffs extends Component {
   }
 }
 
-class Mounts extends Component {
+class Mounts extends React.Component {
   render() {
     return (
       <div className="card bg-secondary text-light">
-        <div className="card-header" id="equipment">
-          Mounts
-        </div>
+        <div className={this.props.classStyles}>Mounts</div>
         <div className="card-body">
           <h6 className="card-text">Horse</h6>
         </div>
@@ -70,13 +68,11 @@ class Mounts extends Component {
   }
 }
 
-class Lights extends Component {
+class Lights extends React.Component {
   render() {
     return (
       <div className="card bg-secondary text-light">
-        <div className="card-header" id="equipment">
-          Light Pets
-        </div>
+        <div className={this.props.classStyles}>Light Pets</div>
         <div className="card-body">
           <h6 className="card-text">Torch</h6>
         </div>
@@ -84,7 +80,6 @@ class Lights extends Component {
     );
   }
 }
-
 function PageHeading() {
   return (
     <nav class="navbar navbar-dark bg-dark">
@@ -95,7 +90,7 @@ function PageHeading() {
   );
 }
 
-class ProgressBar extends Component {
+class ProgressBar extends React.Component {
   render() {
     return (
       <div class="container">
@@ -125,26 +120,48 @@ class ProgressBar extends Component {
     );
   }
 }
-class Role extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentRole: null,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
+class Role extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     currentRole: null,
+  //   };
+  // }
 
-  handleClick(e) {
-    if (e.target.id === "melee-button") {
-      //html change class of all child elements
-      document.getElementById("equipment").classList.add("equipment-melee");
-      document.getElementById("equipment").classList.remove("equipment-ranged");
-      document.getElementById("equipment").classList.remove("equipment-magic");
-      document
-        .getElementById("equipment")
-        .classList.remove("equipment-summoner");
-    }
-  }
+  // updateRole(role) {
+  //   this.setState((state) => {
+  //     // Important: read `state` instead of `this.state` when updating.
+  //     console.log(role);
+  //     console.log(this.state.currentRole);
+  //     return { currentRole: role };
+  //   });
+  // }
+
+  // updateForm() {
+  //   this.updateRole(this.state.currentRole);
+  //   var roleClasses = [
+  //     "equipment-melee",
+  //     "equipment-ranged",
+  //     "equipment-magic",
+  //     "equipment-summoner",
+  //     "equipment-null",
+  //   ];
+  //   var x = document.querySelectorAll(".equip-type");
+  //   for (var i = 0; i < x.length; i++) {
+  //     x[i].classList.remove(...roleClasses);
+  //     x[i].classList.add("equipment-" + this.state.currentRole);
+  //     console.log(this.state.currentRole);
+  //   }
+  // }
+
+  // handleClick(e) {
+  //   // this.updateRole(e.target.id.split("-button")[0]);
+  //   this.setState((state) => {
+  //     // Important: read `state` instead of `this.state` when updating.
+  //     console.log(this.state.currentRole);
+  //     return { currentRole: e.target.id.split("-button")[0] };
+  //   });
+  // }
 
   render() {
     return (
@@ -157,7 +174,8 @@ class Role extends Component {
                 type="button"
                 class="btn btn-melee"
                 id="melee-button"
-                onClick={this.handleClick}
+                onClick={this.props.handleClick}
+                value="melee"
               >
                 Melee
               </button>
@@ -165,7 +183,8 @@ class Role extends Component {
                 type="button"
                 class="btn btn-ranged"
                 id="ranged-button"
-                onClick={this.handleClick}
+                onClick={this.props.handleClick}
+                value="ranged"
               >
                 Ranged
               </button>
@@ -173,7 +192,8 @@ class Role extends Component {
                 type="button"
                 class="btn btn-magic"
                 id="magic-button"
-                onClick={this.handleClick}
+                onClick={this.props.handleClick}
+                value="magic"
               >
                 Magic
               </button>
@@ -181,7 +201,8 @@ class Role extends Component {
                 type="button"
                 class="btn btn-summoner"
                 id="summoner-button"
-                onClick={this.handleClick}
+                onClick={this.props.handleClick}
+                value="summoner"
               >
                 Summoner
               </button>
@@ -193,32 +214,49 @@ class Role extends Component {
   }
 }
 
-class Equipment extends Component {
+class Equipment extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      classStyles: "card-header equip-type",
+    };
+  }
+
+  componentDidUpdate() {
+    // doesn't work
+    console.log(this.props.currentRole);
+    this.setState({
+      classStyles:
+        this.state.classStyles + "equipment-" + this.props.currentRole,
+    });
+  }
+
   render() {
     return (
-      <div className="equipment">
+      <div className="equipment" id="equipment">
         <div class="row">
           <div class="col">
-            <Weapons />
+            <Weapons classStyles={this.state.classStyles} />
           </div>
           <div class="col">
-            <Armor />
-          </div>
-        </div>
-        <div class="row mt-4">
-          <div class="col">
-            <Accessories />
-          </div>
-          <div class="col">
-            <Buffs />
+            <Armor classStyles={this.state.classStyles} />
           </div>
         </div>
         <div class="row mt-4">
           <div class="col">
-            <Mounts />
+            <Accessories classStyles={this.state.classStyles} />
           </div>
           <div class="col">
-            <Lights />
+            <Buffs classStyles={this.state.classStyles} />
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col">
+            <Mounts classStyles={this.state.classStyles} />
+          </div>
+          <div class="col">
+            <Lights classStyles={this.state.classStyles} />
           </div>
         </div>
       </div>
@@ -226,22 +264,43 @@ class Equipment extends Component {
   }
 }
 
-class TerrariaClasses extends Component {
+class TerrariaRoles extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentRole: null,
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   componentDidMount() {
     document.title = "Terraria Classes Guide";
   }
 
+  handleClick(e) {
+    // this.updateRole(e.target.id.split("-button")[0]);
+    // this.setState((state) => {
+    //   // Important: read `state` instead of `this.state` when updating.
+    //   console.log(this.state.currentRole);
+    //   return { currentRole: e.target.id.split("-button")[0] };
+    // });
+
+    // this.setState({ currentRole: e.target.id.split("-button")[0] });
+    this.setState({ currentRole: e.target.value });
+  }
+
   render() {
     return (
-      <div className="test">
+      <div>
         <PageHeading />
         <div class="container">
           <div class="card text-white bg-dark mb-3 mt-3">
             <ProgressBar />
-            <Role />
+            <Role handleClick={this.handleClick} />
           </div>
           <div class="card text-white bg-dark pb-3 mt-3">
-            <Equipment />
+            <Equipment currentRole={this.state.currentRole} />
           </div>
         </div>
       </div>
@@ -249,4 +308,4 @@ class TerrariaClasses extends Component {
   }
 }
 
-ReactDOM.render(<TerrariaClasses />, document.getElementById("root"));
+ReactDOM.render(<TerrariaRoles />, document.getElementById("root"));
