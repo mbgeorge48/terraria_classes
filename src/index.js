@@ -7,7 +7,16 @@ class Weapons extends React.Component {
   render() {
     return (
       <div className="card bg-secondary text-light">
-        <div className={this.props.classStyles}>Weapons</div>
+        <div
+          className={
+            "card-header equip-type" +
+            (this.props.currentRole
+              ? " equipment-" + this.props.currentRole
+              : "")
+          }
+        >
+          Weapons
+        </div>
         <div className="card-body">
           <h6 className="card-text">Point Stick</h6>
         </div>
@@ -20,7 +29,16 @@ class Armor extends React.Component {
   render() {
     return (
       <div className="card bg-secondary text-light">
-        <div className={this.props.classStyles}>Armor</div>
+        <div
+          className={
+            "card-header equip-type" +
+            (this.props.currentRole
+              ? " equipment-" + this.props.currentRole
+              : "")
+          }
+        >
+          Armor
+        </div>
         <div className="card-body">
           <h6 className="card-text">Gold</h6>
         </div>
@@ -33,7 +51,16 @@ class Accessories extends React.Component {
   render() {
     return (
       <div className="card bg-secondary text-light">
-        <div className={this.props.classStyles}>Accessories</div>
+        <div
+          className={
+            "card-header equip-type" +
+            (this.props.currentRole
+              ? " equipment-" + this.props.currentRole
+              : "")
+          }
+        >
+          Accessories
+        </div>
         <div className="card-body">
           <h6 className="card-text">Ranger Emblem</h6>
         </div>
@@ -46,7 +73,16 @@ class Buffs extends React.Component {
   render() {
     return (
       <div className="card bg-secondary text-light">
-        <div className={this.props.classStyles}>Buffs</div>
+        <div
+          className={
+            "card-header equip-type" +
+            (this.props.currentRole
+              ? " equipment-" + this.props.currentRole
+              : "")
+          }
+        >
+          Buffs
+        </div>
         <div className="card-body">
           <h6 className="card-text">Ironskin</h6>
         </div>
@@ -59,7 +95,16 @@ class Mounts extends React.Component {
   render() {
     return (
       <div className="card bg-secondary text-light">
-        <div className={this.props.classStyles}>Mounts</div>
+        <div
+          className={
+            "card-header equip-type" +
+            (this.props.currentRole
+              ? " equipment-" + this.props.currentRole
+              : "")
+          }
+        >
+          Mounts
+        </div>
         <div className="card-body">
           <h6 className="card-text">Horse</h6>
         </div>
@@ -72,7 +117,16 @@ class Lights extends React.Component {
   render() {
     return (
       <div className="card bg-secondary text-light">
-        <div className={this.props.classStyles}>Light Pets</div>
+        <div
+          className={
+            "card-header equip-type" +
+            (this.props.currentRole
+              ? " equipment-" + this.props.currentRole
+              : "")
+          }
+        >
+          Light Pets
+        </div>
         <div className="card-body">
           <h6 className="card-text">Torch</h6>
         </div>
@@ -121,48 +175,6 @@ class ProgressBar extends React.Component {
   }
 }
 class Role extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     currentRole: null,
-  //   };
-  // }
-
-  // updateRole(role) {
-  //   this.setState((state) => {
-  //     // Important: read `state` instead of `this.state` when updating.
-  //     console.log(role);
-  //     console.log(this.state.currentRole);
-  //     return { currentRole: role };
-  //   });
-  // }
-
-  // updateForm() {
-  //   this.updateRole(this.state.currentRole);
-  //   var roleClasses = [
-  //     "equipment-melee",
-  //     "equipment-ranged",
-  //     "equipment-magic",
-  //     "equipment-summoner",
-  //     "equipment-null",
-  //   ];
-  //   var x = document.querySelectorAll(".equip-type");
-  //   for (var i = 0; i < x.length; i++) {
-  //     x[i].classList.remove(...roleClasses);
-  //     x[i].classList.add("equipment-" + this.state.currentRole);
-  //     console.log(this.state.currentRole);
-  //   }
-  // }
-
-  // handleClick(e) {
-  //   // this.updateRole(e.target.id.split("-button")[0]);
-  //   this.setState((state) => {
-  //     // Important: read `state` instead of `this.state` when updating.
-  //     console.log(this.state.currentRole);
-  //     return { currentRole: e.target.id.split("-button")[0] };
-  //   });
-  // }
-
   render() {
     return (
       <div class="container">
@@ -173,7 +185,6 @@ class Role extends React.Component {
               <button
                 type="button"
                 class="btn btn-melee"
-                id="melee-button"
                 onClick={this.props.handleClick}
                 value="melee"
               >
@@ -182,7 +193,6 @@ class Role extends React.Component {
               <button
                 type="button"
                 class="btn btn-ranged"
-                id="ranged-button"
                 onClick={this.props.handleClick}
                 value="ranged"
               >
@@ -191,7 +201,6 @@ class Role extends React.Component {
               <button
                 type="button"
                 class="btn btn-magic"
-                id="magic-button"
                 onClick={this.props.handleClick}
                 value="magic"
               >
@@ -200,7 +209,6 @@ class Role extends React.Component {
               <button
                 type="button"
                 class="btn btn-summoner"
-                id="summoner-button"
                 onClick={this.props.handleClick}
                 value="summoner"
               >
@@ -215,48 +223,31 @@ class Role extends React.Component {
 }
 
 class Equipment extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      classStyles: "card-header equip-type",
-    };
-  }
-
-  componentDidUpdate() {
-    // doesn't work
-    console.log(this.props.currentRole);
-    this.setState({
-      classStyles:
-        this.state.classStyles + "equipment-" + this.props.currentRole,
-    });
-  }
-
   render() {
     return (
       <div className="equipment" id="equipment">
         <div class="row">
           <div class="col">
-            <Weapons classStyles={this.state.classStyles} />
+            <Weapons currentRole={this.props.currentRole} />
           </div>
           <div class="col">
-            <Armor classStyles={this.state.classStyles} />
-          </div>
-        </div>
-        <div class="row mt-4">
-          <div class="col">
-            <Accessories classStyles={this.state.classStyles} />
-          </div>
-          <div class="col">
-            <Buffs classStyles={this.state.classStyles} />
+            <Armor currentRole={this.props.currentRole} />
           </div>
         </div>
         <div class="row mt-4">
           <div class="col">
-            <Mounts classStyles={this.state.classStyles} />
+            <Accessories currentRole={this.props.currentRole} />
           </div>
           <div class="col">
-            <Lights classStyles={this.state.classStyles} />
+            <Buffs currentRole={this.props.currentRole} />
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col">
+            <Mounts currentRole={this.props.currentRole} />
+          </div>
+          <div class="col">
+            <Lights currentRole={this.props.currentRole} />
           </div>
         </div>
       </div>
@@ -269,25 +260,28 @@ class TerrariaRoles extends React.Component {
     super(props);
 
     this.state = {
+      equipmentCardStyle: ["card-header", "equip-type"],
       currentRole: null,
+      roleStyle: null,
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
     document.title = "Terraria Classes Guide";
+    this.setState({
+      roleStyle: this.state.equipmentCardStyle.join(" "),
+    });
   }
 
   handleClick(e) {
-    // this.updateRole(e.target.id.split("-button")[0]);
-    // this.setState((state) => {
-    //   // Important: read `state` instead of `this.state` when updating.
-    //   console.log(this.state.currentRole);
-    //   return { currentRole: e.target.id.split("-button")[0] };
-    // });
-
-    // this.setState({ currentRole: e.target.id.split("-button")[0] });
-    this.setState({ currentRole: e.target.value });
+    this.setState({
+      currentRole: e.target.value,
+      roleStyle:
+        this.state.equipmentCardStyle.join(" ") +
+        " equipment-" +
+        e.target.value,
+    });
   }
 
   render() {
