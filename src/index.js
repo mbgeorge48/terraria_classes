@@ -139,24 +139,12 @@ function getWeapons(currentRole, gameStageIndex) {
   for (var i = 0; i < weaponData.length; i++) {
     const weapon = weaponData[i];
     if (
-      weapon.role === currentRole &&
+      (weapon.role === currentRole || weapon.role === "mixed") &&
       weapon.gameStageAvailable === gameStageIndex &&
       weapon.category === "Weapons"
     ) {
       weaponList.push(weapon);
     }
-    // console.log(
-    //   "name- " +
-    //     obj.name +
-    //     "role- " +
-    //     obj.role +
-    //     "gameStageAvailable- " +
-    //     obj.gameStageAvailable +
-    //     "url- " +
-    //     obj.url +
-    //     "imgPath- " +
-    //     obj.imgPath
-    // );
   }
 
   return weaponList;
