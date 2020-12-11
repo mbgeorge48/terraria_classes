@@ -25,3 +25,4 @@ yarn-error.log*
 # Extras
 .vscode
 items.json
+.log

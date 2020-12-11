@@ -109,23 +109,28 @@ class Equipment extends React.Component {
             />
           </div>
           <div className="col">
-            <Armor currentRole={this.props.currentRole} />
+            <Armor currentRole={this.props.currentRole}
+              gameStageIndex={this.props.gameStageIndex} />
           </div>
         </div>
         <div className="row mt-4">
           <div className="col">
-            <Accessories currentRole={this.props.currentRole} />
+            <Accessories currentRole={this.props.currentRole}
+              gameStageIndex={this.props.gameStageIndex} />
           </div>
           <div className="col">
-            <Buffs currentRole={this.props.currentRole} />
+            <Buffs currentRole={this.props.currentRole}
+              gameStageIndex={this.props.gameStageIndex} />
           </div>
         </div>
         <div className="row mt-4">
           <div className="col">
-            <Mounts currentRole={this.props.currentRole} />
+            <Mounts currentRole={this.props.currentRole}
+              gameStageIndex={this.props.gameStageIndex} />
           </div>
           <div className="col">
-            <Lights currentRole={this.props.currentRole} />
+            <Lights currentRole={this.props.currentRole}
+              gameStageIndex={this.props.gameStageIndex} />
           </div>
         </div>
       </div>
@@ -159,8 +164,8 @@ function populateWeapons(currentRole, gameStageIndex) {
         <td key={uuidv4()}>
           <img
             key={uuidv4()}
-            src={weapon.imgPath}
-            alt={weapon.imgPath}
+            // src={weapon.imgPath}
+            alt={weapon.name}
             className="mr-3 mt-1"
             decoding="async"
           ></img>
@@ -177,7 +182,52 @@ function populateWeapons(currentRole, gameStageIndex) {
       <th key="1">Select a class</th>
     </tr>
   );
+  return listItems;
+}
 
+function getArmor(currentRole, gameStageIndex) {
+  let armorList = [];
+  const armorData = require("./data/items.json");
+  for (var i = 0; i < armorData.length; i++) {
+    const armor = armorData[i];
+    if (
+      (armor.role === currentRole || armor.role === "mixed") &&
+      armor.gameStageAvailable === gameStageIndex && armor.category === "Armor"
+      ) {
+        armorList.push(armor);
+      }
+    }
+    return armorList;
+}
+
+function populateArmor(currentRole, gameStageIndex) {
+  const armorList = getArmor(currentRole, gameStageIndex);
+
+  const listItems = currentRole ? (
+    armorList.map((armor) => (
+      <tr key={uuidv4()}>
+        <td key={uuidv4()}>
+          <img
+            key={uuidv4()}
+            // src={armor.imgPath}
+            alt={armor.name}
+            className="mr-3 mt-1"
+            decoding="async"
+          ></img>
+        </td>
+        <td key={uuidv4()}>
+          <a href={armor.url} key={uuidv4()} target="_blank" rel="noreferrer">
+            {armor.name}
+          </a>
+        </td>
+      </tr>
+    ))
+  ) : (
+    <tr>
+      <th key="1">Select a class</th>
+    </tr>
+  );
+  
   return listItems;
 }
 
@@ -227,7 +277,16 @@ class Armor extends React.Component {
           Armor
         </div>
         <div className="card-body">
-          <h6 className="card-text">Gold</h6>
+          <div className="card-text">
+            <table>
+              <tbody>
+                {populateArmor(
+                  this.props.currentRole,
+                  this.props.gameStageIndex
+                )}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     );
