@@ -146,7 +146,7 @@ function getWeapons(currentRole, gameStageIndex) {
     if (
       (weapon.role === currentRole || weapon.role === "mixed") &&
       weapon.gameStageAvailable === gameStageIndex &&
-      weapon.category === "Weapons"
+      weapon.category === "weapons"
     ) {
       weaponList.push(weapon);
     }
@@ -164,7 +164,7 @@ function populateWeapons(currentRole, gameStageIndex) {
         <td key={uuidv4()}>
           <img
             key={uuidv4()}
-            // src={weapon.imgPath}
+            src={weapon.imgPath}
             alt={weapon.name}
             className="mr-3 mt-1"
             decoding="async"
@@ -192,7 +192,7 @@ function getArmor(currentRole, gameStageIndex) {
     const armor = armorData[i];
     if (
       (armor.role === currentRole || armor.role === "mixed") &&
-      armor.gameStageAvailable === gameStageIndex && armor.category === "Armor"
+      armor.gameStageAvailable === gameStageIndex && armor.category === "armor"
       ) {
         armorList.push(armor);
       }
@@ -209,7 +209,7 @@ function populateArmor(currentRole, gameStageIndex) {
         <td key={uuidv4()}>
           <img
             key={uuidv4()}
-            // src={armor.imgPath}
+            src={armor.imgPath}
             alt={armor.name}
             className="mr-3 mt-1"
             decoding="async"
