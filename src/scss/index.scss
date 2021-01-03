@@ -64,6 +64,14 @@ a {
 a:hover {
   color: white;
 }
-td {
-  height: 50px;
+
+tr {
+  // height: 300px !important;
+  width:32px !important;
+}
+
+img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
 }

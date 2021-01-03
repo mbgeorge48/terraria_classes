@@ -138,6 +138,9 @@ class Equipment extends React.Component {
   }
 }
 
+// Check this our for some ideas to avoid duplicating code
+// https://stackoverflow.com/questions/36983158/rendering-json-data-in-multiple-react-js-components
+
 function getWeapons(currentRole, gameStageIndex) {
   let weaponList = [];
   const weaponData = require("./data/items.json");
@@ -161,7 +164,7 @@ function populateWeapons(currentRole, gameStageIndex) {
   const listItems = currentRole ? (
     weaponList.map((weapon) => (
       <tr key={uuidv4()}>
-        <td key={uuidv4()}>
+        <td className="image-cell">
           <img
             key={uuidv4()}
             src={weapon.imgPath}
