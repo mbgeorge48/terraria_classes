@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Terraria Classes Guide 
+
+While I learn about React I created this project, I'm intending to create a interactive version of the official game wiki's class guide.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
