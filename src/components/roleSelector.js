@@ -17,6 +17,7 @@ export default class Role extends React.Component {
                 className="btn btn-melee"
                 onClick={this.props.roleChange}
                 value="melee"
+                data-testid="melee-role-button"
               >
                 Melee
               </button>
@@ -25,6 +26,7 @@ export default class Role extends React.Component {
                 className="btn btn-ranged"
                 onClick={this.props.roleChange}
                 value="ranged"
+                data-testid="ranged-role-button"
               >
                 Ranged
               </button>
@@ -33,6 +35,7 @@ export default class Role extends React.Component {
                 className="btn btn-magic"
                 onClick={this.props.roleChange}
                 value="magic"
+                data-testid="magic-role-button"
               >
                 Magic
               </button>
@@ -41,6 +44,7 @@ export default class Role extends React.Component {
                 className="btn btn-summoner"
                 onClick={this.props.roleChange}
                 value="summoner"
+                data-testid="summoner-role-button"
               >
                 Summoner
               </button>
