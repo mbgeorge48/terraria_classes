@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid";
 
 function getArmor(currentRole, gameStageIndex) {
   let armorList = [];
-  const armorData = require("../data/items.json");
+  const armorData = require("../../data/items.json");
   for (var i = 0; i < armorData.length; i++) {
     const armor = armorData[i];
     if (

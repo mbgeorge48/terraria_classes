@@ -1,8 +1,11 @@
 import React from "react";
 import { v4 as uuid } from "uuid";
 
-import Armor from "./armorContainer";
-import Weapons from "./weaponContainer";
+import Armor from "./equipmentContainers/armorContainer";
+import Weapons from "./equipmentContainers/weaponContainer";
+
+// bring all the items in here and add them to the state?
+// then push them to each child rather than reading the file over and over
 
 export default class Equipment extends React.Component {
   render() {

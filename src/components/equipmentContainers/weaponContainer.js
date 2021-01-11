@@ -6,7 +6,7 @@ import { v4 as uuid } from "uuid";
 
 function getWeapons(currentRole, gameStageIndex) {
   let weaponList = [];
-  const weaponData = require("../data/items.json");
+  const weaponData = require("../../data/items.json");
   for (var i = 0; i < weaponData.length; i++) {
     const weapon = weaponData[i];
     if (
