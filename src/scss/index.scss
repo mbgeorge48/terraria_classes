@@ -57,3 +57,21 @@ body {
 .equipment-summoner {
   background-color: theme-color("summoner");
 }
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+}
+
+tr {
+  // height: 300px !important;
+  width:32px !important;
+}
+
+img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
