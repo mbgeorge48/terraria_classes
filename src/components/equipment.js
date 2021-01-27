@@ -3,6 +3,9 @@ import { v4 as uuid } from "uuid";
 
 import Armor from "./equipmentContainers/armorContainer";
 import Weapons from "./equipmentContainers/weaponContainer";
+import Buffs from "./equipmentContainers/buffsContainer";
+import Accessories from "./equipmentContainers/accessoriesContainer";
+import Mounts from "./equipmentContainers/mountsContainer";
 
 // bring all the items in here and add them to the state?
 // then push them to each child rather than reading the file over and over
@@ -52,72 +55,6 @@ export default class Equipment extends React.Component {
               gameStageIndex={this.props.gameStageIndex}
             />
           </div>
-        </div>
-      </div>
-    );
-  }
-}
-
-class Accessories extends React.Component {
-  render() {
-    return (
-      <div className="card bg-secondary text-light">
-        <div
-          className={
-            "card-header equip-type" +
-            (this.props.currentRole
-              ? " equipment-" + this.props.currentRole
-              : "")
-          }
-        >
-          Accessories
-        </div>
-        <div className="card-body">
-          <h6 className="card-text">Ranger Emblem</h6>
-        </div>
-      </div>
-    );
-  }
-}
-
-class Buffs extends React.Component {
-  render() {
-    return (
-      <div className="card bg-secondary text-light">
-        <div
-          className={
-            "card-header equip-type" +
-            (this.props.currentRole
-              ? " equipment-" + this.props.currentRole
-              : "")
-          }
-        >
-          Buffs
-        </div>
-        <div className="card-body">
-          <h6 className="card-text">Ironskin</h6>
-        </div>
-      </div>
-    );
-  }
-}
-
-class Mounts extends React.Component {
-  render() {
-    return (
-      <div className="card bg-secondary text-light">
-        <div
-          className={
-            "card-header equip-type" +
-            (this.props.currentRole
-              ? " equipment-" + this.props.currentRole
-              : "")
-          }
-        >
-          Mounts
-        </div>
-        <div className="card-body">
-          <h6 className="card-text">Horse</h6>
         </div>
       </div>
     );
