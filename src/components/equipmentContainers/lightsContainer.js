@@ -4,41 +4,41 @@ import { v4 as uuid } from "uuid";
 // Check this our for some ideas to avoid duplicating code
 // https://stackoverflow.com/questions/36983158/rendering-json-data-in-multiple-react-js-components
 
-function getAccessories(currentRole, gameStageIndex) {
-  let accessoriesList = [];
-  const accessoriesData = require("../../data/items.json");
-  for (var i = 0; i < accessoriesData.length; i++) {
-    const buff = accessoriesData[i];
+function getLights(currentRole, gameStageIndex) {
+  let lightsList = [];
+  const lightsData = require("../../data/items.json");
+  for (var i = 0; i < lightsData.length; i++) {
+    const buff = lightsData[i];
     if (
       (buff.role === currentRole || buff.role === "mixed") &&
       buff.gameStageAvailable === gameStageIndex &&
-      buff.category === "accessories"
+      buff.category === "lights"
     ) {
-      accessoriesList.push(buff);
+      lightsList.push(buff);
     }
   }
 
-  return accessoriesList;
+  return lightsList;
 }
 
-function populateAccessories(currentRole, gameStageIndex) {
-  const accessoriesList = getAccessories(currentRole, gameStageIndex);
+function populateLights(currentRole, gameStageIndex) {
+  const lightsList = getLights(currentRole, gameStageIndex);
 
   const listItems = currentRole ? (
-    accessoriesList.map((accessories) => (
+    lightsList.map((lights) => (
       <tr key={uuid}>
         <td className="image-cell">
           <img
             key={uuid}
-            src={accessories.imgPath}
-            alt={accessories.name}
+            src={lights.imgPath}
+            alt={lights.name}
             className="mr-3 mt-1"
             decoding="async"
           ></img>
         </td>
         <td key={uuid}>
-          <a href={accessories.url} key={uuid} target="_blank" rel="noreferrer">
-            {accessories.name}
+          <a href={lights.url} key={uuid} target="_blank" rel="noreferrer">
+            {lights.name}
           </a>
         </td>
       </tr>
@@ -51,7 +51,7 @@ function populateAccessories(currentRole, gameStageIndex) {
   return listItems;
 }
 
-export default class Accessories extends React.Component {
+export default class Lights extends React.Component {
   render() {
     return (
       <div className="card bg-secondary text-light">
@@ -63,13 +63,13 @@ export default class Accessories extends React.Component {
               : "")
           }
         >
-          Accessories
+          Lights
         </div>
         <div className="card-body">
           <div className="card-text">
             <table>
               <tbody>
-                {populateAccessories(
+                {populateLights(
                   this.props.currentRole,
                   this.props.gameStageIndex
                 )}

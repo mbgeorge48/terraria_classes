@@ -1,11 +1,11 @@
 import React from "react";
-import { v4 as uuid } from "uuid";
 
 import Armor from "./equipmentContainers/armorContainer";
 import Weapons from "./equipmentContainers/weaponContainer";
-import Buffs from "./equipmentContainers/buffsContainer";
 import Accessories from "./equipmentContainers/accessoriesContainer";
+import Buffs from "./equipmentContainers/buffsContainer";
 import Mounts from "./equipmentContainers/mountsContainer";
+import Lights from "./equipmentContainers/lightsContainer";
 
 // bring all the items in here and add them to the state?
 // then push them to each child rather than reading the file over and over
@@ -55,28 +55,6 @@ export default class Equipment extends React.Component {
               gameStageIndex={this.props.gameStageIndex}
             />
           </div>
-        </div>
-      </div>
-    );
-  }
-}
-
-class Lights extends React.Component {
-  render() {
-    return (
-      <div className="card bg-secondary text-light">
-        <div
-          className={
-            "card-header equip-type" +
-            (this.props.currentRole
-              ? " equipment-" + this.props.currentRole
-              : "")
-          }
-        >
-          Light Pets
-        </div>
-        <div className="card-body">
-          <h6 className="card-text">Torch</h6>
         </div>
       </div>
     );
