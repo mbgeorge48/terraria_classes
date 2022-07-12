@@ -1,8 +1,9 @@
 import React, { useCallback, useState } from "react";
 import Slider from "./controller/slider";
 // import { gameStages } from "./common/constants";
-import Container from "./controller/container";
+import ControllerContainer from "./controller/controller-container";
 import Header from "./controller/header";
+import DisplayContainer from "./display/display-container";
 
 const Body: React.FC = () => {
   // const [selectedGameStage, setSelectedGameStage] = useState(gameStages[0]);
@@ -16,24 +17,27 @@ const Body: React.FC = () => {
   );
 
   return (
-    <div
-      className={`rounded-lg m-4 border-2 border-black bg-${
-        selectedRole ? selectedRole : "gray-400/70"
-      } bg-opacity-20`}
-    >
-      <div className="flex lg:flex-row flex-col lg:space-y-0 space-y-4 ">
-        <Header />
-        <Slider
-          min={0}
-          max={6}
-          labelText={"Select your game stage"}
-          rangeColour={`accent-${selectedRole}`}
+    <div>
+      <div
+        className={`rounded-lg m-4 border-2 border-black bg-${
+          selectedRole ? selectedRole : "gray-400/70"
+        } bg-opacity-20`}
+      >
+        <div className="flex lg:flex-row flex-col lg:space-y-0 space-y-4 ">
+          <Header />
+          <Slider
+            min={0}
+            max={6}
+            labelText={"Select your game stage"}
+            rangeColour={`accent-${selectedRole}`}
+          />
+        </div>
+        <ControllerContainer
+          onRoleChange={updateSelectedRole}
+          selectedRole={selectedRole}
         />
       </div>
-      <Container
-        onRoleChange={updateSelectedRole}
-        selectedRole={selectedRole}
-      />
+      <DisplayContainer selectedRole={selectedRole} />
     </div>
   );
 };
