@@ -7,7 +7,10 @@ interface Props {
   selectedRole: string;
 }
 
-const Container: React.FC<Props> = ({ onRoleChange, selectedRole }) => {
+const ControllerContainer: React.FC<Props> = ({
+  onRoleChange,
+  selectedRole,
+}) => {
   return (
     <div className="m-6">
       <div className="md:flex md:flex-row md:space-x-6 grid grid-cols-2 gap-4 justify-evenly">
@@ -44,4 +47,4 @@ const Container: React.FC<Props> = ({ onRoleChange, selectedRole }) => {
   );
 };
 
-export default Container;
+export default ControllerContainer;
