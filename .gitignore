@@ -24,15 +24,12 @@ coverage.xml
 
 
 # NPM Stuff
-/node_modules/*
-
+*.pem
+node_modules
 npm-debug.log*
 .mypy_cache/
 
+
 .env
 .vscode/
-
-apns.pem
-
-*.pem
-node_modules
+src/data
