@@ -6,6 +6,7 @@
 
 # Distribution / packaging
 /env/*
+/dist/*
 /static/build/*
 
 # Unit test / coverage reports
