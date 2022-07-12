@@ -30,7 +30,7 @@ function processData(selectedRole: Role) {
         case "accessories":
           accessoriesList.push(item);
           break;
-        case "buffs":
+        case "buffs/potions":
           buffsList.push(item);
           break;
         case "mounts":
@@ -56,9 +56,7 @@ const DisplayContainer: React.FC<Props> = ({
   selectedRole,
   // selectedGameStage,
 }) => {
-  console.log(allItemData);
   const data = processData(selectedRole);
-  console.log(data.accessoriesList);
 
   return (
     <div className="m-6">
@@ -66,32 +64,32 @@ const DisplayContainer: React.FC<Props> = ({
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="weapons"
-          data={[]}
+          data={data.weaponsList}
         />
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="armor"
-          data={[]}
+          data={data.armorList}
         />
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="accessories"
-          data={[]}
+          data={data.accessoriesList}
         />
         <ItemContainer
           selectedRole={selectedRole}
-          itemCategory="buffs"
-          data={[]}
+          itemCategory="buffs/potions"
+          data={data.buffsList}
         />
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="mounts"
-          data={[]}
+          data={data.mountsList}
         />
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="lights"
-          data={[]}
+          data={data.lightsList}
         />
       </div>
     </div>

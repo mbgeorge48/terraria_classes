@@ -7,7 +7,11 @@ interface Props {
   data?: items;
 }
 
-const ItemContainer: React.FC<Props> = ({ selectedRole, itemCategory }) => {
+const ItemContainer: React.FC<Props> = ({
+  selectedRole,
+  itemCategory,
+  data,
+}) => {
   if (!selectedRole) {
     return null;
   }
@@ -19,7 +23,11 @@ const ItemContainer: React.FC<Props> = ({ selectedRole, itemCategory }) => {
       }`}
     >
       <h1 className="capitalize text-2xl">{itemCategory}</h1>
-      <div className="grid grid-cols-3 gap-y-4"></div>
+      <div className="grid grid-cols-3 gap-y-4">
+        {data?.map((item) => (
+          <img src={item.imgPath} />
+        ))}
+      </div>
     </div>
   );
 };

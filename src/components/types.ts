@@ -4,7 +4,7 @@ export type GameStageChangeHandler = (index: number) => void;
 export type ItemCategory= "weapons"
 | "armor"
 | "accessories"
-| "buffs"
+| "buffs/potions"
 | "mounts"
 | "lights";
 
