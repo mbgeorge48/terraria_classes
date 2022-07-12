@@ -1,10 +1,10 @@
 import React from "react";
 import ClassButton from "./class-button";
-import { RoleChangeHandler } from "./types";
+import { Role, RoleChangeHandler } from "../types";
 
 interface Props {
   onRoleChange: RoleChangeHandler;
-  selectedRole: string;
+  selectedRole: Role;
 }
 
 const ControllerContainer: React.FC<Props> = ({

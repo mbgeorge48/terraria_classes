@@ -1,12 +1,12 @@
 import React, { useCallback } from "react";
 import classNames from "classnames";
-import { RoleChangeHandler } from "./types";
+import { RoleChangeHandler, Role } from "../types";
 
 interface Props {
-  title: string;
+  title: Role;
   baseClasses: string;
   onRoleChange: RoleChangeHandler;
-  selectedRole: string;
+  selectedRole: Role;
   selectedClasses: string;
 }
 

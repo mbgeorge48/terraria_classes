@@ -1,8 +1,8 @@
 import React, { ChangeEvent, useCallback, useState } from "react";
 import classNames from "classnames";
 
-import { gameStages } from "./constants";
-import { GameStageChangeHandler } from "./types";
+import { gameStages } from "../constants";
+import { GameStageChangeHandler } from "../types";
 
 interface Props {
   min: number;

@@ -3,10 +3,11 @@ import Slider from "./controller/slider";
 import ControllerContainer from "./controller/controller-container";
 import Header from "./controller/header";
 import DisplayContainer from "./display/display-container";
+import { Role } from "./types";
 
 const Body: React.FC = () => {
   const [selectedGameStage, setSelectedGameStage] = useState(0);
-  const [selectedRole, setSelectedRole] = useState<string>("");
+  const [selectedRole, setSelectedRole] = useState<Role>();
 
   const updateSelectedGameStage = useCallback(
     (index: number) => {
@@ -16,7 +17,7 @@ const Body: React.FC = () => {
   );
 
   const updateSelectedRole = useCallback(
-    (role: string) => {
+    (role: Role) => {
       setSelectedRole(role);
     },
     [setSelectedRole]
@@ -45,7 +46,10 @@ const Body: React.FC = () => {
         />
       </div>
       <p>{selectedGameStage}</p>
-      <DisplayContainer selectedRole={selectedRole} />
+      <DisplayContainer
+        selectedRole={selectedRole}
+        selectedGameStage={selectedGameStage}
+      />
     </div>
   );
 };
