@@ -1,10 +1,9 @@
-export const gameStages = [
-    "Pre-bosses",
-    "Pre-Hardmode",
-    "Pre-mech bosses",
-    "Pre-Plantera",
-    "Pre-Golem",
-    "Pre-Lunar Events",
-    "Endgame",
-]
-
+export const gameStages: {[key:number]:string} = {
+    0:"Pre-bosses",
+    1:"Pre-Hardmode",
+    2:"Pre-mech bosses",
+    3:"Pre-Plantera",
+    4:"Pre-Golem",
+    5:"Pre-Lunar Events",
+    6:"Endgame",
+}

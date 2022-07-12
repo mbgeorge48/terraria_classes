@@ -2,15 +2,23 @@ import React, { ChangeEvent, useCallback, useState } from "react";
 import classNames from "classnames";
 
 import { gameStages } from "./constants";
+import { GameStageChangeHandler } from "./types";
 
 interface Props {
   min: number;
   max: number;
   rangeColour?: string;
   labelText: string;
+  onGameStageChange: GameStageChangeHandler;
 }
 
-const Slider: React.FC<Props> = ({ min, max, rangeColour, labelText }) => {
+const Slider: React.FC<Props> = ({
+  min,
+  max,
+  rangeColour,
+  labelText,
+  onGameStageChange,
+}) => {
   const [inputValue, setInputValue] = useState(0);
   const [gameStageText, setGameStageText] = useState(gameStages[inputValue]);
 
@@ -18,6 +26,7 @@ const Slider: React.FC<Props> = ({ min, max, rangeColour, labelText }) => {
     const newValue = Number((e.target as HTMLInputElement).value);
     setInputValue(newValue);
     setGameStageText(gameStages[newValue]);
+    onGameStageChange(newValue);
   }, []);
 
   return (
