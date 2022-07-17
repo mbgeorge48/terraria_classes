@@ -1,5 +1,6 @@
 import React from "react";
 import { ItemCategory, items, Role } from "../types";
+import Item from "./item";
 
 interface Props {
   selectedRole: Role;
@@ -18,14 +19,14 @@ const ItemContainer: React.FC<Props> = ({
 
   return (
     <div
-      className={`rounded-xl border-4 bg-gray-800 p-2  text-white border-${
+      className={`rounded-xl border-4 bg-gray-800 p-2 text-white mb-auto border-${
         selectedRole ? selectedRole : undefined
       }`}
     >
-      <h1 className="capitalize text-2xl">{itemCategory}</h1>
-      <div className="grid grid-cols-3 gap-y-4">
+      <h1 className="mb-4 text-2xl capitalize">{itemCategory}</h1>
+      <div className="flex flex-col space-y-2">
         {data?.map((item) => (
-          <img src={item.imgPath} />
+          <Item item={item}/>
         ))}
       </div>
     </div>
