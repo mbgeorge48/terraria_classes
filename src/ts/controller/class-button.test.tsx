@@ -1,38 +1,106 @@
-import React, { useCallback } from "react";
-import classNames from "classnames";
-import { RoleChangeHandler, Role } from "../types";
+import { fireEvent, render, screen } from "@testing-library/react";
+import React from "react";
 
-interface Props {
-  title: Role;
-  baseClasses: string;
-  onRoleChange: RoleChangeHandler;
-  selectedRole: Role;
-  selectedClasses: string;
-}
+import ClassButton from "./class-button";
 
-const ClassButton: React.FC<Props> = ({
-  title,
-  baseClasses,
-  onRoleChange,
-  selectedRole,
-  selectedClasses,
-}) => {
-  const handleClick = useCallback(() => {
-    onRoleChange(title);
-  }, [onRoleChange]);
-
-  return (
-    <button
-      onClick={handleClick}
-      className={classNames(
-        "capitalize text-center bg-white cursor-pointer bg-grey px-6 py-2 md:w-64 rounded-3xl border-2 duration-150 text-xl hover:text-white transition-colors",
-        baseClasses,
-        selectedRole === title ? selectedClasses : undefined
-      )}
-    >
-      {title}
-    </button>
+it("should render a class button - melee", () => {
+  const { container } = render(
+    <ClassButton
+      onRoleChange={jest.fn()}
+      title="melee"
+      baseClasses="border-melee hover:bg-melee"
+      selectedRole="melee"
+      selectedClasses="bg-melee text-white"
+    />
   );
-};
 
-export default ClassButton;
+  expect(screen.getByRole("button")).not.toBeNull();
+
+  expect(container.getElementsByClassName("border-melee").length).toBe(1);
+  expect(container.getElementsByClassName("bg-melee").length).toBe(1);
+});
+
+it("should render a class button - ranged", () => {
+  const { container } = render(
+    <ClassButton
+      onRoleChange={jest.fn()}
+      title="ranged"
+      baseClasses="border-ranged hover:bg-ranged"
+      selectedRole="ranged"
+      selectedClasses="bg-ranged text-white"
+    />
+  );
+
+  expect(screen.getByRole("button")).not.toBeNull();
+
+  expect(container.getElementsByClassName("border-ranged").length).toBe(1);
+  expect(container.getElementsByClassName("bg-ranged").length).toBe(1);
+});
+
+it("should render a class button - magic", () => {
+  const { container } = render(
+    <ClassButton
+      onRoleChange={jest.fn()}
+      title="magic"
+      baseClasses="border-magic hover:bg-magic"
+      selectedRole="magic"
+      selectedClasses="bg-magic text-white"
+    />
+  );
+
+  expect(screen.getByRole("button")).not.toBeNull();
+
+  expect(container.getElementsByClassName("border-magic").length).toBe(1);
+  expect(container.getElementsByClassName("bg-magic").length).toBe(1);
+});
+
+it("should render a class button - summoner", () => {
+  const { container } = render(
+    <ClassButton
+      onRoleChange={jest.fn()}
+      title="summoner"
+      baseClasses="border-summoner hover:bg-summoner"
+      selectedRole="summoner"
+      selectedClasses="bg-summoner text-white"
+    />
+  );
+
+  expect(screen.getByRole("button")).not.toBeNull();
+
+  expect(container.getElementsByClassName("border-summoner").length).toBe(1);
+  expect(container.getElementsByClassName("bg-summoner").length).toBe(1);
+});
+
+it("should render a summoner class button when melee is selected", () => {
+  const { container } = render(
+    <ClassButton
+      onRoleChange={jest.fn()}
+      title="summoner"
+      baseClasses="border-summoner hover:bg-summoner"
+      selectedRole="melee"
+      selectedClasses="bg-summoner text-white"
+    />
+  );
+
+  expect(screen.getByRole("button")).not.toBeNull();
+
+  expect(container.getElementsByClassName("border-summoner").length).toBe(1);
+  expect(container.getElementsByClassName("bg-summoner").length).toBe(0);
+});
+
+it("should call the role change function when the button is pressed", () => {
+  const onRoleChange = jest.fn();
+
+  render(
+    <ClassButton
+      onRoleChange={onRoleChange}
+      title="summoner"
+      baseClasses=""
+      selectedRole="magic"
+      selectedClasses=""
+    />
+  );
+
+  fireEvent.click(screen.getByRole("button"));
+  expect(onRoleChange).toHaveBeenCalledTimes(1);
+});
