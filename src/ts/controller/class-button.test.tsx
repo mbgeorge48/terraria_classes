@@ -4,7 +4,7 @@ import React from "react";
 import ClassButton from "./class-button";
 
 it("should render a class button - melee", () => {
-  const { container } = render(
+  render(
     <ClassButton
       onRoleChange={jest.fn()}
       title="melee"
@@ -13,15 +13,15 @@ it("should render a class button - melee", () => {
       selectedClasses="bg-melee text-white"
     />
   );
+  const button = screen.getByRole("button")
+  expect(button).not.toBeNull();
 
-  expect(screen.getByRole("button")).not.toBeNull();
-
-  expect(container.getElementsByClassName("border-melee").length).toBe(1);
-  expect(container.getElementsByClassName("bg-melee").length).toBe(1);
+  expect(button.classList.contains('border-melee')).toBe(true)
+  expect(button.classList.contains('bg-melee')).toBe(true)
 });
 
 it("should render a class button - ranged", () => {
-  const { container } = render(
+  render(
     <ClassButton
       onRoleChange={jest.fn()}
       title="ranged"
@@ -31,14 +31,15 @@ it("should render a class button - ranged", () => {
     />
   );
 
-  expect(screen.getByRole("button")).not.toBeNull();
+  const button = screen.getByRole("button")
+  expect(button).not.toBeNull();
 
-  expect(container.getElementsByClassName("border-ranged").length).toBe(1);
-  expect(container.getElementsByClassName("bg-ranged").length).toBe(1);
+  expect(button.classList.contains("border-ranged")).toBe(true);
+  expect(button.classList.contains("bg-ranged")).toBe(true);
 });
 
 it("should render a class button - magic", () => {
-  const { container } = render(
+  render(
     <ClassButton
       onRoleChange={jest.fn()}
       title="magic"
@@ -48,14 +49,15 @@ it("should render a class button - magic", () => {
     />
   );
 
-  expect(screen.getByRole("button")).not.toBeNull();
+  const button = screen.getByRole("button")
+  expect(button).not.toBeNull();
 
-  expect(container.getElementsByClassName("border-magic").length).toBe(1);
-  expect(container.getElementsByClassName("bg-magic").length).toBe(1);
+  expect(button.classList.contains("border-magic")).toBe(true);
+  expect(button.classList.contains("bg-magic")).toBe(true);
 });
 
 it("should render a class button - summoner", () => {
-  const { container } = render(
+  render(
     <ClassButton
       onRoleChange={jest.fn()}
       title="summoner"
@@ -65,14 +67,15 @@ it("should render a class button - summoner", () => {
     />
   );
 
-  expect(screen.getByRole("button")).not.toBeNull();
+  const button = screen.getByRole("button")
+  expect(button).not.toBeNull();
 
-  expect(container.getElementsByClassName("border-summoner").length).toBe(1);
-  expect(container.getElementsByClassName("bg-summoner").length).toBe(1);
+  expect(button.classList.contains("border-summoner")).toBe(true);
+  expect(button.classList.contains("bg-summoner")).toBe(true);
 });
 
 it("should render a summoner class button when melee is selected", () => {
-  const { container } = render(
+  render(
     <ClassButton
       onRoleChange={jest.fn()}
       title="summoner"
@@ -82,10 +85,11 @@ it("should render a summoner class button when melee is selected", () => {
     />
   );
 
-  expect(screen.getByRole("button")).not.toBeNull();
+  const button = screen.getByRole("button")
+  expect(button).not.toBeNull();
 
-  expect(container.getElementsByClassName("border-summoner").length).toBe(1);
-  expect(container.getElementsByClassName("bg-summoner").length).toBe(0);
+  expect(button.classList.contains("border-summoner")).toBe(true);
+  expect(button.classList.contains("bg-summoner")).toBe(false);
 });
 
 it("should call the role change function when the button is pressed", () => {
