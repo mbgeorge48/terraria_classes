@@ -26,7 +26,7 @@ const ItemContainer: React.FC<Props> = ({
       <h1 className="mb-4 text-2xl capitalize">{itemCategory}</h1>
       <div className="flex flex-col space-y-2">
         {data?.map((item) => (
-          <Item item={item}/>
+          <Item item={item} />
         ))}
       </div>
     </div>

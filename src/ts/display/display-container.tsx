@@ -7,8 +7,9 @@ interface Props {
   selectedGameStage: number;
 }
 
+export const allItemData: items = require("../../data/all-items.json");
 
-function processData(selectedRole: Role, selectedGameStage:number, allItemData:items) {
+function processData(selectedRole: Role) {
   let weaponsList = [];
   let armorList = [];
   let accessoriesList = [];
@@ -18,7 +19,7 @@ function processData(selectedRole: Role, selectedGameStage:number, allItemData:i
 
   for (var i = 0; i < allItemData.length; i++) {
     const item = allItemData[i];
-    if ((item.role === selectedRole || item.role === "mixed") && item.gameStageAvailable ===selectedGameStage) {
+    if (item.role === selectedRole || item.role === "mixed") {
       switch (item.category) {
         case "weapons":
           weaponsList.push(item);
@@ -53,51 +54,43 @@ function processData(selectedRole: Role, selectedGameStage:number, allItemData:i
 
 const DisplayContainer: React.FC<Props> = ({
   selectedRole,
-  selectedGameStage,
+  // selectedGameStage,
 }) => {
-
-  const allItemData: items = require("../../data/all-items.json");
-
-  if (!allItemData){
-    return <span>Failed to load input data</span>
-  }
-  
-  const data = processData(selectedRole, selectedGameStage, allItemData);
+  const data = processData(selectedRole);
 
   return (
     <div className="m-6">
-      {/* <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 justify-evenly"> */}
-      <div className="flex flex-wrap content-start gap-4 space-x-4 justify-evenly">
-        {data.weaponsList.length > 0 ? <ItemContainer
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-evenly">
+        <ItemContainer
           selectedRole={selectedRole}
           itemCategory="weapons"
           data={data.weaponsList}
-        /> : undefined}
-        {data.armorList.length > 0 ? <ItemContainer
+        />
+        <ItemContainer
           selectedRole={selectedRole}
           itemCategory="armor"
           data={data.armorList}
-        /> : undefined}
-        {data.accessoriesList.length > 0 ? <ItemContainer
+        />
+        <ItemContainer
           selectedRole={selectedRole}
           itemCategory="accessories"
           data={data.accessoriesList}
-        /> : undefined}
-        {data.buffsList.length > 0 ? <ItemContainer
+        />
+        <ItemContainer
           selectedRole={selectedRole}
           itemCategory="buffs/potions"
           data={data.buffsList}
-        /> : undefined}
-        {data.mountsList.length > 0 ? <ItemContainer
+        />
+        <ItemContainer
           selectedRole={selectedRole}
           itemCategory="mounts"
           data={data.mountsList}
-        /> : undefined}
-        {data.lightsList.length > 0 ? <ItemContainer
+        />
+        <ItemContainer
           selectedRole={selectedRole}
           itemCategory="lights"
           data={data.lightsList}
-        /> : undefined}
+        />
       </div>
     </div>
   );
