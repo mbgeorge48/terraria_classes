@@ -13,11 +13,11 @@ it("should render a class button - melee", () => {
       selectedClasses="bg-melee text-white"
     />
   );
-  const button = screen.getByRole("button")
+  const button = screen.getByRole("button");
   expect(button).not.toBeNull();
 
-  expect(button.classList.contains('border-melee')).toBe(true)
-  expect(button.classList.contains('bg-melee')).toBe(true)
+  expect(button.classList.contains("border-melee")).toBe(true);
+  expect(button.classList.contains("bg-melee")).toBe(true);
 });
 
 it("should render a class button - ranged", () => {
@@ -31,7 +31,7 @@ it("should render a class button - ranged", () => {
     />
   );
 
-  const button = screen.getByRole("button")
+  const button = screen.getByRole("button");
   expect(button).not.toBeNull();
 
   expect(button.classList.contains("border-ranged")).toBe(true);
@@ -49,7 +49,7 @@ it("should render a class button - magic", () => {
     />
   );
 
-  const button = screen.getByRole("button")
+  const button = screen.getByRole("button");
   expect(button).not.toBeNull();
 
   expect(button.classList.contains("border-magic")).toBe(true);
@@ -67,7 +67,7 @@ it("should render a class button - summoner", () => {
     />
   );
 
-  const button = screen.getByRole("button")
+  const button = screen.getByRole("button");
   expect(button).not.toBeNull();
 
   expect(button.classList.contains("border-summoner")).toBe(true);
@@ -85,7 +85,7 @@ it("should render a summoner class button when melee is selected", () => {
     />
   );
 
-  const button = screen.getByRole("button")
+  const button = screen.getByRole("button");
   expect(button).not.toBeNull();
 
   expect(button.classList.contains("border-summoner")).toBe(true);
@@ -94,11 +94,12 @@ it("should render a summoner class button when melee is selected", () => {
 
 it("should call the role change function when the button is pressed", () => {
   const onRoleChange = jest.fn();
+  const title = "summoner";
 
   render(
     <ClassButton
       onRoleChange={onRoleChange}
-      title="summoner"
+      title={title}
       baseClasses=""
       selectedRole="magic"
       selectedClasses=""
@@ -107,4 +108,5 @@ it("should call the role change function when the button is pressed", () => {
 
   fireEvent.click(screen.getByRole("button"));
   expect(onRoleChange).toHaveBeenCalledTimes(1);
+  expect(onRoleChange).toHaveBeenCalledWith(title);
 });
