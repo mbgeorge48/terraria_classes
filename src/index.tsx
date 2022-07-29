@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Body from "./ts/body";
-import "./index.css";
+import "./css/index.css";
 
 const backgrounds = [
   "bg-1",
