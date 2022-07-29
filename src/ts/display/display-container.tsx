@@ -9,7 +9,7 @@ interface Props {
 
 export const allItemData: items = require("../../data/all-items.json");
 
-function processData(selectedRole: Role) {
+function processData(selectedRole: Role, selectedGameStage: number) {
   let weaponsList = [];
   let armorList = [];
   let accessoriesList = [];
@@ -19,7 +19,10 @@ function processData(selectedRole: Role) {
 
   for (var i = 0; i < allItemData.length; i++) {
     const item = allItemData[i];
-    if (item.role === selectedRole || item.role === "mixed") {
+    if (
+      (item.role === selectedRole || item.role === "mixed") &&
+      item.gameStageAvailable === selectedGameStage
+    ) {
       switch (item.category) {
         case "weapons":
           weaponsList.push(item);
@@ -54,9 +57,9 @@ function processData(selectedRole: Role) {
 
 const DisplayContainer: React.FC<Props> = ({
   selectedRole,
-  // selectedGameStage,
+  selectedGameStage,
 }) => {
-  const data = processData(selectedRole);
+  const data = processData(selectedRole, selectedGameStage);
 
   return (
     <div className="m-6">
