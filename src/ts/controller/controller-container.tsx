@@ -48,6 +48,13 @@ const ControllerContainer: React.FC<Props> = ({
           <>
             <ClassButton
               onRoleChange={onRoleChange}
+              title="mixed"
+              baseClasses="border-summoner hover:bg-summoner"
+              selectedRole={selectedRole}
+              selectedClasses={"bg-summoner text-white"}
+            />
+            <ClassButton
+              onRoleChange={onRoleChange}
               title="tank"
               baseClasses="border-summoner hover:bg-summoner"
               selectedRole={selectedRole}
