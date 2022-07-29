@@ -36,7 +36,9 @@ const Body: React.FC = () => {
             min={0}
             max={6}
             labelText={"Select your game stage"}
-            rangeColour={`accent-${selectedRole}`}
+            rangeColour={
+              selectedRole ? `accent-${selectedRole}` : "accent-gray-600"
+            }
             onGameStageChange={updateSelectedGameStage}
           />
         </div>
