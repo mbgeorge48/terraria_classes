@@ -25,9 +25,9 @@ const ClassButton: React.FC<Props> = ({
     <button
       onClick={handleClick}
       className={classNames(
-        "capitalize text-center bg-white cursor-pointer bg-grey px-6 py-2 md:w-64 rounded-3xl border-2 duration-150 text-xl hover:text-white transition-colors",
+        "capitalize text-center cursor-pointer px-6 py-2 md:w-64 rounded-3xl border-2 duration-150 text-xl hover:text-white transition-colors",
         baseClasses,
-        selectedRole === title ? selectedClasses : undefined
+        selectedRole === title ? selectedClasses : 'bg-white'
       )}
     >
       {title}
