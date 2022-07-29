@@ -4,10 +4,12 @@ import ControllerContainer from "./controller/controller-container";
 import Header from "./controller/header";
 import DisplayContainer from "./display/display-container";
 import { Role } from "./types";
+import ExtraClassToggle from "./controller/extra-class-toggle";
 
 const Body: React.FC = () => {
   const [selectedGameStage, setSelectedGameStage] = useState(0);
   const [selectedRole, setSelectedRole] = useState<Role>();
+  const [displayExtraClasses, setDisplayExtraClasses] = useState(false);
 
   const updateSelectedGameStage = useCallback(
     (index: number) => {
@@ -21,6 +23,12 @@ const Body: React.FC = () => {
       setSelectedRole(role);
     },
     [setSelectedRole]
+  );
+  const updateDisplayExtraClasses = useCallback(
+    (display: boolean) => {
+      setDisplayExtraClasses(display);
+    },
+    [setDisplayExtraClasses]
   );
 
   return (
@@ -41,13 +49,17 @@ const Body: React.FC = () => {
             }
             onGameStageChange={updateSelectedGameStage}
           />
+          <ExtraClassToggle
+            selectedRole={selectedRole}
+            onToggle={updateDisplayExtraClasses}
+          />
         </div>
         <ControllerContainer
           onRoleChange={updateSelectedRole}
           selectedRole={selectedRole}
+          displayExtraClasses={displayExtraClasses}
         />
       </div>
-      <p>{selectedGameStage}</p>
       <DisplayContainer
         selectedRole={selectedRole}
         selectedGameStage={selectedGameStage}

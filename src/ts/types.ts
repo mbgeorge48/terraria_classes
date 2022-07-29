@@ -1,5 +1,6 @@
 export type RoleChangeHandler = (role: Role) => void;
 export type GameStageChangeHandler = (index: number) => void;
+export type ExtraClassToggleHandler = (display: boolean) => void;
 
 export type ItemCategory =
   | "weapons"
@@ -16,7 +17,6 @@ export type Role =
   | "summoner"
   | "mixed"
   | "healer"
-  | "mixed"
   | "tank"
   | undefined;
 

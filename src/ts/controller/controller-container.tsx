@@ -5,11 +5,13 @@ import { Role, RoleChangeHandler } from "../types";
 interface Props {
   onRoleChange: RoleChangeHandler;
   selectedRole: Role;
+  displayExtraClasses: boolean;
 }
 
 const ControllerContainer: React.FC<Props> = ({
   onRoleChange,
   selectedRole,
+  displayExtraClasses,
 }) => {
   return (
     <div className="m-6">
@@ -42,6 +44,24 @@ const ControllerContainer: React.FC<Props> = ({
           selectedRole={selectedRole}
           selectedClasses={"bg-summoner text-white"}
         />
+        {displayExtraClasses ? (
+          <>
+            <ClassButton
+              onRoleChange={onRoleChange}
+              title="tank"
+              baseClasses="border-summoner hover:bg-summoner"
+              selectedRole={selectedRole}
+              selectedClasses={"bg-summoner text-white"}
+            />
+            <ClassButton
+              onRoleChange={onRoleChange}
+              title="healer"
+              baseClasses="border-summoner hover:bg-summoner"
+              selectedRole={selectedRole}
+              selectedClasses={"bg-summoner text-white"}
+            />
+          </>
+        ) : undefined}
       </div>
     </div>
   );
