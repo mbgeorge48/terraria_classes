@@ -30,16 +30,16 @@ it("should render an item container when there is a selected role", () => {
       selectedRole={"melee"}
       itemCategory={"weapons"}
       data={data}
-      data-testid="container"
     />
   );
   expect(container).not.toBeNull();
-  const child = container.firstChild as HTMLElement;
-  expect(child.className.split(" ")).toContain("border-melee");
-
   expect(screen.getByText("weapons")).not.toBeNull();
   expect(screen.getByText(data[0].name)).not.toBeNull();
 
   expect(screen.getByRole("img")).not.toBeNull();
   expect(screen.getByRole("link")).not.toBeNull();
 });
+
+// TODO Test the right items are listed depending on game stage and slected role
+// TODO Make the contianers flow better
+// TODO Add colours for the new classes
