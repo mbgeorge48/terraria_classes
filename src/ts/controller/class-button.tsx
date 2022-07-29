@@ -19,7 +19,7 @@ const ClassButton: React.FC<Props> = ({
 }) => {
   const handleClick = useCallback(() => {
     onRoleChange(title);
-  }, [onRoleChange]);
+  }, [onRoleChange, title]);
 
   return (
     <button

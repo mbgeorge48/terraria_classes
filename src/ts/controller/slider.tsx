@@ -27,7 +27,7 @@ const Slider: React.FC<Props> = ({
     setInputValue(newValue);
     setGameStageText(gameStages[newValue]);
     onGameStageChange(newValue);
-  }, []);
+  }, [onGameStageChange]);
 
   return (
     <div className="flex flex-grow mx-12 flex-col justify-center rounded-2xl font-semibold">
