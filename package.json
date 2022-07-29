@@ -26,7 +26,7 @@
     "eject": "react-scripts eject",
     "watch": "concurrently npm:watch-*",
     "watch-types": "tsc --noEmit --pretty --project tsconfig.json --watch",
-    "watch-css": "tailwindcss --input src/index.css --output ./dist/output.css --watch"
+    "watch-css": "tailwindcss --input src/css/index.css --output ./dist/output.css --watch"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +48,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^13.3.0",
+    "concurrently": "^7.3.0",
     "react-router-dom": "^6.3.0"
   }
 }
