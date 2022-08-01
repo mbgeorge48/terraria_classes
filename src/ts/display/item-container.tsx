@@ -19,12 +19,14 @@ const ItemContainer: React.FC<Props> = ({
 
   return (
     <div
-      className={`rounded-xl border-4 bg-gray-800 p-2 text-white mb-auto border-${
+      className={`rounded-xl border-4 bg-gray-800 text-white py-2 mb-auto border-${
         selectedRole ? selectedRole : undefined
       }`}
     >
-      <h1 className="mb-4 text-2xl capitalize">{itemCategory}</h1>
-      <div className="flex flex-col space-y-2">
+      <h1 className={`mb-4 text-2xl capitalize p-2 bg-${selectedRole}`}>
+        {itemCategory}
+      </h1>
+      <div className="flex flex-col space-y-2 px-2">
         {data?.map((item) => (
           <Item item={item} key={item.name} />
         ))}
