@@ -23,7 +23,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <div
     className={classNames(
-      "flex flex-col min-h-screen font-Terraria bg-origin-border bg-cover bg-no-repeat",
+      "flex flex-col min-h-screen font-sans bg-origin-border bg-cover bg-no-repeat",
       backgrounds[Math.floor(Math.random() * backgrounds.length)]
     )}
   >
