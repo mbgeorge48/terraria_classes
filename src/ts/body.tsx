@@ -32,7 +32,7 @@ const Body: React.FC = () => {
   );
 
   return (
-    <div>
+    <div className="m-8 rounded-lg border-gray-200 border-4 bg-gray-600/80 min-h-screen">
       <div
         className={`rounded-lg m-4 border-2 border-black bg-${
           selectedRole ? selectedRole : "gray-400/70"
