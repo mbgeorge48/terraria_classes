@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
 
-import Body from "./body";
+import Body from "../body";
 
 it("should render a body container", () => {
   render(<Body />);

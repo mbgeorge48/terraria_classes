@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
 
 import React from "react";
-import { items } from "../types";
+import { items } from "../../types";
 
-import ItemContainer from "./item-container";
+import ItemContainer from "../item-container";
 
 const data: items = [
   {

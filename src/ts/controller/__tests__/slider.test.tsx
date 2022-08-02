@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
-import Slider from "./slider";
+import Slider from "../slider";
 
 it("should render the game stage slider", () => {
   const selectedRole = "test";
