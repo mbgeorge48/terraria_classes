@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 import classNames from "classnames";
 import React from "react";
 import { bgColour } from "../constants";
@@ -35,7 +37,7 @@ const ItemContainer: React.FC<Props> = ({
       </h1>
       <div className="flex flex-col px-2 space-y-2">
         {data?.map((item) => (
-          <Item item={item} key={item.name} selectedRole={selectedRole} />
+          <Item item={item} key={uuidv4()} selectedRole={selectedRole} />
         ))}
       </div>
     </div>
