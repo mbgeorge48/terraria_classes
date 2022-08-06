@@ -7,13 +7,13 @@ module.exports = {
         ranged: "#1E9682",
         magic: "#920F6F",
         summoner: "#075EFF",
-        mixed:"#AFCFE2",
-        healer:"#29B360",
-        tank:"#D20000",
+        mixed: "#AFCFE2",
+        healer: "#29B360",
+        tank: "#D20000",
       },
       fontFamily: {
-        'sans': ['Montserrat', 'sans-serif'],
-        'terraria': ["Terraria"],
+        sans: ["Montserrat", "sans-serif"],
+        terraria: ["Terraria"],
       },
     },
     backgroundImage: {
