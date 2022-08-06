@@ -13,7 +13,7 @@ const Item: React.FC<Props> = ({ item, selectedRole }) => {
   return (
     <a
       className={classNames(
-        "flex flex-row space-x-4 w-fit place-items-center decoration-4 underline-offset-8 hover:underline",
+        "flex flex-row space-x-4 w-fit place-items-center decoration-4 underline-offset-2 hover:underline",
         selectedRole ? roleClasses[selectedRole].decoration : undefined
       )}
       href={item.url}
