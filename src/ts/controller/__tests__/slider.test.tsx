@@ -3,14 +3,14 @@ import React from "react";
 import Slider from "../slider";
 
 it("should render the game stage slider", () => {
-  const selectedRole = "test";
+  const selectedRole = "melee";
 
   render(
     <Slider
       min={0}
       max={1}
       labelText="Slider Label"
-      rangeColour={`accent-${selectedRole}`}
+      selectedRole={selectedRole}
       onGameStageChange={jest.fn()}
     />
   );
@@ -18,7 +18,7 @@ it("should render the game stage slider", () => {
   const slider = screen.getByRole("slider");
   expect(slider).not.toBeNull();
   expect(screen.getByText("Slider Label")).not.toBeNull();
-  expect(slider.classList.contains("accent-test")).toBe(true);
+  expect(slider.classList.contains("accent-melee")).toBe(true);
 });
 
 it("should call the game stage change function when the slider is updated", () => {
@@ -29,7 +29,7 @@ it("should call the game stage change function when the slider is updated", () =
       min={0}
       max={6}
       labelText=""
-      rangeColour=""
+      selectedRole="summoner"
       onGameStageChange={onGameStageChange}
     />
   );

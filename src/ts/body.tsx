@@ -32,21 +32,19 @@ const Body: React.FC = () => {
   );
 
   return (
-    <div className="m-8 rounded-lg border-gray-200 border-4 bg-gray-600/80 min-h-screen">
+    <div className="min-h-screen m-8 border-4 border-gray-200 rounded-lg bg-gray-600/80">
       <div
         className={`rounded-lg m-4 border-2 border-black bg-${
           selectedRole ? selectedRole : "gray-400/70"
         } bg-opacity-20`}
       >
-        <div className="flex lg:flex-row flex-col lg:space-y-0 space-y-4 ">
+        <div className="flex flex-col space-y-4 lg:flex-row lg:space-y-0 ">
           <Header />
           <Slider
             min={0}
             max={6}
             labelText={"Select your game stage"}
-            rangeColour={
-              selectedRole ? `accent-${selectedRole}` : "accent-gray-600"
-            }
+            selectedRole={selectedRole}
             onGameStageChange={updateSelectedGameStage}
           />
           <ExtraClassToggle

@@ -1,13 +1,13 @@
 import React, { ChangeEvent, useCallback, useState } from "react";
 import classNames from "classnames";
 
-import { gameStages } from "../constants";
-import { GameStageChangeHandler } from "../types";
+import { accentColour, gameStages } from "../constants";
+import { GameStageChangeHandler, Role } from "../types";
 
 interface Props {
   min: number;
   max: number;
-  rangeColour?: string;
+  selectedRole: Role;
   labelText: string;
   onGameStageChange: GameStageChangeHandler;
 }
@@ -15,23 +15,26 @@ interface Props {
 const Slider: React.FC<Props> = ({
   min,
   max,
-  rangeColour,
+  selectedRole,
   labelText,
   onGameStageChange,
 }) => {
   const [inputValue, setInputValue] = useState(0);
   const [gameStageText, setGameStageText] = useState(gameStages[inputValue]);
 
-  const handleInputChange = useCallback((e: ChangeEvent) => {
-    const newValue = Number((e.target as HTMLInputElement).value);
-    setInputValue(newValue);
-    setGameStageText(gameStages[newValue]);
-    onGameStageChange(newValue);
-  }, [onGameStageChange]);
+  const handleInputChange = useCallback(
+    (e: ChangeEvent) => {
+      const newValue = Number((e.target as HTMLInputElement).value);
+      setInputValue(newValue);
+      setGameStageText(gameStages[newValue]);
+      onGameStageChange(newValue);
+    },
+    [onGameStageChange]
+  );
 
   return (
-    <div className="flex flex-grow mx-12 flex-col justify-center rounded-2xl font-semibold">
-      <div className="flex-row flex justify-between">
+    <div className="flex flex-col justify-center flex-grow mx-12 font-semibold rounded-2xl">
+      <div className="flex flex-row justify-between">
         <label htmlFor="progressSlider" className="text-2xl">
           {labelText}
         </label>
@@ -43,7 +46,10 @@ const Slider: React.FC<Props> = ({
         max={max}
         step="1"
         value={inputValue}
-        className={classNames("w-full mx-4", rangeColour)}
+        className={classNames(
+          "w-full mx-4",
+          selectedRole ? accentColour[selectedRole] : "accent-gray-500"
+        )}
         id="progressSlider"
         onChange={handleInputChange}
       />
