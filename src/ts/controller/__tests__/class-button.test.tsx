@@ -5,13 +5,7 @@ import ClassButton from "../class-button";
 
 it("should render a class button - melee", () => {
   render(
-    <ClassButton
-      onRoleChange={jest.fn()}
-      title="melee"
-      baseClasses="border-melee hover:bg-melee"
-      selectedRole="melee"
-      selectedClasses="bg-melee text-white"
-    />
+    <ClassButton onRoleChange={jest.fn()} title="melee" selectedRole="melee" />
   );
   const button = screen.getByRole("button");
   expect(button).not.toBeNull();
@@ -25,9 +19,7 @@ it("should render a class button - ranged", () => {
     <ClassButton
       onRoleChange={jest.fn()}
       title="ranged"
-      baseClasses="border-ranged hover:bg-ranged"
       selectedRole="ranged"
-      selectedClasses="bg-ranged text-white"
     />
   );
 
@@ -40,13 +32,7 @@ it("should render a class button - ranged", () => {
 
 it("should render a class button - magic", () => {
   render(
-    <ClassButton
-      onRoleChange={jest.fn()}
-      title="magic"
-      baseClasses="border-magic hover:bg-magic"
-      selectedRole="magic"
-      selectedClasses="bg-magic text-white"
-    />
+    <ClassButton onRoleChange={jest.fn()} title="magic" selectedRole="magic" />
   );
 
   const button = screen.getByRole("button");
@@ -61,9 +47,7 @@ it("should render a class button - summoner", () => {
     <ClassButton
       onRoleChange={jest.fn()}
       title="summoner"
-      baseClasses="border-summoner hover:bg-summoner"
       selectedRole="summoner"
-      selectedClasses="bg-summoner text-white"
     />
   );
 
@@ -79,9 +63,7 @@ it("should render a summoner class button when melee is selected", () => {
     <ClassButton
       onRoleChange={jest.fn()}
       title="summoner"
-      baseClasses="border-summoner hover:bg-summoner"
       selectedRole="melee"
-      selectedClasses="bg-summoner text-white"
     />
   );
 
@@ -100,9 +82,7 @@ it("should call the role change function when the button is pressed", () => {
     <ClassButton
       onRoleChange={onRoleChange}
       title={title}
-      baseClasses=""
       selectedRole="magic"
-      selectedClasses=""
     />
   );
 
