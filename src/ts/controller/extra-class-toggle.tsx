@@ -32,7 +32,7 @@ const ExtraClassToggle: React.FC<Props> = ({
         onChange={handleToggle}
         className={classNames(
           "self-center",
-          selectedRole ? roleClasses[selectedRole].accent : undefined
+          selectedRole ? roleClasses[selectedRole].accent : "accent-gray-500"
         )}
       />
     </div>
