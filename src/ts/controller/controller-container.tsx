@@ -19,53 +19,39 @@ const ControllerContainer: React.FC<Props> = ({
         <ClassButton
           onRoleChange={onRoleChange}
           title="melee"
-          baseClasses="border-melee hover:bg-melee"
           selectedRole={selectedRole}
-          selectedClasses={"bg-melee text-white"}
         />
         <ClassButton
           onRoleChange={onRoleChange}
           title="ranged"
-          baseClasses="border-ranged hover:bg-ranged"
           selectedRole={selectedRole}
-          selectedClasses={"bg-ranged text-white"}
         />
         <ClassButton
           onRoleChange={onRoleChange}
           title="magic"
-          baseClasses="border-magic hover:bg-magic"
           selectedRole={selectedRole}
-          selectedClasses={"bg-magic text-white"}
         />
         <ClassButton
           onRoleChange={onRoleChange}
           title="summoner"
-          baseClasses="border-summoner hover:bg-summoner"
           selectedRole={selectedRole}
-          selectedClasses={"bg-summoner text-white"}
         />
         {displayExtraClasses ? (
           <>
             <ClassButton
               onRoleChange={onRoleChange}
               title="mixed"
-              baseClasses="border-mixed hover:bg-mixed"
               selectedRole={selectedRole}
-              selectedClasses={"bg-mixed text-white"}
             />
             <ClassButton
               onRoleChange={onRoleChange}
               title="tank"
-              baseClasses="border-tank hover:bg-tank"
               selectedRole={selectedRole}
-              selectedClasses={"bg-tank text-white"}
             />
             <ClassButton
               onRoleChange={onRoleChange}
               title="healer"
-              baseClasses="border-healer hover:bg-healer"
               selectedRole={selectedRole}
-              selectedClasses={"bg-healer text-white"}
             />
           </>
         ) : undefined}
