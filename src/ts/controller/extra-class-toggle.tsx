@@ -21,15 +21,16 @@ const ExtraClassToggle: React.FC<Props> = ({
   }, [checkValue, onToggle]);
 
   return (
-    <label>
+    <div className="space-x-2 text-sm mx-2 flex justify-start">
+      <label htmlFor="toggle">Show Extra Classes</label>
       <input
+        id="toggle"
         type="checkbox"
         checked={checkValue}
         onChange={handleToggle}
-        className={`accent-${selectedRole}`}
+        className={`self-center accent-${selectedRole}`}
       />
-      My Value
-    </label>
+    </div>
   );
 };
 

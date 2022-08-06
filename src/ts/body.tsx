@@ -47,15 +47,15 @@ const Body: React.FC = () => {
             selectedRole={selectedRole}
             onGameStageChange={updateSelectedGameStage}
           />
-          <ExtraClassToggle
-            selectedRole={selectedRole}
-            onToggle={updateDisplayExtraClasses}
-          />
         </div>
         <ControllerContainer
           onRoleChange={updateSelectedRole}
           selectedRole={selectedRole}
           displayExtraClasses={displayExtraClasses}
+        />
+        <ExtraClassToggle
+          selectedRole={selectedRole}
+          onToggle={updateDisplayExtraClasses}
         />
       </div>
       <DisplayContainer
