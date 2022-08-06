@@ -12,6 +12,7 @@ export const roleClasses = {
   melee: {
     border: 'border-melee',
     bg:'bg-melee',
+    hoverBg:'hover:bg-melee',
     accent:'accent-melee',
     text:'text-melee',
     decoration:'decoration-melee'
@@ -19,6 +20,7 @@ export const roleClasses = {
   ranged: {
     border: 'border-ranged',
     bg:'bg-ranged',
+    hoverBg:'hover:bg-ranged',
     accent:'accent-ranged',
     text:'text-ranged',
     decoration:'decoration-ranged'
@@ -26,6 +28,7 @@ export const roleClasses = {
   magic: {
     border: 'border-magic',
     bg:'bg-magic',
+    hoverBg:'hover:bg-magic',
     accent:'accent-magic',
     text:'text-magic',
     decoration:'decoration-magic'
@@ -33,6 +36,7 @@ export const roleClasses = {
   summoner: {
     border: 'border-summoner',
     bg:'bg-summoner',
+    hoverBg:'hover:bg-summoner',
     accent:'accent-summoner',
     text:'text-summoner',
     decoration:'decoration-summoner'
@@ -40,6 +44,7 @@ export const roleClasses = {
   mixed: {
     border: 'border-mixed',
     bg:'bg-mixed',
+    hoverBg:'hover:bg-mixed',
     accent:'accent-mixed',
     text:'text-mixed',
     decoration:'decoration-mixed'
@@ -47,6 +52,7 @@ export const roleClasses = {
   tank: {
     border: 'border-tank',
     bg:'bg-tank',
+    hoverBg:'hover:bg-tank',
     accent:'accent-tank',
     text:'text-tank',
     decoration:'decoration-tank'
@@ -54,6 +60,7 @@ export const roleClasses = {
   healer: {
     border: 'border-healer',
     bg:'bg-healer',
+    hoverBg:'hover:bg-healer',
     accent:'accent-healer',
     text:'text-healer',
     decoration:'decoration-healer'

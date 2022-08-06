@@ -24,10 +24,10 @@ const ClassButton: React.FC<Props> = ({
       className={classNames(
         "capitalize text-center font-semibold cursor-pointer px-6 py-2 md:w-64 rounded-3xl border-2 duration-150 text-xl hover:text-white transition-colors",
         title
-          ? roleClasses[title].border.concat(" hover:", roleClasses[title].bg)
+          ? roleClasses[title].border.concat(" ", roleClasses[title].hoverBg)
           : undefined,
         title && selectedRole === title
-          ? roleClasses[selectedRole].bg.concat(" ", "text-white")
+          ? roleClasses[title].bg.concat(" ", "text-white")
           : "bg-white"
       )}
     >
