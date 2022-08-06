@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React from "react";
-import { decorationColour } from "../constants";
+
+import { roleClasses } from "../constants";
 import { item, Role } from "../types";
 
 interface Props {
@@ -13,7 +14,7 @@ const Item: React.FC<Props> = ({ item, selectedRole }) => {
     <a
       className={classNames(
         "flex flex-row space-x-4 w-fit place-items-center decoration-4 underline-offset-8 hover:underline",
-        selectedRole ? decorationColour[selectedRole] : undefined
+        selectedRole ? roleClasses[selectedRole].decoration : undefined
       )}
       href={item.url}
       target="_blank"
@@ -23,6 +24,7 @@ const Item: React.FC<Props> = ({ item, selectedRole }) => {
         src={item.imgPath}
         alt={item.name}
         className="w-10 h-10 aspect-square"
+        // TODO make the images less weird
       />
       <p className="text-lg">{item.name}</p>
     </a>

@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useCallback, useState } from "react";
 import classNames from "classnames";
 
-import { accentColour, gameStages } from "../constants";
+import { gameStages, roleClasses } from "../constants";
 import { GameStageChangeHandler, Role } from "../types";
 
 interface Props {
@@ -48,7 +48,7 @@ const Slider: React.FC<Props> = ({
         value={inputValue}
         className={classNames(
           "w-full mx-4",
-          selectedRole ? accentColour[selectedRole] : "accent-gray-500"
+          selectedRole ? roleClasses[selectedRole].accent : "accent-gray-500"
         )}
         id="progressSlider"
         onChange={handleInputChange}

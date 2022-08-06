@@ -1,4 +1,6 @@
+import classNames from "classnames";
 import React, { useCallback, useState } from "react";
+import { roleClasses } from "../constants";
 
 import { ExtraClassToggleHandler, Role } from "../types";
 
@@ -28,7 +30,10 @@ const ExtraClassToggle: React.FC<Props> = ({
         type="checkbox"
         checked={checkValue}
         onChange={handleToggle}
-        className={`self-center accent-${selectedRole}`}
+        className={classNames(
+          "self-center",
+          selectedRole ? roleClasses[selectedRole].accent : undefined
+        )}
       />
     </div>
   );

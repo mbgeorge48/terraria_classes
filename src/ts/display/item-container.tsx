@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
-
 import classNames from "classnames";
 import React from "react";
-import { bgColour } from "../constants";
+
+import { roleClasses } from "../constants";
 import { ItemCategory, items, Role } from "../types";
 import Item from "./item";
 
@@ -30,7 +30,7 @@ const ItemContainer: React.FC<Props> = ({
       <h1
         className={classNames(
           "mb-4 text-2xl capitalize p-2",
-          selectedRole ? bgColour[selectedRole] : undefined
+          selectedRole ? roleClasses[selectedRole].bg : undefined
         )}
       >
         {itemCategory}
