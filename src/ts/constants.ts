@@ -8,42 +8,54 @@ export const gameStages: { [key: number]: string } = {
   6: "Endgame",
 };
 
-export const borderColour = {
-  melee: "border-melee",
-  ranged: "border-ranged",
-  magic: "border-magic",
-  summoner: "border-summoner",
-  mixed: "border-mixed",
-  tank: "border-tank",
-  healer: "border-healer",
-};
-
-export const bgColour = {
-  melee: "bg-melee",
-  ranged: "bg-ranged",
-  magic: "bg-magic",
-  summoner: "bg-summoner",
-  mixed: "bg-mixed",
-  tank: "bg-tank",
-  healer: "bg-healer",
-};
-
-export const accentColour = {
-  melee: "accent-melee",
-  ranged: "accent-ranged",
-  magic: "accent-magic",
-  summoner: "accent-summoner",
-  mixed: "accent-mixed",
-  tank: "accent-tank",
-  healer: "accent-healer",
-};
-
-export const decorationColour = {
-  melee: "decoration-melee",
-  ranged: "decoration-ranged",
-  magic: "decoration-magic",
-  summoner: "decoration-summoner",
-  mixed: "decoration-mixed",
-  tank: "decoration-tank",
-  healer: "decoration-healer",
-};
+export const roleClasses = {
+  melee: {
+    border: 'border-melee',
+    bg:'bg-melee',
+    accent:'accent-melee',
+    text:'text-melee',
+    decoration:'decoration-melee'
+  },
+  ranged: {
+    border: 'border-ranged',
+    bg:'bg-ranged',
+    accent:'accent-ranged',
+    text:'text-ranged',
+    decoration:'decoration-ranged'
+  },
+  magic: {
+    border: 'border-magic',
+    bg:'bg-magic',
+    accent:'accent-magic',
+    text:'text-magic',
+    decoration:'decoration-magic'
+  },
+  summoner: {
+    border: 'border-summoner',
+    bg:'bg-summoner',
+    accent:'accent-summoner',
+    text:'text-summoner',
+    decoration:'decoration-summoner'
+  },
+  mixed: {
+    border: 'border-mixed',
+    bg:'bg-mixed',
+    accent:'accent-mixed',
+    text:'text-mixed',
+    decoration:'decoration-mixed'
+  },
+  tank: {
+    border: 'border-tank',
+    bg:'bg-tank',
+    accent:'accent-tank',
+    text:'text-tank',
+    decoration:'decoration-tank'
+  },
+  healer: {
+    border: 'border-healer',
+    bg:'bg-healer',
+    accent:'accent-healer',
+    text:'text-healer',
+    decoration:'decoration-healer'
+  },
+}
