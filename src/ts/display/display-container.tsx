@@ -63,7 +63,7 @@ const DisplayContainer: React.FC<Props> = ({
 
   return (
     <div className="m-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-evenly">
+      <div className="flex flex-wrap justify-around gap-4">
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="weapons"
