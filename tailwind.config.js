@@ -23,9 +23,6 @@ module.exports = {
       4: "url('../images/backgrounds/4.png')",
       5: "url('../images/backgrounds/5.png')",
       6: "url('../images/backgrounds/6.png')",
-      7: "url('../images/backgrounds/7.png')",
-      8: "url('../images/backgrounds/8.png')",
-      9: "url('../images/backgrounds/9.png')",
     },
   },
   safelist: [
