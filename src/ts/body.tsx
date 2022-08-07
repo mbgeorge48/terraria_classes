@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import Slider from "./controller/slider";
 import ControllerContainer from "./controller/controller-container";
-import Header from "./controller/header";
+import Header from "./header";
 import DisplayContainer from "./display/display-container";
 import { Role } from "./types";
 import ExtraClassToggle from "./controller/extra-class-toggle";
@@ -32,7 +32,7 @@ const Body: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen m-8 border-4 border-gray-200 rounded-lg bg-gray-600/80">
+    <div>
       <div
         className={`rounded-lg m-4 border-2 border-black bg-${
           selectedRole ? selectedRole : "gray-400/70"
