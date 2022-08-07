@@ -23,13 +23,14 @@ const ItemContainer: React.FC<Props> = ({
 
   return (
     <div
-      className={`rounded-xl border-4 bg-gray-800 text-white py-2 mb-auto w-72 border-${
-        selectedRole ? selectedRole : undefined
-      }`}
+      className={classNames(
+        "rounded-xl border-4 bg-white text-gray-600 py-2 mb-auto drop-shadow-md w-72 group",
+        selectedRole ? roleClasses[selectedRole].border : undefined
+      )}
     >
       <h1
         className={classNames(
-          "mb-4 text-2xl capitalize p-2",
+          "mb-4 text-2xl capitalize p-2 text-white group-hover:drop-shadow-xl",
           selectedRole ? roleClasses[selectedRole].bg : undefined
         )}
       >

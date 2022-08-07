@@ -63,7 +63,7 @@ const DisplayContainer: React.FC<Props> = ({
 
   return (
     <div className="m-6">
-      <div className="flex flex-wrap justify-around gap-4">
+      <div className="flex flex-wrap justify-around">
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="weapons"
