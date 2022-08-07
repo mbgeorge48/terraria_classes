@@ -27,7 +27,7 @@ export function CreditPopover() {
             <div>
               <span>Checkout the </span>
               <a
-                href="https://github.com"
+                href="https://github.com/mbgeorge48/terraria_classes"
                 target="_blank"
                 rel="noreferrer"
                 className="underline decoration-4 decoration-yellow-400"

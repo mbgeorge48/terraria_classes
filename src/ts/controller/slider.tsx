@@ -34,8 +34,8 @@ const Slider: React.FC<Props> = ({
 
   return (
     <div className="flex flex-col justify-center flex-grow mx-12 font-semibold rounded-2xl">
-      <div className="flex flex-row justify-between">
-        <label htmlFor="progressSlider" className="text-2xl">
+      <div className="flex flex-row justify-center md:justify-between">
+        <label htmlFor="progressSlider" className="text-2xl hidden md:block">
           {labelText}
         </label>
         <p className="text-2xl">{gameStageText}</p>

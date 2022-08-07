@@ -15,7 +15,7 @@ const ControllerContainer: React.FC<Props> = ({
 }) => {
   return (
     <div className="m-6">
-      <div className="md:flex md:flex-row md:space-x-6 grid grid-cols-2 gap-4 justify-evenly">
+      <div className="md:flex md:flex-row md:space-x-6 grid grid-cols-1 gap-4 justify-evenly">
         <ClassButton
           onRoleChange={onRoleChange}
           title="melee"
