@@ -1,0 +1,22 @@
+name: DailyBuild
+on:
+  pull_request:
+    types: [opened, reopened]
+
+env:
+  IN_TEST: true
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+      - uses: dcodeIO/setup-node-nvm@v4
+      - name: build
+        run: ./build
+      - name: runtests
+        run: ./runtests
