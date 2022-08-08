@@ -5,9 +5,8 @@
 .*.swp
 
 # Distribution / packaging
-/env/*
-/dist/*
-/static/build/*
+env/*
+build/*
 
 # Unit test / coverage reports
 /coverage/*

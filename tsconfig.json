@@ -27,7 +27,7 @@
     "target": "es6",
     "baseUrl": "./",
     "paths": {
-      "^*": ["./static/src/ts*"]
+      "^*": ["./src/ts*"]
     }
   },
   "include": [
