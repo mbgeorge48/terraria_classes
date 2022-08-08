@@ -23,7 +23,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "create-dirs": "mkdir -p static/build",
+    "build": "npm run create-dirs && npm run build-css && npm run build-js",
+    "build-css": "tailwindcss --input src/css/index.css --output build/index.css",
+    "build-js": "esbuild src/ts/index.tsx --outfile=build/index.js --bundle --minify",
     "test": "react-scripts test",
     "coverage": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject",
