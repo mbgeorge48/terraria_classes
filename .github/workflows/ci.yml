@@ -1,9 +1,9 @@
 name: CI
-  on:
-    pull_request:
-      types: [opened, reopened]
-    schedule:
-      - cron:  '0 10 * * *'
+on:
+  pull_request:
+    types: [opened, reopened]
+  schedule:
+    - cron: "0 10 * * *"
 
 env:
   IN_TEST: true
