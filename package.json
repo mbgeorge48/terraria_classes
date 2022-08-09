@@ -29,7 +29,9 @@
     "eject": "react-scripts eject",
     "watch": "concurrently npm:watch-*",
     "watch-types": "tsc --noEmit --pretty --project tsconfig.json --watch",
-    "watch-css": "tailwindcss --input src/css/index.css --output build/output.css --watch"
+    "watch-css": "tailwindcss --input src/css/index.css --output build/output.css --watch",
+    "tests": "npm run typecheck && npm test -- --coverage --runInBand --watchAll",
+    "typecheck": "tsc --noEmit --project tsconfig.json"
   },
   "eslintConfig": {
     "extends": [
@@ -53,5 +55,18 @@
     "@testing-library/react": "^13.3.0",
     "concurrently": "^7.3.0",
     "react-router-dom": "^6.3.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "!src/index.tsx",
+      "!src/ts/__helpers__/*"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 80
+      }
+    }
   }
 }
