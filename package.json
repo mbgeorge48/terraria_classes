@@ -29,7 +29,7 @@
     "eject": "react-scripts eject",
     "watch": "concurrently npm:watch-*",
     "watch-types": "tsc --noEmit --pretty --project tsconfig.json --watch",
-    "watch-css": "tailwindcss --input src/css/index.css --output ./dist/output.css --watch"
+    "watch-css": "tailwindcss --input src/css/index.css --output build/output.css --watch"
   },
   "eslintConfig": {
     "extends": [
