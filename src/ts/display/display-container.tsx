@@ -7,7 +7,7 @@ interface Props {
   selectedGameStage: number;
 }
 
-export const allItemData: items = require("../../data/all-items.json");
+export const allItemData: items = require("../../../data/all-items.json");
 
 function processData(selectedRole: Role, selectedGameStage: number) {
   let weaponsList = [];
