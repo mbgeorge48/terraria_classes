@@ -4,7 +4,7 @@ import os
 from flask import Flask
 from markupsafe import escape
 
-DATA_PATH = os.path.normpath("../data/all-items.json")
+DATA_PATH = os.path.normpath("./data/all-items.json")
 
 app = Flask(__name__)
 
