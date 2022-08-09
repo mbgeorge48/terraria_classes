@@ -23,7 +23,7 @@ it("should render a container - extra classes", () => {
     <ControllerContainer
       onRoleChange={jest.fn()}
       selectedRole={"melee"}
-      displayExtraClasses={false}
+      displayExtraClasses={true}
     />
   );
 
