@@ -22,16 +22,16 @@ const ItemContainer: React.FC<Props> = ({
   }
 
   return (
-    <div className="relative mb-auto group">
+    <div className="relative mb-auto w-3/4 lg:w-auto group md:w-2/3 mx-auto">
       <div
         className={classNames(
-          "absolute -inset-0 blur-sm transition-all ease-in-out delay-150 duration-300 group-hover:blur-md group-hover:-inset-1",
+          "absolute -inset-0 blur-sm transition-all ease-in-out delay-150 duration-300 group-hover:blur-md group-hover:-inset-1 group-active:blur-md group-active:-inset-1",
           selectedRole ? roleClasses[selectedRole].bg : undefined
         )}
       ></div>
       <div
         className={classNames(
-          "relative rounded-xl border-4 bg-white text-gray-600 py-2 drop-shadow-md w-72",
+          "relative rounded-xl border-4 bg-white text-gray-600 py-2 drop-shadow-md",
           selectedRole ? roleClasses[selectedRole].border : undefined
         )}
       >
