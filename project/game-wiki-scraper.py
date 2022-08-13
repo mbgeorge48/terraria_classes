@@ -1,9 +1,9 @@
 import json
+import os
 import re
 import sys
-import os
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
@@ -20,7 +20,7 @@ class GameWikiScraper:
         self.filterData()
         print(f"Found {len(self.all_items)} items")
 
-        file_path = Path(os.path.join("project","data", "all-items.json"))
+        file_path = Path(os.path.join("project", "data", "all-items.json"))
         with open(file_path, "w") as fp:
             json.dump(self.all_items, fp, indent=2)
 
