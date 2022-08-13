@@ -24,3 +24,24 @@ jobs:
           npm ci
           npm run build --if-present
           npm run tests
+      - name: pyenv
+        run: |
+          curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+          echo "~/.pyenv/bin" >> $GITHUB_PATH
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+      - uses: actions/cache@v2
+        with:
+          path: ~/.pyenv/versions
+          key: ${{ runner.os }}-pyenv-${{ hashFiles('.python-version') }}
+      - name: python formatting
+        run: |
+          pyenv install --skip-existing
+          pyenv exec python -m venv env
+          env/bin/pip install --upgrade pip
+          env/bin/pip install -r requirements.txt
+          flake8 project
+          black project/ --check
+          isort --check --diff project
