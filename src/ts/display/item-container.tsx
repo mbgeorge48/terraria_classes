@@ -22,24 +22,32 @@ const ItemContainer: React.FC<Props> = ({
   }
 
   return (
-    <div
-      className={classNames(
-        "rounded-xl border-4 bg-white text-gray-600 py-2 mb-auto drop-shadow-md w-72 group",
-        selectedRole ? roleClasses[selectedRole].border : undefined
-      )}
-    >
-      <h1
+    <div className="relative mb-auto w-3/4 lg:w-auto group md:w-2/3 mx-auto">
+      <div
         className={classNames(
-          "mb-4 text-2xl capitalize p-2 text-white group-hover:drop-shadow-xl",
+          "absolute -inset-0 blur-sm transition-all ease-in-out delay-150 duration-300 group-hover:blur-md group-hover:-inset-1 group-active:blur-md group-active:-inset-1",
           selectedRole ? roleClasses[selectedRole].bg : undefined
         )}
+      ></div>
+      <div
+        className={classNames(
+          "relative rounded-xl border-4 bg-white text-gray-600 py-2 drop-shadow-md",
+          selectedRole ? roleClasses[selectedRole].border : undefined
+        )}
       >
-        {itemCategory}
-      </h1>
-      <div className="flex flex-col px-2 space-y-2">
-        {data?.map((item) => (
-          <Item item={item} key={uuidv4()} selectedRole={selectedRole} />
-        ))}
+        <h1
+          className={classNames(
+            "mb-4 text-2xl capitalize p-2 text-white group-hover:drop-shadow-xl",
+            selectedRole ? roleClasses[selectedRole].bg : undefined
+          )}
+        >
+          {itemCategory}
+        </h1>
+        <div className="flex flex-col px-2 space-y-2">
+          {data?.map((item) => (
+            <Item item={item} key={uuidv4()} selectedRole={selectedRole} />
+          ))}
+        </div>
       </div>
     </div>
   );

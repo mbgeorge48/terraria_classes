@@ -30,7 +30,7 @@
     "watch": "concurrently npm:watch-*",
     "watch-types": "tsc --noEmit --pretty --project tsconfig.json --watch",
     "watch-css": "tailwindcss --input src/css/index.css --output build/output.css --watch",
-    "tests": "npm run typecheck && npm test -- --coverage --runInBand --watchAll",
+    "tests": "npm run typecheck && npm test -- --coverage --runInBand --watchAll=false",
     "typecheck": "tsc --noEmit --project tsconfig.json"
   },
   "eslintConfig": {
