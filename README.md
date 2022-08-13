@@ -28,7 +28,7 @@ A `JSON` file is required to fetch all the data required for the app. The file s
     {
       "name": "Copper armor",
       "role": "mixed",
-      "url": "https://terraria.gamepedia.com/Copper_armor",
+      "url": "https://terraria.gamepedia.com/wiki/Copper_armor",
       "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/9d/Copper_armor.png",
       "category": "armor",
       "gameStageAvailable": 0
