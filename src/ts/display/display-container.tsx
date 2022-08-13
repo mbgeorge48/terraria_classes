@@ -62,8 +62,8 @@ const DisplayContainer: React.FC<Props> = ({
   const data = processData(selectedRole, selectedGameStage);
 
   return (
-    <div className="m-6">
-      <div className="flex flex-wrap justify-around gap-4">
+    <div className="m-4">
+      <div className="lg:flex lg:flex-wrap lg:justify-around gap-4 grid grid-cols-1">
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="weapons"
