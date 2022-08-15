@@ -1,4 +1,6 @@
 import React from "react";
+import useSWR from "swr";
+// import { useAPI } from "../api";
 import { items, Role } from "../types";
 import ItemContainer from "./item-container";
 
@@ -7,42 +9,43 @@ interface Props {
   selectedGameStage: number;
 }
 
-export const allItemData: items = require("../../data/all-items.json");
+// export const allItemData: items = require("../../data/all-items.json");
 
-function processData(selectedRole: Role, selectedGameStage: number) {
+function processData(filteredData: items) {
   let weaponsList = [];
   let armorList = [];
   let accessoriesList = [];
   let buffsList = [];
   let mountsList = [];
   let lightsList = [];
+  // console.table(filteredData);
 
-  for (var i = 0; i < allItemData.length; i++) {
-    const item = allItemData[i];
-    if (
-      (item.role === selectedRole || item.role === "mixed") &&
-      item.gameStageAvailable === selectedGameStage
-    ) {
-      switch (item.category) {
-        case "weapons":
-          weaponsList.push(item);
-          break;
-        case "armor":
-          armorList.push(item);
-          break;
-        case "accessories":
-          accessoriesList.push(item);
-          break;
-        case "buffs/potions":
-          buffsList.push(item);
-          break;
-        case "mounts":
-          mountsList.push(item);
-          break;
-        case "lights":
-          lightsList.push(item);
-          break;
-      }
+  console.log(filteredData);
+  console.table(filteredData);
+
+  for (var i = 0; i < filteredData.length; i++) {
+    const item = filteredData[i];
+    console.log(item);
+
+    switch (item.category) {
+      case "weapons":
+        weaponsList.push(item);
+        break;
+      case "armor":
+        armorList.push(item);
+        break;
+      case "accessories":
+        accessoriesList.push(item);
+        break;
+      case "buffs/potions":
+        buffsList.push(item);
+        break;
+      case "mounts":
+        mountsList.push(item);
+        break;
+      case "lights":
+        lightsList.push(item);
+        break;
     }
   }
   return {
@@ -55,11 +58,26 @@ function processData(selectedRole: Role, selectedGameStage: number) {
   };
 }
 
+const fetcher = (url: string) => fetch(url).then((response) => response.json());
+
 const DisplayContainer: React.FC<Props> = ({
   selectedRole,
   selectedGameStage,
 }) => {
-  const data = processData(selectedRole, selectedGameStage);
+  const { data, error } = useSWR(
+    `http://127.0.0.1:5000/api/${selectedRole}/${selectedGameStage}/`,
+    fetcher
+  );
+
+  if (error) {
+    return <p>Failed to data form.</p>;
+  }
+
+  if (!data) {
+    return null;
+  }
+  const processedData = processData(data);
+  // console.table(processedData);
 
   return (
     <div className="m-4">
@@ -67,32 +85,32 @@ const DisplayContainer: React.FC<Props> = ({
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="weapons"
-          data={data.weaponsList}
+          data={processedData.weaponsList}
         />
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="armor"
-          data={data.armorList}
+          data={processedData.armorList}
         />
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="accessories"
-          data={data.accessoriesList}
+          data={processedData.accessoriesList}
         />
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="buffs/potions"
-          data={data.buffsList}
+          data={processedData.buffsList}
         />
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="mounts"
-          data={data.mountsList}
+          data={processedData.mountsList}
         />
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="lights"
-          data={data.lightsList}
+          data={processedData.lightsList}
         />
       </div>
     </div>
