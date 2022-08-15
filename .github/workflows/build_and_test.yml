@@ -28,7 +28,6 @@ jobs:
         uses: actions/setup-python@v4.2.0
       - name: python formatting
         run: |
-          python -m pip install flake8 black isort
-          python -m flake8 project --exclude data
+          python -m pip install black isort
           python -m black project --check
           python -m isort --check --diff project
