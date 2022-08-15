@@ -190,7 +190,7 @@ Endgame: 6
 ```
 
 #### Categories available
-
+ 
 - Weapons
 - Armor
 - Accessories
@@ -198,5 +198,7 @@ Endgame: 6
   - Encompass Buffs, Potions and Flasks
 - Mounts
 - Lights
+
+---
 
 _I'm not the owner of any of the Terraira resources, this was made as a learning expirence and for love of the game_
