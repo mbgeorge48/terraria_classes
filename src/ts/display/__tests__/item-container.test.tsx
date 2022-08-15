@@ -1,20 +1,9 @@
 import { render, screen } from "@testing-library/react";
 
 import React from "react";
-import { items } from "../../types";
+import { fakeData } from "../../__tests__/utils.test";
 
 import ItemContainer from "../item-container";
-
-const data: items = [
-  {
-    name: "Pointy Stick",
-    role: "melee",
-    url: "https://terraria.gamepedia.com/fake_url",
-    imgPath: "https://terraria.gamepedia.com/fake_picture.png",
-    category: "weapons",
-    gameStageAvailable: 0,
-  },
-];
 
 it("should render nothing when there is no selected role", () => {
   const { container } = render(
@@ -29,17 +18,12 @@ it("should render an item container when there is a selected role", () => {
     <ItemContainer
       selectedRole={"melee"}
       itemCategory={"weapons"}
-      data={data}
+      data={fakeData}
     />
   );
   expect(container).not.toBeNull();
   expect(screen.getByText("weapons")).not.toBeNull();
-  expect(screen.getByText(data[0].name)).not.toBeNull();
-
-  expect(screen.getByRole("img")).not.toBeNull();
-  expect(screen.getByRole("link")).not.toBeNull();
+  expect(screen.getByText(fakeData[0].name)).not.toBeNull();
+  expect(screen.getAllByRole("img")).toHaveLength(fakeData.length);
+  expect(screen.getAllByRole("link")).toHaveLength(fakeData.length);
 });
-
-// TODO Test the right items are listed depending on game stage and slected role
-// TODO Make the contianers flow better
-// TODO Add colours for the new classes
