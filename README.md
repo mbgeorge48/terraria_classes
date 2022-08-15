@@ -145,18 +145,58 @@ However the data can be extracted in quite a simular way
 
 ### Flask API
 
-_docs here_
+Creating a Flask API endpoint wasn't necessary for this projects however this app was partly a learning experience for myself so I wanted to give it ago
 
 #### Setup
 
 Copy the setup steps from the 'Terraria Game Wiki Scraper' section
 
-_Run this command to run the api_
+The config for the Flask App lives in `.flaskenv` so once you've installed all the modules simply run:
+
+```
+flask run
+```
 
 #### Usage
 
-_The one and only endpoint_
+There are 3 endpoints available
+
+- `/api/docs/`
+  - This returns a summary of the other two endpoints
+- `/api/<role>/<gameStageAvailable>/`
+
+  - Takes in a [game role](#roles-available) and a [game stage](#game-stage-mapping)
+  - Returns a JSON array containing all the items that fit into those two parameters that looks like [this example output](#example-output)
+
+- `/api/<role>/<gameStageAvailable>/<category>/`
+
+  - Takes in a [game role](#roles-available), a [game stage](#game-stage-mapping) and a [category](#categories-available)
+  - Returns a JSON array containing all the items that fit into all three parameters that looks like [this example output](#example-output)
 
 ---
+
+#### Game stage mapping
+
+To make it easier I convert the game stages into numbers, the mapping goes like this:
+
+```
+Pre-Bosses: 0
+Pre-Hardmode: 1
+Pre-Mech Bosses: 2
+Pre-Plantera: 3
+Pre-Golem: 4
+Pre-Lunar Events: 5
+Endgame: 6
+```
+
+#### Categories available
+
+- Weapons
+- Armor
+- Accessories
+- Buffs
+  - Encompass Buffs, Potions and Flasks
+- Mounts
+- Lights
 
 _I'm not the owner of any of the Terraira resources, this was made as a learning expirence and for love of the game_
