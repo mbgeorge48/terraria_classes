@@ -23,7 +23,7 @@ const ExtraClassToggle: React.FC<Props> = ({
   }, [checkValue, onToggle]);
 
   return (
-    <div className="space-x-2 text-sm mx-2 flex justify-start">
+    <div className="flex justify-start mx-2 space-x-2 text-sm">
       <label htmlFor="toggle">Show Extra Classes</label>
       <input
         id="toggle"
