@@ -22,7 +22,7 @@ const ItemContainer: React.FC<Props> = ({
   }
 
   return (
-    <div className="relative mb-auto w-3/4 lg:w-auto group md:w-2/3 mx-auto">
+    <div className="relative w-3/4 mx-auto mb-auto lg:w-auto group md:w-2/3">
       <div
         className={classNames(
           "absolute -inset-0 blur-sm transition-all ease-in-out delay-150 duration-300 group-hover:blur-md group-hover:-inset-1 group-active:blur-md group-active:-inset-1",

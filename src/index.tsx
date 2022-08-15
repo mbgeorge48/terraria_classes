@@ -14,12 +14,12 @@ const root = ReactDOM.createRoot(
 root.render(
   <div
     className={classNames(
-      "flex flex-col h-screen overflow-hidden font-sans bg-origin-border bg-cover bg-no-repeat",
+      "font-sans bg-origin-border flex flex-col min-h-screen bg-cover bg-no-repeat",
       backgrounds[Math.floor(Math.random() * backgrounds.length)]
     )}
   >
     <Body />
-    <div className="ml-6 mt-auto mb-4">
+    <div className="mt-auto mb-4 ml-6">
       <CreditPopover />
     </div>
   </div>

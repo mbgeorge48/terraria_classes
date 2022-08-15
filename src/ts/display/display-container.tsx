@@ -1,4 +1,8 @@
+import classNames from "classnames";
 import React from "react";
+import useSWR from "swr";
+import { processData } from "../utils";
+import { roleClasses } from "../constants";
 import { items, Role } from "../types";
 import ItemContainer from "./item-container";
 
@@ -7,92 +11,67 @@ interface Props {
   selectedGameStage: number;
 }
 
-export const allItemData: items = require("../../data/all-items.json");
-
-function processData(selectedRole: Role, selectedGameStage: number) {
-  let weaponsList = [];
-  let armorList = [];
-  let accessoriesList = [];
-  let buffsList = [];
-  let mountsList = [];
-  let lightsList = [];
-
-  for (var i = 0; i < allItemData.length; i++) {
-    const item = allItemData[i];
-    if (
-      (item.role === selectedRole || item.role === "mixed") &&
-      item.gameStageAvailable === selectedGameStage
-    ) {
-      switch (item.category) {
-        case "weapons":
-          weaponsList.push(item);
-          break;
-        case "armor":
-          armorList.push(item);
-          break;
-        case "accessories":
-          accessoriesList.push(item);
-          break;
-        case "buffs/potions":
-          buffsList.push(item);
-          break;
-        case "mounts":
-          mountsList.push(item);
-          break;
-        case "lights":
-          lightsList.push(item);
-          break;
-      }
-    }
-  }
-  return {
-    weaponsList,
-    armorList,
-    accessoriesList,
-    buffsList,
-    mountsList,
-    lightsList,
-  };
-}
+const fetcher = (url: string) => fetch(url).then((response) => response.json());
 
 const DisplayContainer: React.FC<Props> = ({
   selectedRole,
   selectedGameStage,
 }) => {
-  const data = processData(selectedRole, selectedGameStage);
+  const { data, error } = useSWR<items>(
+    `http://127.0.0.1:5000/api/${selectedRole}/${selectedGameStage}/`,
+    fetcher
+  );
+
+  if (error) {
+    return (
+      <div
+        className={classNames(
+          "rounded-lg m-4 border-2 border-black bg-opacity-30",
+          selectedRole ? roleClasses[selectedRole].bg : "gray-400/70"
+        )}
+      >
+        Something Went wrong!
+      </div>
+    );
+  }
+
+  if (!data) {
+    return null;
+  }
+  const processedData = processData(data);
 
   return (
     <div className="m-4">
-      <div className="lg:flex lg:flex-wrap lg:justify-around gap-4 grid grid-cols-1">
+      <div className="grid grid-cols-1 gap-4 lg:flex lg:flex-wrap lg:justify-around">
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="weapons"
-          data={data.weaponsList}
+          data={processedData.weaponsList}
         />
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="armor"
-          data={data.armorList}
+          data={processedData.armorList}
         />
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="accessories"
-          data={data.accessoriesList}
+          data={processedData.accessoriesList}
         />
         <ItemContainer
           selectedRole={selectedRole}
-          itemCategory="buffs/potions"
-          data={data.buffsList}
+          itemCategory="buffs"
+          data={processedData.buffsList}
         />
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="mounts"
-          data={data.mountsList}
+          data={processedData.mountsList}
         />
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="lights"
-          data={data.lightsList}
+          data={processedData.lightsList}
         />
       </div>
     </div>
