@@ -6,7 +6,7 @@ export type ItemCategory =
   | "weapons"
   | "armor"
   | "accessories"
-  | "buffs/potions"
+  | "buffs"
   | "mounts"
   | "lights";
 
