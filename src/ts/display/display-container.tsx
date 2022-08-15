@@ -1,7 +1,8 @@
+import classNames from "classnames";
 import React from "react";
 import useSWR from "swr";
-// import { useAPI } from "../api";
-import { items, Role } from "../types";
+import { roleClasses } from "../constants";
+import { item, items, Role } from "../types";
 import ItemContainer from "./item-container";
 
 interface Props {
@@ -9,24 +10,15 @@ interface Props {
   selectedGameStage: number;
 }
 
-// export const allItemData: items = require("../../data/all-items.json");
-
 function processData(filteredData: items) {
-  let weaponsList = [];
-  let armorList = [];
-  let accessoriesList = [];
-  let buffsList = [];
-  let mountsList = [];
-  let lightsList = [];
-  // console.table(filteredData);
+  let weaponsList: item[] = [];
+  let armorList: item[] = [];
+  let accessoriesList: item[] = [];
+  let buffsList: item[] = [];
+  let mountsList: item[] = [];
+  let lightsList: item[] = [];
 
-  console.log(filteredData);
-  console.table(filteredData);
-
-  for (var i = 0; i < filteredData.length; i++) {
-    const item = filteredData[i];
-    console.log(item);
-
+  filteredData.forEach((item) => {
     switch (item.category) {
       case "weapons":
         weaponsList.push(item);
@@ -37,7 +29,7 @@ function processData(filteredData: items) {
       case "accessories":
         accessoriesList.push(item);
         break;
-      case "buffs/potions":
+      case "buffs":
         buffsList.push(item);
         break;
       case "mounts":
@@ -47,7 +39,8 @@ function processData(filteredData: items) {
         lightsList.push(item);
         break;
     }
-  }
+  });
+
   return {
     weaponsList,
     armorList,
@@ -64,24 +57,32 @@ const DisplayContainer: React.FC<Props> = ({
   selectedRole,
   selectedGameStage,
 }) => {
-  const { data, error } = useSWR(
+  const { data, error } = useSWR<items>(
     `http://127.0.0.1:5000/api/${selectedRole}/${selectedGameStage}/`,
     fetcher
   );
 
   if (error) {
-    return <p>Failed to data form.</p>;
+    return (
+      <div
+        className={classNames(
+          "rounded-lg m-4 border-2 border-black bg-opacity-30",
+          selectedRole ? roleClasses[selectedRole].bg : "gray-400/70"
+        )}
+      >
+        Something Went wrong!
+      </div>
+    );
   }
 
   if (!data) {
     return null;
   }
   const processedData = processData(data);
-  // console.table(processedData);
 
   return (
     <div className="m-4">
-      <div className="lg:flex lg:flex-wrap lg:justify-around gap-4 grid grid-cols-1">
+      <div className="grid grid-cols-1 gap-4 lg:flex lg:flex-wrap lg:justify-around">
         <ItemContainer
           selectedRole={selectedRole}
           itemCategory="weapons"
@@ -99,7 +100,7 @@ const DisplayContainer: React.FC<Props> = ({
         />
         <ItemContainer
           selectedRole={selectedRole}
-          itemCategory="buffs/potions"
+          itemCategory="buffs"
           data={processedData.buffsList}
         />
         <ItemContainer
