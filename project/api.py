@@ -3,14 +3,16 @@ import os
 from pathlib import Path
 
 
-from flask import Flask
+from flask import Flask, jsonify
+from flask_cors import CORS
 from markupsafe import escape
 
-DATA_PATH = Path(os.path.join("project", "data", "all-items.json"))
-
 app = Flask(__name__)
+CORS(app)
 
-f = open(os.path.normpath(DATA_PATH))
+
+data_path = Path(os.path.join("project", "data", "all-items.json"))
+f = open(os.path.normpath(data_path))
 data = json.load(f)
 f.close()
 
@@ -24,7 +26,7 @@ def filter_json(role, gameStageAvailable):
             and item["gameStageAvailable"] == int(escape(gameStageAvailable))
         ):
             response.append(item)
-    return response
+    return jsonify({'data':response})
 
 
 @app.route("/api/<role>/<gameStageAvailable>/<category>/")
