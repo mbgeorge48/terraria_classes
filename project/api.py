@@ -26,7 +26,7 @@ def filter_json(role, gameStageAvailable):
             and item["gameStageAvailable"] == int(escape(gameStageAvailable))
         ):
             response.append(item)
-    return jsonify({'data':response})
+    return jsonify(response)
 
 
 @app.route("/api/<role>/<gameStageAvailable>/<category>/")
@@ -39,4 +39,4 @@ def filter_json_full(role, gameStageAvailable, category):
             and item["category"] == escape(category)
         ):
             response.append(item)
-    return response
+    return jsonify(response)
