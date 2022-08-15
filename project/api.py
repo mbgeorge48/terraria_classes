@@ -18,14 +18,19 @@ f.close()
 
 @app.route("/api/docs/")
 def docs():
-    filter_json_usage = "Send a role (melee, ranged, magic, summoner, mixed, healer, tank) and a game stage and it will return the items that fit that role and are availible in that game stage"
-    filter_json_full_usage = "Same as the above, but you can also send the item category to filter it further"
+    filter_json_usage = "Send a role \
+        (melee, ranged, magic, summoner, mixed, healer, tank) \
+        and a game stage and it will return the items that fit that role \
+        and are availible in that game stage"
+    filter_json_full_usage = "Same as the above, but you can also send \
+        the item category to filter it further"
     return jsonify(
         {
             "docs": [
                 {"/api/<role>/<gameStageAvailable>/": filter_json_usage},
                 {
-                    "/api/<role>/<gameStageAvailable>/<category>/": filter_json_full_usage
+                    "/api/<role>/<gameStageAvailable>/<category>/":
+                    filter_json_full_usage
                 },
             ]
         }
