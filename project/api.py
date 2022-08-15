@@ -2,7 +2,6 @@ import json
 import os
 from pathlib import Path
 
-
 from flask import Flask, jsonify
 from flask_cors import CORS
 from markupsafe import escape
