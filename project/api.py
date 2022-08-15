@@ -29,8 +29,7 @@ def docs():
             "docs": [
                 {"/api/<role>/<gameStageAvailable>/": filter_json_usage},
                 {
-                    "/api/<role>/<gameStageAvailable>/<category>/":
-                    filter_json_full_usage
+                    "/api/<role>/<gameStageAvailable>/<category>/": filter_json_full_usage
                 },
             ]
         }
