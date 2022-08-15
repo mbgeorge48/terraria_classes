@@ -1,54 +1,14 @@
 import classNames from "classnames";
 import React from "react";
 import useSWR from "swr";
+import { processData } from "../utils";
 import { roleClasses } from "../constants";
-import { item, items, Role } from "../types";
+import { items, Role } from "../types";
 import ItemContainer from "./item-container";
 
 interface Props {
   selectedRole: Role;
   selectedGameStage: number;
-}
-
-function processData(filteredData: items) {
-  let weaponsList: item[] = [];
-  let armorList: item[] = [];
-  let accessoriesList: item[] = [];
-  let buffsList: item[] = [];
-  let mountsList: item[] = [];
-  let lightsList: item[] = [];
-
-  filteredData.forEach((item) => {
-    switch (item.category) {
-      case "weapons":
-        weaponsList.push(item);
-        break;
-      case "armor":
-        armorList.push(item);
-        break;
-      case "accessories":
-        accessoriesList.push(item);
-        break;
-      case "buffs":
-        buffsList.push(item);
-        break;
-      case "mounts":
-        mountsList.push(item);
-        break;
-      case "lights":
-        lightsList.push(item);
-        break;
-    }
-  });
-
-  return {
-    weaponsList,
-    armorList,
-    accessoriesList,
-    buffsList,
-    mountsList,
-    lightsList,
-  };
 }
 
 const fetcher = (url: string) => fetch(url).then((response) => response.json());
