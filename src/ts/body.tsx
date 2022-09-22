@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import Slider from "./controller/slider";
 import ControllerContainer from "./controller/controller-container";
-import Header from "./header";
+import Header from "./controller/header";
 import DisplayContainer from "./display/display-container";
 import { Role } from "./types";
 import ExtraClassToggle from "./controller/extra-class-toggle";

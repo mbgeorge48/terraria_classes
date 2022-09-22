@@ -1,32 +1,44 @@
 import classNames from "classnames";
 import React from "react";
-import useSWR from "swr";
+
 import { processData } from "../utils";
 import { roleClasses } from "../constants";
 import { items, Role } from "../types";
 import ItemContainer from "./item-container";
+import { useAPI } from "../api/api";
 
 interface Props {
   selectedRole: Role;
   selectedGameStage: number;
 }
 
-const fetcher = (url: string) => fetch(url).then((response) => response.json());
-
 const DisplayContainer: React.FC<Props> = ({
   selectedRole,
   selectedGameStage,
 }) => {
-  const { data, error } = useSWR<items>(
-    `http://127.0.0.1:5000/api/${selectedRole}/${selectedGameStage}/`,
-    fetcher
+  const { data, isValidating, error } = useAPI<items>(
+    `http://127.0.0.1:5000/api/${selectedRole}/${selectedGameStage}/`
   );
 
-  if (error) {
+  if (isValidating) {
     return (
       <div
         className={classNames(
-          "rounded-lg m-4 border-2 border-black bg-opacity-30",
+          "rounded-lg m-4 border-2 border-black bg-opacity-30 py-4",
+          selectedRole ? roleClasses[selectedRole].bg : "gray-400/70"
+        )}
+      >
+        Loading&hellip;
+      </div>
+    );
+  }
+
+  if (error) {
+    console.log(error);
+    return (
+      <div
+        className={classNames(
+          "rounded-lg m-4 border-2 border-black bg-opacity-30 py-4",
           selectedRole ? roleClasses[selectedRole].bg : "gray-400/70"
         )}
       >
