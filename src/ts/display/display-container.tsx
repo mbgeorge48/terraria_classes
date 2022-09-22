@@ -19,6 +19,7 @@ const DisplayContainer: React.FC<Props> = ({
   const { data, isValidating, error } = useAPI<items>(
     `http://127.0.0.1:5000/api/${selectedRole}/${selectedGameStage}/`
   );
+
   if (isValidating) {
     return (
       <div
