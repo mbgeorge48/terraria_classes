@@ -190,7 +190,7 @@ Endgame: 6
 ```
 
 #### Categories available
- 
+
 - Weapons
 - Armor
 - Accessories
