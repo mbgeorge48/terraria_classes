@@ -38,7 +38,7 @@ const DisplayContainer: React.FC<Props> = ({
     return (
       <div
         className={classNames(
-          "rounded-lg m-4 border-2 border-black bg-opacity-30 py-4",
+          "rounded-lg m-4 p-4 border-2 border-black bg-opacity-30 py-4",
           selectedRole ? roleClasses[selectedRole].bg : "gray-400/70"
         )}
       >
