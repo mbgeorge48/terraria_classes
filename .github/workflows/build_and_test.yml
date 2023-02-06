@@ -1,33 +1,35 @@
 name: build&test
 on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
-  workflow_dispatch:
+    push:
+        branches: ["main"]
+    pull_request:
+        branches: ["main"]
+    workflow_dispatch:
 
 jobs:
-  build_test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x]
+    build_test:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [18.x]
 
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: npm ci, build and test
-        run: |
-          npm ci
-          npm run build --if-present
-          npm run tests
-      - name: Setup Python
-        uses: actions/setup-python@v4.2.0
-      - name: python formatting
-        run: |
-          python -m pip install black isort
-          python -m black project --check
-          python -m isort --check --diff project
+        steps:
+            - uses: actions/checkout@v3
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v2
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - name: npm ci, build and test
+              run: |
+                  cd react_client
+                  npm ci
+                  npm run build --if-present
+                  npm run tests
+            - name: Setup Python
+              uses: actions/setup-python@v4.2.0
+            - name: python formatting
+              run: |
+                  cd flask_server
+                  python -m pip install black isort
+                  python -m black project --check
+                  python -m isort --check --diff .

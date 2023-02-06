@@ -6,14 +6,14 @@
 .*.swp
 
 # Distribution / packaging
-env/*
-build/*
+*/env/*
+*/build/*
 
 # Unit test / coverage reports
-/coverage/*
-/htmlcov/*
-/.tox/*
-/.hypothesis/*
+*/coverage/*
+*/htmlcov/*
+*/.tox/*
+*/.hypothesis/*
 
 .coverage
 .coverage.*
@@ -24,11 +24,10 @@ coverage.xml
 
 
 # NPM Stuff
-*.pem
-node_modules
-npm-debug.log*
-.mypy_cache/
+*/*.pem
+*/node_modules
+*/npm-debug.log*
+*/.mypy_cache/
 
 
-.env
 .vscode/

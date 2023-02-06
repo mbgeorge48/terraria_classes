@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)
 
 
-data_path = Path(os.path.join("project", "data", "all-items.json"))
+data_path = Path(os.path.join("data", "all-items.json"))
 f = open(os.path.normpath(data_path))
 data = json.load(f)
 f.close()
