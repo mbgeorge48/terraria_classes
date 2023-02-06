@@ -1,1 +1,1 @@
-FLASK_APP=api.py
+FLASK_APP=src/api.py
