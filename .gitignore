@@ -8,6 +8,8 @@
 # Distribution / packaging
 env/*
 build/*
+*/env/*
+*/build/*
 
 # Unit test / coverage reports
 coverage/*
@@ -25,6 +27,7 @@ coverage.xml
 # NPM Stuff
 *.pem
 node_modules
+*/node_modules
 npm-debug.log*
 .mypy_cache/
 
