@@ -12,7 +12,7 @@ build/*
 */build/*
 
 # Unit test / coverage reports
-coverage/*
+*/coverage/*
 htmlcov/*
 .tox/*
 .hypothesis/*
