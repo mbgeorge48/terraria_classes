@@ -12,7 +12,7 @@ module.exports = {
                 tank: "#D20000",
             },
             fontFamily: {
-                sans: ["sans-serif"],
+                sans: ["Ubuntu", "sans-serif"],
                 terraria: ["Terraria"],
             },
         },

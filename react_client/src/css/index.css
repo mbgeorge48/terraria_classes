@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;600&display=swap');
 @font-face {
     font-family: "Terraria";
     src: url("../fonts/terraria.ttf") format("truetype");
