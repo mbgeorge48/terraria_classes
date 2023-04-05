@@ -6,13 +6,13 @@ This is a single page app that helps you build your character to fit into a cert
 
 ## Roles available
 
-- Melee
-- Ranged
-- Magic
-- Summoner
-- _Tank_
-- _Healer_
-- _Mixed_
+-   Melee
+-   Ranged
+-   Magic
+-   Summoner
+-   _Tank_
+-   _Healer_
+-   _Mixed_
 
 The last three aren't fully fleshed out roles.
 Mixed is generally an early game exclusive, while Tank and Healer are late game (usually coop) builds.
@@ -29,14 +29,14 @@ A `JSON` file is required to fetch all the data required for the app. The file s
 
 ```json
 [
-  {
-    "name": "Gold Bow",
-    "url": "https://terraria.fandom.com/wiki/Gold_Bow",
-    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/f/ff/Gold_Bow.png",
-    "role": "ranged",
-    "category": "weapons",
-    "gameStageAvailable": 0
-  }
+    {
+        "name": "Gold Bow",
+        "url": "https://terraria.fandom.com/wiki/Gold_Bow",
+        "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/f/ff/Gold_Bow.png",
+        "role": "ranged",
+        "category": "weapons",
+        "gameStageAvailable": 0
+    }
 ]
 ```
 
@@ -92,14 +92,14 @@ The output is an array of JSON objects that follow this rough format:
 
 ```json
 [
-  {
-    "name": "Gold Bow",
-    "url": "https://terraria.fandom.com/wiki/Gold_Bow",
-    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/f/ff/Gold_Bow.png",
-    "role": "ranged",
-    "category": "weapons",
-    "gameStageAvailable": 0
-  }
+    {
+        "name": "Gold Bow",
+        "url": "https://terraria.fandom.com/wiki/Gold_Bow",
+        "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/f/ff/Gold_Bow.png",
+        "role": "ranged",
+        "category": "weapons",
+        "gameStageAvailable": 0
+    }
 ]
 ```
 
@@ -109,14 +109,14 @@ Move items are found by traversing the HTML and looking for this section of elem
 
 ```html
 <span style="xyz" class="abc">
-  <a href="url" title="Item Name">
-    <img alt="Item Name" src="img path" data-src="img path" ... />
-  </a>
-  <span>
+    <a href="url" title="Item Name">
+        <img alt="Item Name" src="img path" data-src="img path" ... />
+    </a>
     <span>
-      <a href="url" title="Item Name"> Item Name </a>
+        <span>
+            <a href="url" title="Item Name"> Item Name </a>
+        </span>
     </span>
-  </span>
 </span>
 ```
 
@@ -128,16 +128,22 @@ Sometimes items appear in the HTML as:
 
 ```html
 <li style="xyz">
-  <span class="abc">
-    <a href="url" title="Item Name">
-      <img alt="Item Name" src="img path" data-src="img path" class="abc" ... />
-    </a>
-    <span>
-      <span>
-        <a href="url" title="Item Name ">Item Name</a>
-      </span>
+    <span class="abc">
+        <a href="url" title="Item Name">
+            <img
+                alt="Item Name"
+                src="img path"
+                data-src="img path"
+                class="abc"
+                ...
+            />
+        </a>
+        <span>
+            <span>
+                <a href="url" title="Item Name ">Item Name</a>
+            </span>
+        </span>
     </span>
-  </span>
 </li>
 ```
 
@@ -161,17 +167,17 @@ flask run
 
 There are 3 endpoints available
 
-- `/api/docs/`
-  - This returns a summary of the other two endpoints
-- `/api/<role>/<gameStageAvailable>/`
+-   `/api/docs/`
+    -   This returns a summary of the other two endpoints
+-   `/api/<role>/<gameStageAvailable>/`
 
-  - Takes in a [game role](#roles-available) and a [game stage](#game-stage-mapping)
-  - Returns a JSON array containing all the items that fit into those two parameters that looks like [this example output](#example-output)
+    -   Takes in a [game role](#roles-available) and a [game stage](#game-stage-mapping)
+    -   Returns a JSON array containing all the items that fit into those two parameters that looks like [this example output](#example-output)
 
-- `/api/<role>/<gameStageAvailable>/<category>/`
+-   `/api/<role>/<gameStageAvailable>/<category>/`
 
-  - Takes in a [game role](#roles-available), a [game stage](#game-stage-mapping) and a [category](#categories-available)
-  - Returns a JSON array containing all the items that fit into all three parameters that looks like [this example output](#example-output)
+    -   Takes in a [game role](#roles-available), a [game stage](#game-stage-mapping) and a [category](#categories-available)
+    -   Returns a JSON array containing all the items that fit into all three parameters that looks like [this example output](#example-output)
 
 ---
 
@@ -191,13 +197,13 @@ Endgame: 6
 
 #### Categories available
 
-- Weapons
-- Armor
-- Accessories
-- Buffs
-  - Encompass Buffs, Potions and Flasks
-- Mounts
-- Lights
+-   Weapons
+-   Armor
+-   Accessories
+-   Buffs
+    -   Encompass Buffs, Potions and Flasks
+-   Mounts
+-   Lights
 
 ---
 
