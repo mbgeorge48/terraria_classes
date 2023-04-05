@@ -37,7 +37,7 @@ const ItemContainer: React.FC<Props> = ({
             >
                 <h1
                     className={classNames(
-                        "mb-4 text-2xl capitalize p-2 text-white",
+                        "mb-4 text-2xl capitalize p-2 text-white font-medium",
                         selectedRole ? roleClasses[selectedRole].bg : undefined
                     )}
                 >
