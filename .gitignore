@@ -8,12 +8,14 @@
 # Distribution / packaging
 env/*
 build/*
+*/env/*
+*/build/*
 
 # Unit test / coverage reports
-/coverage/*
-/htmlcov/*
-/.tox/*
-/.hypothesis/*
+*/coverage/*
+htmlcov/*
+.tox/*
+.hypothesis/*
 
 .coverage
 .coverage.*
@@ -22,13 +24,11 @@ nosetests.xml
 coverage.xml
 *,cover
 
-
 # NPM Stuff
 *.pem
 node_modules
+*/node_modules
 npm-debug.log*
 .mypy_cache/
 
-
-.env
 .vscode/
