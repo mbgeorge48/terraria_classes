@@ -9,7 +9,7 @@ export function CreditPopover() {
             {({ open }) => (
                 <>
                     <Popover.Button
-                        className={`flex flex-row  border-2 border-gray-500 bg-white p-2 hover:border-yellow-400
+                        className={`flex flex-row  border-2 border-gray-500 bg-white p-2 hover:border-yellow-400 focus:outline-none
               ${open ? "rounded-b-xl" : "rounded-xl"}`}
                     >
                         <span>Credits</span>
