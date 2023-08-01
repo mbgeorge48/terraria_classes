@@ -28,9 +28,7 @@ class GameWikiScraper:
         self.soup = BeautifulSoup("".join(r.text), features="lxml")
 
     def filterData(self):
-        info_cards = self.soup.find_all(
-            "div", attrs={"class": "infocard clearfix"}
-        )
+        info_cards = self.soup.find_all("div", attrs={"class": "infocard clearfix"})
         for card in info_cards:
             class_container = card.find("div", attrs={"class": "hgroup"})
             if len(class_container) > 1:
@@ -42,9 +40,7 @@ class GameWikiScraper:
                 game_stage = self.gameStageConvert(
                     class_container.findChildren()[0].text.lower()
                 )
-                for item_container in card.find_all(
-                    "div", attrs={"class": "box"}
-                ):
+                for item_container in card.find_all("div", attrs={"class": "box"}):
                     self.pullItems(item_container, role, game_stage)
 
             elif class_container.find("div", attrs={"class": "main"}).text in [
@@ -53,9 +49,7 @@ class GameWikiScraper:
             ]:
                 role = "mixed"
                 game_stage = 0
-                for item_container in card.find_all(
-                    "div", attrs={"class": "box"}
-                ):
+                for item_container in card.find_all("div", attrs={"class": "box"}):
                     self.pullItems(item_container, role, game_stage)
 
     def gameStageConvert(self, stage):
@@ -73,9 +67,7 @@ class GameWikiScraper:
     def pullItems(self, item_container, role, game_stage):
         if not item_container.find_all("li"):
             category = self.convertCategory(
-                item_container.find(
-                    "div", attrs={"class": "title"}
-                ).text.lower()
+                item_container.find("div", attrs={"class": "title"}).text.lower()
             )
             for span in item_container.find("p").find_all(
                 "span", attrs={"style": "display:block;margin:0.5em 0;"}
@@ -103,9 +95,7 @@ class GameWikiScraper:
         for item in item_container.find_all("li"):
             valid = True
             category = self.convertCategory(
-                item_container.find(
-                    "div", attrs={"class": "title"}
-                ).text.lower()
+                item_container.find("div", attrs={"class": "title"}).text.lower()
             )
             try:
                 name = item.text.replace("(", "").replace(")", "").rstrip()
@@ -165,9 +155,12 @@ if __name__ == "__main__":
 
     finish_time = datetime.now().strftime(time_format)
     print(f"Finish time = {finish_time}")
-    time_delta = datetime.strptime(
-        finish_time, time_format
-    ) - datetime.strptime(start_time, time_format)
+    time_delta = datetime.strptime(finish_time, time_format) - datetime.strptime(
+        start_time, time_format
+    )
     total_seconds = time_delta.total_seconds()
     minutes = total_seconds / 60
     print(f"Time elapsed = {minutes} (minutes)")
+
+# TODO
+# Catch console exclusive items
