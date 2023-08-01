@@ -75,16 +75,17 @@ const DisplayContainer: React.FC<Props> = ({
                     itemCategory="buffs"
                     data={processedData.buffsList}
                 />
-                <ItemContainer
+                {/* Don't tend to style nicely */}
+                {/* <ItemContainer
                     selectedRole={selectedRole}
                     itemCategory="mounts"
                     data={processedData.mountsList}
-                />
-                <ItemContainer
+                /> */}
+                {/* <ItemContainer
                     selectedRole={selectedRole}
                     itemCategory="lights"
                     data={processedData.lightsList}
-                />
+                /> */}
             </div>
         </div>
     );
