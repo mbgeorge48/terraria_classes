@@ -15,15 +15,21 @@ const root = ReactDOM.createRoot(
 root.render(
     <div
         className={classNames(
-            "font-sans bg-origin-border flex flex-col min-h-screen bg-cover bg-no-repeat",
+            "bg-cover bg-origin-border bg-no-repeat",
             useImageBackground
                 ? backgrounds[Math.floor(Math.random() * backgrounds.length)]
                 : "bg-stone-100"
         )}
     >
-        <Body />
-        <div className="mt-auto mb-4 ml-6">
-            <CreditPopover />
+        <div
+            className={classNames(
+                "font-sans  flex flex-col  mx-auto max-w-screen-2xl min-h-screen"
+            )}
+        >
+            <Body />
+            <div className="mt-auto mb-4 ml-6">
+                <CreditPopover />
+            </div>
         </div>
     </div>
 );

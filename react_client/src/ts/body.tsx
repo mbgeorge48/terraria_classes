@@ -34,7 +34,7 @@ const Body: React.FC = () => {
     );
 
     return (
-        <div>
+        <>
             <div
                 className={classNames(
                     "rounded-lg m-4 border-2 border-black bg-opacity-30",
@@ -65,7 +65,7 @@ const Body: React.FC = () => {
                 selectedRole={selectedRole}
                 selectedGameStage={selectedGameStage}
             />
-        </div>
+        </>
     );
 };
 
