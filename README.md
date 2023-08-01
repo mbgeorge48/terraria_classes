@@ -83,7 +83,7 @@ pip install -r requirements.txt
 3. Run the script
 
 ```
-python project/game-wiki-scraper.py
+python src/game-wiki-scraper.py
 ```
 
 #### Example Output
