@@ -1,6 +1,5 @@
 # Misc
 .DS_Store
-*.pyc
 
 # Vim tmp files
 .*.swp
@@ -32,3 +31,8 @@ npm-debug.log*
 .mypy_cache/
 
 .vscode/
+
+# Python Stuff
+*.pyc
+*/.env/
+__pycache__
