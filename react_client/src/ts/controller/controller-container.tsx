@@ -13,9 +13,18 @@ const ControllerContainer: React.FC<Props> = ({
     selectedRole,
     displayExtraClasses,
 }) => {
+    const baseClasses: Role[] = ["melee", "ranged", "magic", "summoner"];
+    const extraClasses: Role[] = ["mixed", "tank", "healer"];
     return (
         <div className="m-4">
             <div className="grid grid-cols-1 gap-4 md:flex md:flex-row md:flex-wrap justify-evenly">
+                {/* {baseClasses.map((class, index)=>(
+                        <ClassButton
+                        onRoleChange={onRoleChange}
+                        title={class}
+                        selectedRole={selectedRole}
+                    />
+                ))} */}
                 <ClassButton
                     onRoleChange={onRoleChange}
                     title="melee"

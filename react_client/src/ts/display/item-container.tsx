@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
 import classNames from "classnames";
 import React from "react";
 
@@ -44,10 +43,10 @@ const ItemContainer: React.FC<Props> = ({
                     {itemCategory}
                 </h1>
                 <div className="flex flex-col px-2 space-y-2">
-                    {data?.map((item) => (
+                    {data?.map((item, index) => (
                         <Item
                             item={item}
-                            key={uuidv4()}
+                            key={index}
                             selectedRole={selectedRole}
                         />
                     ))}
