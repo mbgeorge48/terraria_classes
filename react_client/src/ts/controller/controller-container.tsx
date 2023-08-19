@@ -8,62 +8,28 @@ interface Props {
     displayExtraClasses: boolean;
 }
 
-const ControllerContainer: React.FC<Props> = ({
-    onRoleChange,
-    selectedRole,
-    displayExtraClasses,
-}) => {
+const ControllerContainer: React.FC<Props> = (props) => {
+    const { onRoleChange, selectedRole, displayExtraClasses } = props;
     const baseClasses: Role[] = ["melee", "ranged", "magic", "summoner"];
     const extraClasses: Role[] = ["mixed", "tank", "healer"];
     return (
         <div className="m-4">
             <div className="grid grid-cols-1 gap-4 md:flex md:flex-row md:flex-wrap justify-evenly">
-                {/* {baseClasses.map((class, index)=>(
-                        <ClassButton
+                {baseClasses.map((role) => (
+                    <ClassButton
                         onRoleChange={onRoleChange}
-                        title={class}
+                        title={role}
                         selectedRole={selectedRole}
                     />
-                ))} */}
-                <ClassButton
-                    onRoleChange={onRoleChange}
-                    title="melee"
-                    selectedRole={selectedRole}
-                />
-                <ClassButton
-                    onRoleChange={onRoleChange}
-                    title="ranged"
-                    selectedRole={selectedRole}
-                />
-                <ClassButton
-                    onRoleChange={onRoleChange}
-                    title="magic"
-                    selectedRole={selectedRole}
-                />
-                <ClassButton
-                    onRoleChange={onRoleChange}
-                    title="summoner"
-                    selectedRole={selectedRole}
-                />
-                {displayExtraClasses ? (
-                    <>
+                ))}
+                {displayExtraClasses &&
+                    extraClasses.map((role) => (
                         <ClassButton
                             onRoleChange={onRoleChange}
-                            title="mixed"
+                            title={role}
                             selectedRole={selectedRole}
                         />
-                        <ClassButton
-                            onRoleChange={onRoleChange}
-                            title="tank"
-                            selectedRole={selectedRole}
-                        />
-                        <ClassButton
-                            onRoleChange={onRoleChange}
-                            title="healer"
-                            selectedRole={selectedRole}
-                        />
-                    </>
-                ) : undefined}
+                    ))}
             </div>
         </div>
     );

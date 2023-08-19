@@ -61,10 +61,12 @@ const Body: React.FC = () => {
                     onToggle={updateDisplayExtraClasses}
                 />
             </div>
-            <DisplayContainer
-                selectedRole={selectedRole}
-                selectedGameStage={selectedGameStage}
-            />
+            {selectedRole && (
+                <DisplayContainer
+                    selectedRole={selectedRole}
+                    selectedGameStage={selectedGameStage}
+                />
+            )}
         </>
     );
 };
