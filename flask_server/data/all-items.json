@@ -976,14 +976,6 @@
     "gameStageAvailable": 0
   },
   {
-    "name": "Wolf Fang",
-    "url": "https://terraria.fandom.com/wiki/Wolf_Fang",
-    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/c/c9/Wolf_Fang.png",
-    "role": "mixed",
-    "category": "buffs",
-    "gameStageAvailable": 0
-  },
-  {
     "name": "Terragrim",
     "url": "https://terraria.fandom.com/wiki/Terragrim",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/0/0a/Terragrim.png",
@@ -1291,14 +1283,6 @@
     "name": "Molten Fury",
     "url": "https://terraria.fandom.com/wiki/Molten_Fury",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/e/e4/Molten_Fury.png",
-    "role": "ranged",
-    "category": "weapons",
-    "gameStageAvailable": 1
-  },
-  {
-    "name": "Sharanga",
-    "url": "https://terraria.fandom.com/wiki/Sharanga",
-    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/91/Sharanga.png",
     "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 1
@@ -2059,14 +2043,6 @@
     "name": "Slice of Cake",
     "url": "https://terraria.fandom.com/wiki/Slice_of_Cake",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/6/69/Slice_of_Cake.png",
-    "role": "mixed",
-    "category": "buffs",
-    "gameStageAvailable": 1
-  },
-  {
-    "name": "Wolf Fang",
-    "url": "https://terraria.fandom.com/wiki/Wolf_Fang",
-    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/c/c9/Wolf_Fang.png",
     "role": "mixed",
     "category": "buffs",
     "gameStageAvailable": 1
@@ -3280,14 +3256,6 @@
     "gameStageAvailable": 2
   },
   {
-    "name": "Wolf Fang",
-    "url": "https://terraria.fandom.com/wiki/Wolf_Fang",
-    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/c/c9/Wolf_Fang.png",
-    "role": "mixed",
-    "category": "buffs",
-    "gameStageAvailable": 2
-  },
-  {
     "name": "True Night's Edge",
     "url": "https://terraria.fandom.com/wiki/True_Night%27s_Edge",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/2/28/True_Night%27s_Edge.png",
@@ -3880,14 +3848,6 @@
     "gameStageAvailable": 3
   },
   {
-    "name": "Spectral armor",
-    "url": "https://terraria.fandom.com/wiki/Spectral_armor",
-    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/2/23/Spectral_armor.png",
-    "role": "magic",
-    "category": "armor",
-    "gameStageAvailable": 3
-  },
-  {
     "name": "Celestial Emblem",
     "url": "https://terraria.fandom.com/wiki/Celestial_Emblem",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/0/04/Celestial_Emblem.png",
@@ -4304,1106 +4264,1082 @@
     "gameStageAvailable": 3
   },
   {
-    "name": "Wolf Fang",
-    "url": "https://terraria.fandom.com/wiki/Wolf_Fang",
-    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/c/c9/Wolf_Fang.png",
-    "role": "mixed",
-    "category": "buffs",
-    "gameStageAvailable": 3
-  },
-  {
     "name": "Terra Blade",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Terra_Blade",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/4/4d/Terra_Blade.png",
+    "role": "melee",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "The Horseman's Blade",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/The_Horseman%27s_Blade",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/93/The_Horseman%27s_Blade.png",
+    "role": "melee",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Seedler",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Seedler",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/a/a0/Seedler.png",
+    "role": "melee",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Flower Pow",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Flower_Pow",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/d/da/Flower_Pow.png",
+    "role": "melee",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Keybrand",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Keybrand",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/0/02/Keybrand.png",
+    "role": "melee",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "The Eye of Cthulhu",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/The_Eye_of_Cthulhu",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/c/c4/The_Eye_of_Cthulhu.png",
+    "role": "melee",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Kraken",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Kraken",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/d/d3/Kraken.png",
+    "role": "melee",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Shadow Jousting Lance",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Shadow_Jousting_Lance",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/4/43/Shadow_Jousting_Lance.png",
+    "role": "melee",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Vampire Knives",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Vampire_Knives",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/7/7f/Vampire_Knives.png",
+    "role": "melee",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Scourge of the Corruptor",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Scourge_of_the_Corruptor",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/8/8a/Scourge_of_the_Corruptor.png",
+    "role": "melee",
+    "category": "weapons",
+    "gameStageAvailable": 4
+  },
+  {
+    "name": "Paladin's Hammer",
+    "url": "https://terraria.fandom.com/wiki/Paladin%27s_Hammer",
+    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/f/f7/Paladin%27s_Hammer.png",
+    "role": "melee",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Chlorophyte armor",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Chlorophyte_armor",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/2/2f/Chlorophyte_armor_Mask.png",
-    "category": "armor",
-    "gameStageAvailable": 4
-  },
-  {
-    "name": "Dragon armor",
     "role": "melee",
-    "url": "https://terraria.fandom.com/wiki/Dragon_armor",
-    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/6/68/Dragon_armor.png",
     "category": "armor",
     "gameStageAvailable": 4
   },
   {
     "name": "Hallowed Mask",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Hallowed_Mask",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/0/0a/Hallowed_Mask.png",
+    "role": "melee",
     "category": "armor",
     "gameStageAvailable": 4
   },
   {
     "name": "Turtle Scale Mail",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Turtle_Scale_Mail",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/92/Turtle_Scale_Mail.png",
+    "role": "melee",
     "category": "armor",
     "gameStageAvailable": 4
   },
   {
     "name": "Monk's Shirt",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Monk%27s_Shirt",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/6/6c/Monk%27s_Shirt.png",
+    "role": "melee",
     "category": "armor",
     "gameStageAvailable": 4
   },
   {
     "name": "Squire's Greaves",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Squire%27s_Greaves",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/95/Squire%27s_Greaves.png",
+    "role": "melee",
     "category": "armor",
     "gameStageAvailable": 4
   },
   {
     "name": "Warrior Emblem",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Warrior_Emblem",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/d/d7/Warrior_Emblem.png",
+    "role": "melee",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Mechanical Glove",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Mechanical_Glove",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/2/21/Mechanical_Glove.png",
+    "role": "melee",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Fire Gauntlet",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Fire_Gauntlet",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/8/8a/Fire_Gauntlet.png",
+    "role": "melee",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Frozen Shield",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Frozen_Shield",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/b/bc/Frozen_Shield.png",
+    "role": "melee",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Yoyo Bag",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Yoyo_Bag",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/8/8d/Yoyo_Bag.png",
+    "role": "melee",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Moon Charm",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Moon_Charm",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/b/b6/Moon_Charm.png",
+    "role": "melee",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Flask of Ichor",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Flask_of_Ichor",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/7/71/Flask_of_Ichor.png",
+    "role": "melee",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Flask of Cursed Flames",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Flask_of_Cursed_Flames",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/0/08/Flask_of_Cursed_Flames.png",
+    "role": "melee",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Sharpening Station",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Sharpening_Station",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/3/3b/Sharpening_Station.png",
+    "role": "melee",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Ale",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Ale",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/a/a2/Ale.png",
+    "role": "melee",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Sake",
-    "role": "melee",
     "url": "https://terraria.fandom.com/wiki/Sake",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/f/f6/Sake.png",
+    "role": "melee",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Megashark",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Megashark",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/3/36/Megashark.png",
+    "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Piranha Gun",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Piranha_Gun",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/a/a5/Piranha_Gun.png",
+    "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Sniper Rifle",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Sniper_Rifle",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/c/cf/Sniper_Rifle.png",
+    "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Coin Gun",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Coin_Gun",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/d/d0/Coin_Gun.png",
+    "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Tactical Shotgun",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Tactical_Shotgun",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/d/d0/Tactical_Shotgun.png",
+    "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Chain Gun",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Chain_Gun",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/3/3c/Chain_Gun.png",
+    "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Daedalus Stormbow",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Daedalus_Stormbow",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/b/b0/Daedalus_Stormbow.png",
+    "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Chlorophyte Shotbow",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Chlorophyte_Shotbow",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/1/13/Chlorophyte_Shotbow.png",
+    "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Rocket Launcher",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Rocket_Launcher",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/0/05/Rocket_Launcher.png",
+    "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Pulse Bow",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Pulse_Bow",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/4/44/Pulse_Bow.png",
+    "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Nail Gun",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Nail_Gun",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/7/79/Nail_Gun.png",
+    "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Jack 'O Lantern Launcher",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Jack_%27O_Lantern_Launcher",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/9a/Jack_%27O_Lantern_Launcher.png",
+    "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Candy Corn Rifle",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Candy_Corn_Rifle",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/f/fa/Candy_Corn_Rifle.png",
+    "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Stake Launcher",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Stake_Launcher",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/0/04/Stake_Launcher.png",
+    "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Venus Magnum",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Venus_Magnum",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/d/de/Venus_Magnum.png",
+    "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Proximity Mine Launcher",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Proximity_Mine_Launcher",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/f/ff/Proximity_Mine_Launcher.png",
+    "role": "ranged",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Shroomite armor",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Shroomite_armor",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/8/84/Shroomite_armor.png",
-    "category": "armor",
-    "gameStageAvailable": 4
-  },
-  {
-    "name": "Titan armor",
     "role": "ranged",
-    "url": "https://terraria.fandom.com/wiki/Titan_armor",
-    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/0/08/Titan_armor.png",
     "category": "armor",
     "gameStageAvailable": 4
   },
   {
     "name": "Spooky Leggings",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Spooky_Leggings",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/7/74/Spooky_Leggings.png",
+    "role": "ranged",
     "category": "armor",
     "gameStageAvailable": 4
   },
   {
     "name": "Mythril Greaves",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Mythril_Greaves",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/2/24/Mythril_Greaves.png",
+    "role": "ranged",
     "category": "armor",
     "gameStageAvailable": 4
   },
   {
     "name": "Ranger Emblem",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Ranger_Emblem",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/3/31/Ranger_Emblem.png",
+    "role": "ranged",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Magic Quiver",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Magic_Quiver",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/b/b8/Magic_Quiver.png",
+    "role": "ranged",
+    "category": "accessories",
+    "gameStageAvailable": 4
+  },
+  {
+    "name": "Molten Quiver",
+    "url": "https://terraria.fandom.com/wiki/Molten_Quiver",
+    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/8/8e/Molten_Quiver.png",
+    "role": "ranged",
+    "category": "accessories",
+    "gameStageAvailable": 4
+  },
+  {
+    "name": "Stalker's Quiver",
+    "url": "https://terraria.fandom.com/wiki/Stalker%27s_Quiver",
+    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/5/51/Stalker%27s_Quiver.png",
+    "role": "ranged",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Archery Potion",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Archery_Potion",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/9f/Archery_Potion.png",
+    "role": "ranged",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Ammo Reservation Potion",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Ammo_Reservation_Potion",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/96/Ammo_Reservation_Potion.png",
+    "role": "ranged",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Ammo Box",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Ammo_Box",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/3/36/Ammo_Box.png",
+    "role": "ranged",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "High Velocity Bullet",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/High_Velocity_Bullet",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/1/1b/High_Velocity_Bullet.png",
+    "role": "ranged",
     "category": "ammunition",
     "gameStageAvailable": 4
   },
   {
     "name": "Platinum Coin",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Platinum_Coin",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/2/2c/Platinum_Coin.png",
+    "role": "ranged",
     "category": "ammunition",
     "gameStageAvailable": 4
   },
   {
     "name": "Crystal Bullet",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Crystal_Bullet",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/b/bc/Crystal_Bullet.png",
+    "role": "ranged",
     "category": "ammunition",
     "gameStageAvailable": 4
   },
   {
     "name": "Chlorophyte Bullet",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Chlorophyte_Bullet",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/2/23/Chlorophyte_Bullet.png",
+    "role": "ranged",
     "category": "ammunition",
     "gameStageAvailable": 4
   },
   {
     "name": "Endless Musket Pouch",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Endless_Musket_Pouch",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/b/b8/Endless_Musket_Pouch.png",
+    "role": "ranged",
     "category": "ammunition",
     "gameStageAvailable": 4
   },
   {
     "name": "Hellfire Arrow",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Hellfire_Arrow",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/94/Hellfire_Arrow.png",
+    "role": "ranged",
     "category": "ammunition",
     "gameStageAvailable": 4
   },
   {
     "name": "Holy Arrow",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Holy_Arrow",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/c/c9/Holy_Arrow.png",
+    "role": "ranged",
     "category": "ammunition",
     "gameStageAvailable": 4
   },
   {
     "name": "Ichor Arrow",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Ichor_Arrow",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/4/47/Ichor_Arrow.png",
+    "role": "ranged",
     "category": "ammunition",
     "gameStageAvailable": 4
   },
   {
     "name": "Chlorophyte Arrow",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Chlorophyte_Arrow",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/0/06/Chlorophyte_Arrow.png",
+    "role": "ranged",
     "category": "ammunition",
     "gameStageAvailable": 4
   },
   {
     "name": "Venom Arrow",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Venom_Arrow",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/e/ea/Venom_Arrow.png",
+    "role": "ranged",
     "category": "ammunition",
     "gameStageAvailable": 4
   },
   {
     "name": "Endless Quiver",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Endless_Quiver",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/7/7a/Endless_Quiver.png",
+    "role": "ranged",
     "category": "ammunition",
     "gameStageAvailable": 4
   },
   {
     "name": "Mini Nuke I",
-    "role": "ranged",
     "url": "https://terraria.fandom.com/wiki/Mini_Nuke_I",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/7/70/Mini_Nuke_I.png",
+    "role": "ranged",
     "category": "ammunition",
     "gameStageAvailable": 4
   },
   {
     "name": "Bat Scepter",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Bat_Scepter",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/e/eb/Bat_Scepter.png",
+    "role": "magic",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Venom Staff",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Venom_Staff",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/f/fa/Venom_Staff.png",
+    "role": "magic",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Nettle Burst",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Nettle_Burst",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/98/Nettle_Burst.png",
+    "role": "magic",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Shadowbeam Staff",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Shadowbeam_Staff",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/b/b6/Shadowbeam_Staff.png",
+    "role": "magic",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Spectre Staff",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Spectre_Staff",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/e/e8/Spectre_Staff.png",
+    "role": "magic",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Inferno Fork",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Inferno_Fork",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/0/0f/Inferno_Fork.png",
+    "role": "magic",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Magnet Sphere",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Magnet_Sphere",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/1/1a/Magnet_Sphere.png",
+    "role": "magic",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Rainbow Gun",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Rainbow_Gun",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/b/ba/Rainbow_Gun.png",
+    "role": "magic",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Resonance Scepter",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Resonance_Scepter",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/6/6c/Resonance_Scepter.png",
+    "role": "magic",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Toxic Flask",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Toxic_Flask",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/8/87/Toxic_Flask.png",
+    "role": "magic",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Clinger Staff",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Clinger_Staff",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/8/81/Clinger_Staff.png",
+    "role": "magic",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Razorpine",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Razorpine",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/6/6c/Razorpine.png",
-    "category": "weapons",
-    "gameStageAvailable": 4
-  },
-  {
-    "name": "Zapinator",
     "role": "magic",
-    "url": "https://terraria.fandom.com/wiki/Zapinator",
-    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/d/df/Zapinator.png",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Spectre armor",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Spectre_armor",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/c/c0/Spectre_armor.png",
-    "category": "armor",
-    "gameStageAvailable": 4
-  },
-  {
-    "name": "Spectral armor",
     "role": "magic",
-    "url": "https://terraria.fandom.com/wiki/Spectral_armor",
-    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/2/23/Spectral_armor.png",
     "category": "armor",
     "gameStageAvailable": 4
   },
   {
     "name": "Hallowed Headgear",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Hallowed_Headgear",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/7/7c/Hallowed_Headgear.png",
+    "role": "magic",
     "category": "armor",
     "gameStageAvailable": 4
   },
   {
     "name": "Apprentice's Trousers",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Apprentice%27s_Trousers",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/4/41/Apprentice%27s_Trousers.png",
+    "role": "magic",
     "category": "armor",
     "gameStageAvailable": 4
   },
   {
     "name": "Celestial Emblem",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Celestial_Emblem",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/0/04/Celestial_Emblem.png",
+    "role": "magic",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Celestial Cuffs",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Celestial_Cuffs",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/b/b8/Celestial_Cuffs.png",
+    "role": "magic",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Sorcerer Emblem",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Sorcerer_Emblem",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/b/b6/Sorcerer_Emblem.png",
+    "role": "magic",
+    "category": "accessories",
+    "gameStageAvailable": 4
+  },
+  {
+    "name": "Magnet Flower",
+    "url": "https://terraria.fandom.com/wiki/Magnet_Flower",
+    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/4/4a/Magnet_Flower.png",
+    "role": "magic",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Mana Regeneration Potion",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Mana_Regeneration_Potion",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/c/cc/Mana_Regeneration_Potion.png",
+    "role": "magic",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Magic Power Potion",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Magic_Power_Potion",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/2/2c/Magic_Power_Potion.png",
+    "role": "magic",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Crystal Ball",
-    "role": "magic",
     "url": "https://terraria.fandom.com/wiki/Crystal_Ball",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/e/e2/Crystal_Ball.png",
+    "role": "magic",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Blade Staff",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Blade_Staff",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/8/89/Blade_Staff.png",
+    "role": "summoner",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Raven Staff",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Raven_Staff",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/1/10/Raven_Staff.png",
+    "role": "summoner",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Desert Tiger Staff",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Desert_Tiger_Staff",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/e/e7/Desert_Tiger_Staff.png",
+    "role": "summoner",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Sanguine Staff",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Sanguine_Staff",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/3/3d/Sanguine_Staff.png",
+    "role": "summoner",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Pygmy Staff",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Pygmy_Staff",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/b/b1/Pygmy_Staff.png",
+    "role": "summoner",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Terraprisma",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Terraprisma",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/b/b0/Terraprisma.png",
+    "role": "summoner",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Staff of the Frost Hydra",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Staff_of_the_Frost_Hydra",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/2/20/Staff_of_the_Frost_Hydra.png",
+    "role": "summoner",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Queen Spider Staff",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Queen_Spider_Staff",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/97/Queen_Spider_Staff.png",
+    "role": "summoner",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Morning Star",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Morning_Star",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/b/bc/Morning_Star.png",
+    "role": "summoner",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Dark Harvest",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Dark_Harvest",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/1/18/Dark_Harvest.png",
+    "role": "summoner",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Kaleidoscope",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Kaleidoscope",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/8/86/Kaleidoscope.png",
+    "role": "summoner",
     "category": "weapons",
     "gameStageAvailable": 4
   },
   {
     "name": "Spooky armor",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Spooky_armor",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/a/a9/Spooky_armor.png",
+    "role": "summoner",
     "category": "armor",
     "gameStageAvailable": 4
   },
   {
     "name": "Tiki armor",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Tiki_armor",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/b/b0/Tiki_armor.png",
+    "role": "summoner",
     "category": "armor",
     "gameStageAvailable": 4
   },
   {
     "name": "Squire's Great Helm",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Squire%27s_Great_Helm",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/e/ea/Squire%27s_Great_Helm.png",
+    "role": "summoner",
     "category": "armor",
     "gameStageAvailable": 4
   },
   {
     "name": "Summoner Emblem",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Summoner_Emblem",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/7/70/Summoner_Emblem.png",
+    "role": "summoner",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Hercules Beetle",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Hercules_Beetle",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/5/5a/Hercules_Beetle.png",
+    "role": "summoner",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Papyrus Scarab",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Papyrus_Scarab",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/a/a8/Papyrus_Scarab.png",
+    "role": "summoner",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Necromantic Scroll",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Necromantic_Scroll",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/6/67/Necromantic_Scroll.png",
+    "role": "summoner",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Pygmy Necklace",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Pygmy_Necklace",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/2/2f/Pygmy_Necklace.png",
+    "role": "summoner",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Berserker's Glove",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Berserker%27s_Glove",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/0/05/Berserker%27s_Glove.png",
+    "role": "summoner",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
-    "name": "Hexxed Branch",
-    "role": "summoner",
+    "name": "Tree Mount",
     "url": "https://terraria.fandom.com/wiki/Tree_Mount",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/f/fb/Tree_Mount.png",
+    "role": "summoner",
     "category": "mounts",
     "gameStageAvailable": 4
   },
   {
     "name": "Flask of Ichor",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Flask_of_Ichor",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/7/71/Flask_of_Ichor.png",
+    "role": "summoner",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Flask of Cursed Flames",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Flask_of_Cursed_Flames",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/0/08/Flask_of_Cursed_Flames.png",
+    "role": "summoner",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Summoning Potion",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Summoning_Potion",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/91/Summoning_Potion.png",
+    "role": "summoner",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Bewitching Table",
-    "role": "summoner",
     "url": "https://terraria.fandom.com/wiki/Bewitching_Table",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/9d/Bewitching_Table.png",
+    "role": "summoner",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Squire's Great Helm",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Squire%27s_Great_Helm",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/e/ea/Squire%27s_Great_Helm.png",
+    "role": "mixed",
     "category": "armor",
     "gameStageAvailable": 4
   },
   {
     "name": "Spooky Breastplate",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Spooky_Breastplate",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/a/ae/Spooky_Breastplate.png",
+    "role": "mixed",
     "category": "armor",
     "gameStageAvailable": 4
   },
   {
     "name": "Avenger Emblem",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Avenger_Emblem",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/c/c3/Avenger_Emblem.png",
+    "role": "mixed",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Lightning Boots",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Lightning_Boots",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/2/2c/Lightning_Boots.png",
+    "role": "mixed",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Terraspark Boots",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Terraspark_Boots",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/b/ba/Terraspark_Boots.png",
+    "role": "mixed",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Amphibian Boots",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Amphibian_Boots",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/8/8d/Amphibian_Boots.png",
+    "role": "mixed",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Ankh Shield",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Ankh_Shield",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/99/Ankh_Shield.png",
+    "role": "mixed",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Charm of Myths",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Charm_of_Myths",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/f/f0/Charm_of_Myths.png",
+    "role": "mixed",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Flame Wings",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Flame_Wings",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/b/bf/Flame_Wings.png",
+    "role": "mixed",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Mothron Wings",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Mothron_Wings",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/8/8e/Mothron_Wings.png",
+    "role": "mixed",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Hoverboard",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Hoverboard",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/2/20/Hoverboard.png",
+    "role": "mixed",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
     "name": "Moon Stone",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Moon_Stone",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/3/35/Moon_Stone.png",
+    "role": "mixed",
     "category": "accessories",
     "gameStageAvailable": 4
   },
   {
-    "name": "Toy Tank",
-    "role": "mixed",
-    "url": "https://terraria.fandom.com/wiki/Santank_Mount",
-    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/9a/Santank_Mount.png",
-    "category": "mounts",
-    "gameStageAvailable": 4
-  },
-  {
     "name": "Ironskin Potion",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Ironskin_Potion",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/9f/Ironskin_Potion.png",
+    "role": "mixed",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Endurance Potion",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Endurance_Potion",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/93/Endurance_Potion.png",
+    "role": "mixed",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Rage Potion",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Rage_Potion",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/e/ec/Rage_Potion.png",
+    "role": "mixed",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Wrath Potion",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Wrath_Potion",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/d/d7/Wrath_Potion.png",
+    "role": "mixed",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Regeneration Potion",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Regeneration_Potion",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/2/2d/Regeneration_Potion.png",
+    "role": "mixed",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Lifeforce Potion",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Lifeforce_Potion",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/2/25/Lifeforce_Potion.png",
+    "role": "mixed",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Gravitation Potion",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Gravitation_Potion",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/0/09/Gravitation_Potion.png",
+    "role": "mixed",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Well Fed",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Well_Fed",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/a/a3/Well_Fed.png",
+    "role": "mixed",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Plenty Satisfied",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Plenty_Satisfied",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/2/2a/Plenty_Satisfied.png",
+    "role": "mixed",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Exquisitely Stuffed",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Exquisitely_Stuffed",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/1/15/Exquisitely_Stuffed.png",
+    "role": "mixed",
     "category": "buffs",
     "gameStageAvailable": 4
   },
   {
     "name": "Slice of Cake",
-    "role": "mixed",
     "url": "https://terraria.fandom.com/wiki/Slice_of_Cake",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/6/69/Slice_of_Cake.png",
-    "category": "buffs",
-    "gameStageAvailable": 4
-  },
-  {
-    "name": "Wolf Fang",
     "role": "mixed",
-    "url": "https://terraria.fandom.com/wiki/Wolf_Fang",
-    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/c/c9/Wolf_Fang.png",
     "category": "buffs",
     "gameStageAvailable": 4
   },
@@ -5432,10 +5368,18 @@
     "gameStageAvailable": 5
   },
   {
-    "name": "The Horseman's BladeNorth Pole",
+    "name": "The Horseman's Blade",
     "role": "melee",
     "url": "https://terraria.fandom.com/wiki/The_Horseman%27s_Blade",
     "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/9/93/The_Horseman%27s_Blade.png",
+    "category": "weapons",
+    "gameStageAvailable": 5
+  },
+  {
+    "name": "North Pole",
+    "role": "melee",
+    "url": "https://terraria.fandom.com/wiki/North_Pole",
+    "imgPath": "https://static.wikia.nocookie.net/terraria_gamepedia/images/d/d4/North_Pole.png",
     "category": "weapons",
     "gameStageAvailable": 5
   },

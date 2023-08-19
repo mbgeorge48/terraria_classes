@@ -72,6 +72,11 @@ class GameWikiScraper:
             for span in item_container.find("p").find_all(
                 "span", attrs={"style": "display:block;margin:0.5em 0;"}
             ):
+                spanList = span.find("span").findAll("span")
+                if len(spanList) > 1:
+                    if self.get_exclusivity_details(spanList):
+                        continue
+
                 name = (
                     span.find("a")
                     .get("title")
@@ -123,6 +128,14 @@ class GameWikiScraper:
                     "gameStageAvailable": game_stage,
                 }
                 self.all_items.append(this_item)
+
+    def get_exclusivity_details(self, spanList):
+        for element in spanList:
+            title = element.get("title")
+            if title:
+                if "pc" not in title.lower() or "console" not in title.lower():
+                    return title
+        return None
 
     def convertCategory(self, category):
         if "buffs" in category:
