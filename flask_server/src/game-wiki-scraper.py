@@ -174,6 +174,3 @@ if __name__ == "__main__":
     total_seconds = time_delta.total_seconds()
     minutes = total_seconds / 60
     print(f"Time elapsed = {minutes} (minutes)")
-
-# TODO
-# Catch console exclusive items

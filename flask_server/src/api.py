@@ -44,7 +44,7 @@ def filter_json(role, gameStageAvailable):
             "gameStageAvailable"
         ] == int(escape(gameStageAvailable)):
             response.append(item)
-    return jsonify(response)
+    return jsonify(deduplicate_response(response))
 
 
 @app.route("/api/<role>/<gameStageAvailable>/<category>/")
@@ -57,4 +57,15 @@ def filter_json_full(role, gameStageAvailable, category):
             and item["category"] == escape(category)
         ):
             response.append(item)
-    return jsonify(response)
+    return jsonify(deduplicate_response(response))
+
+
+def deduplicate_response(response):
+    items = []
+    item_names = []
+    for data in response:
+        if data["name"] in item_names:
+            continue
+        item_names.append(data["name"])
+        items.append(data)
+    return items
