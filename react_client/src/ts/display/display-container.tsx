@@ -34,7 +34,7 @@ const DisplayContainer: React.FC<Props> = ({
     }
 
     if (error) {
-        console.log(error);
+        console.error(error);
         return (
             <div
                 className={classNames(
@@ -75,17 +75,16 @@ const DisplayContainer: React.FC<Props> = ({
                     itemCategory="buffs"
                     data={processedData.buffsList}
                 />
-                {/* Don't tend to style nicely */}
-                {/* <ItemContainer
+                <ItemContainer
                     selectedRole={selectedRole}
                     itemCategory="mounts"
                     data={processedData.mountsList}
-                /> */}
-                {/* <ItemContainer
+                />
+                <ItemContainer
                     selectedRole={selectedRole}
                     itemCategory="lights"
                     data={processedData.lightsList}
-                /> */}
+                />
             </div>
         </div>
     );

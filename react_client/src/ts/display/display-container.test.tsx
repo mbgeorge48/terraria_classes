@@ -23,6 +23,7 @@ describe("DisplayContainer", () => {
             data: undefined,
             error: undefined,
             mutate: jest.fn(),
+            isLoading: true,
         });
         render(
             <DisplayContainer selectedRole={"melee"} selectedGameStage={0} />
@@ -36,6 +37,7 @@ describe("DisplayContainer", () => {
             data: undefined,
             error: { name: "test name", message: "test message" },
             mutate: jest.fn(),
+            isLoading: false,
         });
         render(
             <DisplayContainer selectedRole={"melee"} selectedGameStage={0} />
@@ -49,6 +51,7 @@ describe("DisplayContainer", () => {
             data: mockItems,
             error: undefined,
             mutate: jest.fn(),
+            isLoading: false,
         });
         render(
             <DisplayContainer selectedRole={"melee"} selectedGameStage={0} />

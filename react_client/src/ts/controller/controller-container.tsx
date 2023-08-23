@@ -20,6 +20,7 @@ const ControllerContainer: React.FC<Props> = (props) => {
                         onRoleChange={onRoleChange}
                         title={role}
                         selectedRole={selectedRole}
+                        key={role}
                     />
                 ))}
                 {displayExtraClasses &&
@@ -28,6 +29,7 @@ const ControllerContainer: React.FC<Props> = (props) => {
                             onRoleChange={onRoleChange}
                             title={role}
                             selectedRole={selectedRole}
+                            key={role}
                         />
                     ))}
             </div>
