@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
-import ControllerContainer from "./controller-container";
+import ControllerContainer from "../controller-container";
 
 it("should render a container", () => {
     render(

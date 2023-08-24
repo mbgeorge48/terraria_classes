@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
-import { CreditPopover } from "./credit-popover";
+import { CreditPopover } from "../credit-popover";
 
 it("should render the credits component", () => {
     render(<CreditPopover />);

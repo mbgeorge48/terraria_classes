@@ -1,9 +1,9 @@
 import React from "react";
 import { screen, render } from "@testing-library/react";
 
-import DisplayContainer from "./display-container";
-import * as api from "../api/api";
-import { item, items } from "../types";
+import DisplayContainer from "../display-container";
+import * as api from "../../api/api";
+import { item, items } from "../../types";
 
 const mockItem: item = {
     name: "Stick",

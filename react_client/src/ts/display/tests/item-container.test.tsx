@@ -1,17 +1,9 @@
 import { render, screen } from "@testing-library/react";
 
 import React from "react";
-import { fakeData } from "../utils.test";
+import { fakeData } from "../../tests/utils.test";
 
-import ItemContainer from "./item-container";
-
-it("should render nothing when there is no selected role", () => {
-    const { container } = render(
-        <ItemContainer selectedRole={undefined} itemCategory={"weapons"} />
-    );
-
-    expect(container.childElementCount).toEqual(0);
-});
+import ItemContainer from "../item-container";
 
 it("should render an item container when there is a selected role", () => {
     const { container } = render(

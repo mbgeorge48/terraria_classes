@@ -1,5 +1,5 @@
-import { items } from "./types";
-import { processData } from "./utils";
+import { items } from "../types";
+import { processData } from "../utils";
 
 export const fakeData: items = [
     {
