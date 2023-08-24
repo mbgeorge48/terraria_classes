@@ -54,7 +54,7 @@ const DisplayContainer: React.FC<Props> = ({
 
     return (
         <div className="m-4">
-            <div className="grid grid-cols-1 gap-4 lg:flex lg:flex-wrap lg:justify-around">
+            <div className="flex flex-row flex-wrap justify-around gap-4 p-4 xs:flex-col">
                 <ItemContainer
                     selectedRole={selectedRole}
                     itemCategory="weapons"

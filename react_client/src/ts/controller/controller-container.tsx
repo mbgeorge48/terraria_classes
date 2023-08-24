@@ -13,9 +13,17 @@ const ControllerContainer: React.FC<Props> = (props) => {
     const baseClasses: Role[] = ["melee", "ranged", "magic", "summoner"];
     const extraClasses: Role[] = ["mixed", "tank", "healer"];
     return (
-        <div className="m-4">
-            <div className="grid grid-cols-1 gap-4 md:flex md:flex-row md:flex-wrap justify-evenly">
-                {baseClasses.map((role) => (
+        <div className="flex flex-col flex-wrap gap-4 p-4 sm:flex-row">
+            {baseClasses.map((role) => (
+                <ClassButton
+                    onRoleChange={onRoleChange}
+                    title={role}
+                    selectedRole={selectedRole}
+                    key={role}
+                />
+            ))}
+            {displayExtraClasses &&
+                extraClasses.map((role) => (
                     <ClassButton
                         onRoleChange={onRoleChange}
                         title={role}
@@ -23,16 +31,6 @@ const ControllerContainer: React.FC<Props> = (props) => {
                         key={role}
                     />
                 ))}
-                {displayExtraClasses &&
-                    extraClasses.map((role) => (
-                        <ClassButton
-                            onRoleChange={onRoleChange}
-                            title={role}
-                            selectedRole={selectedRole}
-                            key={role}
-                        />
-                    ))}
-            </div>
         </div>
     );
 };
