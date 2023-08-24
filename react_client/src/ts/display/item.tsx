@@ -22,7 +22,7 @@ const Item: React.FC<Props> = ({ item, selectedRole }) => {
         >
             <img
                 src={item.imgPath}
-                alt={item.name}
+                alt="item"
                 className="object-contain w-10 h-10"
             />
             <p className="text-lg">{item.name}</p>
