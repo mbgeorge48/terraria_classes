@@ -16,21 +16,13 @@ export function useRole() {
     return useContext(RoleContext);
 }
 
-interface Props extends PropsWithChildren {
-    selectedRole?: Role;
-    setSelectedRole: (role: Role) => void;
-}
+interface Props extends PropsWithChildren, RoleContextType {}
 
 export function RoleProvider(props: Props) {
-    const { selectedRole = undefined, setSelectedRole, children } = props;
+    const { children } = props;
 
     return (
-        <RoleContext.Provider
-            value={{
-                selectedRole,
-                setSelectedRole,
-            }}
-        >
+        <RoleContext.Provider value={{ ...props }}>
             {children}
         </RoleContext.Provider>
     );

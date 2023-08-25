@@ -2,7 +2,6 @@ import { render, RenderOptions } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { RoleProvider } from "../context/RoleContext";
 import React, { ReactElement } from "react";
-import { Role } from "^/types";
 
 const consoleError = console.error;
 

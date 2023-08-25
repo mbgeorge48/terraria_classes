@@ -12,7 +12,6 @@ const ClassButton: React.FC<Props> = ({ title }) => {
     const { selectedRole, setSelectedRole } = useRole();
 
     const handleClick = useCallback(() => {
-        console.log(title);
         setSelectedRole(title);
     }, [setSelectedRole, title]);
     return (

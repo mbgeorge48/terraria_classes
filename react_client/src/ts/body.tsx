@@ -6,12 +6,11 @@ import DisplayContainer from "./display/display-container";
 import ExtraClassToggle from "./controller/extra-class-toggle";
 import { roleClasses } from "./constants";
 import classNames from "classnames";
-import { Role } from "./types";
-import { RoleProvider } from "./context/RoleContext";
+import { useRole } from "./context/RoleContext";
 
 const Body: React.FC = () => {
+    const { selectedRole } = useRole();
     const [selectedGameStage, setSelectedGameStage] = useState(0);
-    const [selectedRole, setSelectedRole] = useState<Role>();
     const [displayExtraClasses, setDisplayExtraClasses] = useState(false);
 
     const updateSelectedGameStage = useCallback(
@@ -29,10 +28,7 @@ const Body: React.FC = () => {
     );
 
     return (
-        <RoleProvider
-            setSelectedRole={setSelectedRole}
-            selectedRole={selectedRole}
-        >
+        <>
             <div
                 className={classNames(
                     "rounded-lg m-4 border-2 border-black bg-opacity-30",
@@ -59,7 +55,7 @@ const Body: React.FC = () => {
             {selectedRole && (
                 <DisplayContainer selectedGameStage={selectedGameStage} />
             )}
-        </RoleProvider>
+        </>
     );
 };
 
