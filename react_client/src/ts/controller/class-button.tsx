@@ -26,7 +26,7 @@ const ClassButton: React.FC<Props> = ({ title }) => {
                     ),
                 title && selectedRole === title
                     ? roleClasses[title].bg.concat(" ", "text-white")
-                    : "bg-slate-100"
+                    : "bg-white"
             )}
         >
             {title}

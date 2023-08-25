@@ -24,7 +24,7 @@ const App: React.FC = () => {
                         ? backgrounds[
                               Math.floor(Math.random() * backgrounds.length)
                           ]
-                        : "bg-slate-100"
+                        : "bg-slate-200"
                 )}
             >
                 <div

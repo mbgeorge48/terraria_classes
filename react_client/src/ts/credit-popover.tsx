@@ -9,8 +9,8 @@ export function CreditPopover() {
             {({ open }) => (
                 <>
                     <Popover.Button
-                        className={`flex flex-row  border-2 border-gray-500 bg-slate-100 p-2 hover:border-yellow-400 focus:outline-none
-              ${open ? "rounded-b-xl" : "rounded-xl"}`}
+                        className={`flex flex-row  border-2 border-gray-500 bg-white p-2 hover:border-yellow-400 focus:outline-none
+              ${open ? "rounded-b-xl border-t-white" : "rounded-xl"}`}
                     >
                         <span>Credits</span>
                         <ChevronUpIcon
@@ -20,7 +20,7 @@ export function CreditPopover() {
                         />
                     </Popover.Button>
                     <Popover.Panel
-                        className={`absolute z-10 -top-16 py-2 px-4 border-2 border-gray-400 bg-slate-100 flex flex-col
+                        className={`absolute z-10 -top-16 py-2 px-4 border-2 border-gray-500 bg-white flex flex-col
             ${open ? "rounded-t-xl rounded-r-xl" : undefined}`}
                     >
                         <span>Designed and created by me, Matt G</span>
