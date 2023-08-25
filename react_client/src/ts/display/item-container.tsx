@@ -27,7 +27,7 @@ const ItemContainer: React.FC<Props> = ({ itemCategory, data }) => {
             ></div>
             <div
                 className={classNames(
-                    "relative rounded-xl border-4 bg-white text-gray-600 py-2 drop-shadow-md",
+                    "relative rounded-xl border-4 bg-slate-100 text-gray-600 py-2 drop-shadow-md",
                     selectedRole ? roleClasses[selectedRole].border : undefined
                 )}
             >

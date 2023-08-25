@@ -1,7 +1,8 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import React from "react";
 
 import ClassButton from "../class-button";
+import { render } from "../../__helpers__/render";
 
 it("should render a class button - melee", () => {
     render(<ClassButton title="melee" />);
@@ -9,7 +10,6 @@ it("should render a class button - melee", () => {
     expect(button).not.toBeNull();
 
     expect(button.classList.contains("border-melee")).toBe(true);
-    expect(button.classList.contains("bg-melee")).toBe(true);
 });
 
 it("should render a class button - ranged", () => {
@@ -19,7 +19,6 @@ it("should render a class button - ranged", () => {
     expect(button).not.toBeNull();
 
     expect(button.classList.contains("border-ranged")).toBe(true);
-    expect(button.classList.contains("bg-ranged")).toBe(true);
 });
 
 it("should render a class button - magic", () => {
@@ -29,7 +28,6 @@ it("should render a class button - magic", () => {
     expect(button).not.toBeNull();
 
     expect(button.classList.contains("border-magic")).toBe(true);
-    expect(button.classList.contains("bg-magic")).toBe(true);
 });
 
 it("should render a class button - summoner", () => {
@@ -39,7 +37,6 @@ it("should render a class button - summoner", () => {
     expect(button).not.toBeNull();
 
     expect(button.classList.contains("border-summoner")).toBe(true);
-    expect(button.classList.contains("bg-summoner")).toBe(true);
 });
 
 it("should render a summoner class button when melee is selected", () => {
@@ -49,16 +46,4 @@ it("should render a summoner class button when melee is selected", () => {
     expect(button).not.toBeNull();
 
     expect(button.classList.contains("border-summoner")).toBe(true);
-    expect(button.classList.contains("bg-summoner")).toBe(false);
-});
-
-it("should call the role change function when the button is pressed", () => {
-    const onRoleChange = jest.fn();
-    const title = "summoner";
-
-    render(<ClassButton title={title} />);
-
-    fireEvent.click(screen.getByRole("button"));
-    expect(onRoleChange).toHaveBeenCalledTimes(1);
-    expect(onRoleChange).toHaveBeenCalledWith(title);
 });

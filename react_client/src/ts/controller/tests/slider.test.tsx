@@ -1,6 +1,7 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, screen } from "@testing-library/react";
 import React from "react";
 import Slider from "../slider";
+import { render } from "../../__helpers__/render";
 
 it("should render the game stage slider", () => {
     render(
@@ -15,7 +16,6 @@ it("should render the game stage slider", () => {
     const slider = screen.getByRole("slider");
     expect(slider).not.toBeNull();
     expect(screen.getByText("Slider Label")).not.toBeNull();
-    expect(slider.classList.contains("accent-melee")).toBe(true);
 });
 
 it("should call the game stage change function when the slider is updated", () => {

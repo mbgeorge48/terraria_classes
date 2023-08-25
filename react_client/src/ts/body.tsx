@@ -6,8 +6,8 @@ import DisplayContainer from "./display/display-container";
 import ExtraClassToggle from "./controller/extra-class-toggle";
 import { roleClasses } from "./constants";
 import classNames from "classnames";
-import { RoleProvider } from "./context/RoleProvider";
 import { Role } from "./types";
+import { RoleProvider } from "./context/RoleContext";
 
 const Body: React.FC = () => {
     const [selectedGameStage, setSelectedGameStage] = useState(0);

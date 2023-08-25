@@ -18,7 +18,7 @@ root.render(
             "bg-cover bg-origin-border bg-no-repeat",
             useImageBackground
                 ? backgrounds[Math.floor(Math.random() * backgrounds.length)]
-                : "bg-stone-100"
+                : "bg-slate-100"
         )}
     >
         <div
