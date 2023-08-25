@@ -3,13 +3,7 @@ import React from "react";
 import ControllerContainer from "../controller-container";
 
 it("should render a container", () => {
-    render(
-        <ControllerContainer
-            onRoleChange={jest.fn()}
-            selectedRole={"melee"}
-            displayExtraClasses={false}
-        />
-    );
+    render(<ControllerContainer displayExtraClasses={false} />);
 
     expect(screen.getAllByRole("button")).toHaveLength(4);
     expect(screen.getByText("melee")).not.toBeNull();
@@ -19,13 +13,7 @@ it("should render a container", () => {
 });
 
 it("should render a container - extra classes", () => {
-    render(
-        <ControllerContainer
-            onRoleChange={jest.fn()}
-            selectedRole={"melee"}
-            displayExtraClasses={true}
-        />
-    );
+    render(<ControllerContainer displayExtraClasses={true} />);
 
     expect(screen.getAllByRole("button")).toHaveLength(7);
     expect(screen.getByText("melee")).not.toBeNull();

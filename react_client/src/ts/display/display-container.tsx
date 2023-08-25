@@ -3,19 +3,16 @@ import React from "react";
 
 import { processData } from "../utils";
 import { roleClasses } from "../constants";
-import { items, Role } from "../types";
+import { items } from "../types";
 import ItemContainer from "./item-container";
 import { useAPI } from "../api/api";
-
+import { useRole } from "../context/RoleContext";
 interface Props {
-    selectedRole: Role;
     selectedGameStage: number;
 }
 
-const DisplayContainer: React.FC<Props> = ({
-    selectedRole,
-    selectedGameStage,
-}) => {
+const DisplayContainer: React.FC<Props> = ({ selectedGameStage }) => {
+    const { selectedRole } = useRole();
     const { data, isValidating, error } = useAPI<items>(
         `/api/${selectedRole}/${selectedGameStage}/`
     );
@@ -56,32 +53,26 @@ const DisplayContainer: React.FC<Props> = ({
         <div className="m-4">
             <div className="flex flex-row flex-wrap justify-around gap-4 p-4 xs:flex-col">
                 <ItemContainer
-                    selectedRole={selectedRole}
                     itemCategory="weapons"
                     data={processedData.weaponsList}
                 />
                 <ItemContainer
-                    selectedRole={selectedRole}
                     itemCategory="armor"
                     data={processedData.armorList}
                 />
                 <ItemContainer
-                    selectedRole={selectedRole}
                     itemCategory="accessories"
                     data={processedData.accessoriesList}
                 />
                 <ItemContainer
-                    selectedRole={selectedRole}
                     itemCategory="buffs"
                     data={processedData.buffsList}
                 />
                 <ItemContainer
-                    selectedRole={selectedRole}
                     itemCategory="mounts"
                     data={processedData.mountsList}
                 />
                 <ItemContainer
-                    selectedRole={selectedRole}
                     itemCategory="lights"
                     data={processedData.lightsList}
                 />

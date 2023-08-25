@@ -3,10 +3,11 @@ import Slider from "./controller/slider";
 import ControllerContainer from "./controller/controller-container";
 import Header from "./controller/header";
 import DisplayContainer from "./display/display-container";
-import { Role } from "./types";
 import ExtraClassToggle from "./controller/extra-class-toggle";
 import { roleClasses } from "./constants";
 import classNames from "classnames";
+import { RoleProvider } from "./context/RoleProvider";
+import { Role } from "./types";
 
 const Body: React.FC = () => {
     const [selectedGameStage, setSelectedGameStage] = useState(0);
@@ -20,12 +21,6 @@ const Body: React.FC = () => {
         [setSelectedGameStage]
     );
 
-    const updateSelectedRole = useCallback(
-        (role: Role) => {
-            setSelectedRole(role);
-        },
-        [setSelectedRole]
-    );
     const updateDisplayExtraClasses = useCallback(
         (display: boolean) => {
             setDisplayExtraClasses(display);
@@ -34,7 +29,10 @@ const Body: React.FC = () => {
     );
 
     return (
-        <>
+        <RoleProvider
+            setSelectedRole={setSelectedRole}
+            selectedRole={selectedRole}
+        >
             <div
                 className={classNames(
                     "rounded-lg m-4 border-2 border-black bg-opacity-30",
@@ -47,13 +45,10 @@ const Body: React.FC = () => {
                         min={0}
                         max={6}
                         labelText={"Select your game stage"}
-                        selectedRole={selectedRole}
                         onGameStageChange={updateSelectedGameStage}
                     />
                 </div>
                 <ControllerContainer
-                    onRoleChange={updateSelectedRole}
-                    selectedRole={selectedRole}
                     displayExtraClasses={displayExtraClasses}
                 />
                 <ExtraClassToggle
@@ -62,12 +57,9 @@ const Body: React.FC = () => {
                 />
             </div>
             {selectedRole && (
-                <DisplayContainer
-                    selectedRole={selectedRole}
-                    selectedGameStage={selectedGameStage}
-                />
+                <DisplayContainer selectedGameStage={selectedGameStage} />
             )}
-        </>
+        </RoleProvider>
     );
 };
 

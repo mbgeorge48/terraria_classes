@@ -2,20 +2,17 @@ import classNames from "classnames";
 import React from "react";
 
 import { roleClasses } from "../constants";
-import { ItemCategory, items, Role } from "../types";
+import { ItemCategory, items } from "../types";
 import Item from "./item";
+import { useRole } from "../context/RoleContext";
 
 interface Props {
-    selectedRole: Role;
     itemCategory: ItemCategory;
     data?: items;
 }
 
-const ItemContainer: React.FC<Props> = ({
-    selectedRole,
-    itemCategory,
-    data,
-}) => {
+const ItemContainer: React.FC<Props> = ({ itemCategory, data }) => {
+    const { selectedRole } = useRole();
     if (!selectedRole || (data && data.length < 1)) {
         return null;
     }

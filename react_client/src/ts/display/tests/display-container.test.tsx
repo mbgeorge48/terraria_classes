@@ -25,9 +25,7 @@ describe("DisplayContainer", () => {
             mutate: jest.fn(),
             isLoading: true,
         });
-        render(
-            <DisplayContainer selectedRole={"melee"} selectedGameStage={0} />
-        );
+        render(<DisplayContainer selectedGameStage={0} />);
         expect(screen.getByText("Loading…")).not.toBeNull();
     });
 
@@ -39,9 +37,7 @@ describe("DisplayContainer", () => {
             mutate: jest.fn(),
             isLoading: false,
         });
-        render(
-            <DisplayContainer selectedRole={"melee"} selectedGameStage={0} />
-        );
+        render(<DisplayContainer selectedGameStage={0} />);
         expect(screen.getByText("Something Went wrong!")).not.toBeNull();
     });
 
@@ -53,9 +49,7 @@ describe("DisplayContainer", () => {
             mutate: jest.fn(),
             isLoading: false,
         });
-        render(
-            <DisplayContainer selectedRole={"melee"} selectedGameStage={0} />
-        );
+        render(<DisplayContainer selectedGameStage={0} />);
         expect(screen.getByText("Stick")).not.toBeNull();
     });
 });

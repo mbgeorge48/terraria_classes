@@ -3,14 +3,11 @@ import React from "react";
 import Slider from "../slider";
 
 it("should render the game stage slider", () => {
-    const selectedRole = "melee";
-
     render(
         <Slider
             min={0}
             max={1}
             labelText="Slider Label"
-            selectedRole={selectedRole}
             onGameStageChange={jest.fn()}
         />
     );
@@ -29,7 +26,6 @@ it("should call the game stage change function when the slider is updated", () =
             min={0}
             max={6}
             labelText=""
-            selectedRole="summoner"
             onGameStageChange={onGameStageChange}
         />
     );

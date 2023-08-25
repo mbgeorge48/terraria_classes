@@ -1,23 +1,20 @@
 import React, { useCallback } from "react";
 import classNames from "classnames";
 
-import { RoleChangeHandler, Role } from "../types";
+import { Role } from "../types";
 import { roleClasses } from "../constants";
-
+import { useRole } from "../context/RoleContext";
 interface Props {
     title: Role;
-    onRoleChange: RoleChangeHandler;
-    selectedRole: Role;
 }
 
-const ClassButton: React.FC<Props> = ({
-    title,
-    onRoleChange,
-    selectedRole,
-}) => {
+const ClassButton: React.FC<Props> = ({ title }) => {
+    const { selectedRole, setSelectedRole } = useRole();
+
     const handleClick = useCallback(() => {
-        onRoleChange(title);
-    }, [onRoleChange, title]);
+        console.log(title);
+        setSelectedRole(title);
+    }, [setSelectedRole, title]);
     return (
         <button
             onClick={handleClick}

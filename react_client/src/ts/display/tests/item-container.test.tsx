@@ -7,11 +7,7 @@ import ItemContainer from "../item-container";
 
 it("should render an item container when there is a selected role", () => {
     const { container } = render(
-        <ItemContainer
-            selectedRole={"melee"}
-            itemCategory={"weapons"}
-            data={fakeData}
-        />
+        <ItemContainer itemCategory={"weapons"} data={fakeData} />
     );
     expect(container).not.toBeNull();
     expect(screen.getByText("weapons")).not.toBeNull();
