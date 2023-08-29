@@ -3,7 +3,7 @@ import { screen } from "@testing-library/react";
 
 import { render } from "../../__helpers__/render";
 import DisplayContainer from "../display-container";
-import * as api from "../../api/api";
+import * as api from "../../hooks/api/useAPI";
 import { item, items } from "../../types";
 
 const mockItem: item = {
