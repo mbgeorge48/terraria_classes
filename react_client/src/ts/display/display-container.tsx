@@ -5,19 +5,19 @@ import { processData } from "../utils";
 import { roleClasses } from "../constants";
 import { items } from "../types";
 import ItemContainer from "./item-container";
-import { useAPI } from "../api/api";
 import { useRole } from "../context/RoleContext";
+import { useAPI } from "../hooks/api/useAPI";
 interface Props {
     selectedGameStage: number;
 }
 
 const DisplayContainer: React.FC<Props> = ({ selectedGameStage }) => {
     const { selectedRole } = useRole();
-    const { data, isValidating, error } = useAPI<items>(
+    const { data, isValidating, isLoading, error } = useAPI<items>(
         `/api/${selectedRole}/${selectedGameStage}/`
     );
 
-    if (isValidating) {
+    if (isValidating || isLoading) {
         return (
             <div
                 className={classNames(
