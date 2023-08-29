@@ -1,5 +1,4 @@
 import { screen } from "@testing-library/react";
-
 import React from "react";
 import { fakeData } from "../../tests/utils.test";
 import ItemContainer from "../item-container";

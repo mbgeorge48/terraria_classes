@@ -1,5 +1,4 @@
 import { render, RenderOptions } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
 import { RoleProvider } from "../context/RoleContext";
 import React, { ReactElement } from "react";
 
@@ -15,11 +14,9 @@ afterAll(() => {
 
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
     return (
-        <BrowserRouter>
-            <RoleProvider setSelectedRole={jest.fn()} selectedRole={"melee"}>
-                {children}
-            </RoleProvider>
-        </BrowserRouter>
+        <RoleProvider setSelectedRole={jest.fn()} selectedRole={"melee"}>
+            {children}
+        </RoleProvider>
     );
 };
 
