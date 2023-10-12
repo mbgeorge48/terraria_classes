@@ -10,15 +10,8 @@ import { useRole } from "./context/RoleContext";
 
 export function Body() {
     const { selectedRole } = useRole();
-    const [selectedGameStage, setSelectedGameStage] = useState(0);
-    const [displayExtraClasses, setDisplayExtraClasses] = useState(false);
 
-    const updateSelectedGameStage = useCallback(
-        (index: number) => {
-            setSelectedGameStage(index);
-        },
-        [setSelectedGameStage]
-    );
+    const [displayExtraClasses, setDisplayExtraClasses] = useState(false);
 
     const updateDisplayExtraClasses = useCallback(
         (display: boolean) => {
@@ -41,7 +34,6 @@ export function Body() {
                         min={0}
                         max={6}
                         labelText={"Select your game stage"}
-                        onGameStageChange={updateSelectedGameStage}
                     />
                 </div>
                 <ControllerContainer
@@ -52,9 +44,7 @@ export function Body() {
                     onToggle={updateDisplayExtraClasses}
                 />
             </div>
-            {selectedRole && (
-                <DisplayContainer selectedGameStage={selectedGameStage} />
-            )}
+            {selectedRole && <DisplayContainer />}
         </>
     );
 }

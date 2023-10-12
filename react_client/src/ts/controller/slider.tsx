@@ -1,31 +1,28 @@
 import { ChangeEvent, useCallback, useState } from "react";
 import classNames from "classnames";
 import { gameStages, roleClasses } from "../constants";
-import { GameStageChangeHandler } from "../types";
 import { useRole } from "../context/RoleContext";
+import { useGameStage } from "../context/GameStageContext";
 
 interface Props {
     min: number;
     max: number;
     labelText: string;
-    onGameStageChange: GameStageChangeHandler;
 }
 
 export function Slider(props: Props) {
-    const { min, max, labelText, onGameStageChange } = props;
+    const { min, max, labelText } = props;
+    const { setSelectedGameStage } = useGameStage();
     const { selectedRole } = useRole();
     const [inputValue, setInputValue] = useState(0);
     const [gameStageText, setGameStageText] = useState(gameStages[inputValue]);
 
-    const handleInputChange = useCallback(
-        (e: ChangeEvent) => {
-            const newValue = Number((e.target as HTMLInputElement).value);
-            setInputValue(newValue);
-            setGameStageText(gameStages[newValue]);
-            onGameStageChange(newValue);
-        },
-        [onGameStageChange]
-    );
+    const handleInputChange = useCallback((e: ChangeEvent) => {
+        const newValue = Number((e.target as HTMLInputElement).value);
+        setInputValue(newValue);
+        setGameStageText(gameStages[newValue]);
+        setSelectedGameStage(newValue);
+    }, []);
 
     return (
         <div className="flex flex-col justify-center flex-grow mx-12 font-semibold rounded-2xl">
