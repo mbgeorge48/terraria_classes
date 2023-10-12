@@ -1,14 +1,14 @@
-import React, { useCallback, useState } from "react";
-import Slider from "./controller/slider";
-import ControllerContainer from "./controller/controller-container";
-import Header from "./controller/header";
-import DisplayContainer from "./display/display-container";
-import ExtraClassToggle from "./controller/extra-class-toggle";
+import { useCallback, useState } from "react";
+import { Slider } from "./controller/slider";
+import { ControllerContainer } from "./controller/controller-container";
+import { Header } from "./controller/header";
+import { DisplayContainer } from "./display/display-container";
+import { ExtraClassToggle } from "./controller/extra-class-toggle";
 import { roleClasses } from "./constants";
 import classNames from "classnames";
 import { useRole } from "./context/RoleContext";
 
-const Body: React.FC = () => {
+export function Body() {
     const { selectedRole } = useRole();
     const [selectedGameStage, setSelectedGameStage] = useState(0);
     const [displayExtraClasses, setDisplayExtraClasses] = useState(false);
@@ -57,6 +57,4 @@ const Body: React.FC = () => {
             )}
         </>
     );
-};
-
-export default Body;
+}

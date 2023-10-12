@@ -1,12 +1,11 @@
-import React from "react";
-import ClassButton from "./class-button";
+import { ClassButton } from "./class-button";
 import { Role } from "../types";
 
 interface Props {
     displayExtraClasses: boolean;
 }
 
-const ControllerContainer: React.FC<Props> = (props) => {
+export function ControllerContainer(props: Props) {
     const { displayExtraClasses } = props;
     const baseClasses: Role[] = ["melee", "ranged", "magic", "summoner"];
     const extraClasses: Role[] = ["mixed", "tank", "healer"];
@@ -21,6 +20,4 @@ const ControllerContainer: React.FC<Props> = (props) => {
                 ))}
         </div>
     );
-};
-
-export default ControllerContainer;
+}

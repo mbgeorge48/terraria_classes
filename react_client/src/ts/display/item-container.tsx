@@ -1,9 +1,7 @@
 import classNames from "classnames";
-import React from "react";
-
 import { roleClasses } from "../constants";
 import { ItemCategory, items } from "../types";
-import Item from "./item";
+import { Item } from "./item";
 import { useRole } from "../context/RoleContext";
 
 interface Props {
@@ -11,7 +9,8 @@ interface Props {
     data?: items;
 }
 
-const ItemContainer: React.FC<Props> = ({ itemCategory, data }) => {
+export function ItemContainer(props: Props) {
+    const { itemCategory, data } = props;
     const { selectedRole } = useRole();
     if (!selectedRole || (data && data.length < 1)) {
         return null;
@@ -51,6 +50,4 @@ const ItemContainer: React.FC<Props> = ({ itemCategory, data }) => {
             </div>
         </div>
     );
-};
-
-export default ItemContainer;
+}

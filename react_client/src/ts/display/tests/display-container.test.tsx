@@ -1,8 +1,7 @@
-import React from "react";
 import { screen } from "@testing-library/react";
 
 import { render } from "../../__helpers__/render";
-import DisplayContainer from "../display-container";
+import { DisplayContainer } from "../display-container";
 import * as api from "../../hooks/api/useAPI";
 import { item, items } from "../../types";
 

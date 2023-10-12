@@ -1,20 +1,18 @@
 import classNames from "classnames";
-import React from "react";
-
 import { processData } from "../utils";
 import { roleClasses } from "../constants";
 import { items } from "../types";
-import ItemContainer from "./item-container";
+import { ItemContainer } from "./item-container";
 import { useRole } from "../context/RoleContext";
 import { useAPI } from "../hooks/api/useAPI";
 interface Props {
     selectedGameStage: number;
 }
 
-const DisplayContainer: React.FC<Props> = ({ selectedGameStage }) => {
+export function DisplayContainer(props: Props) {
     const { selectedRole } = useRole();
     const { data, isValidating, isLoading, error } = useAPI<items>(
-        `/api/${selectedRole}/${selectedGameStage}/`
+        `/api/${selectedRole}/${props.selectedGameStage}/`
     );
 
     if (isValidating || isLoading) {
@@ -79,6 +77,4 @@ const DisplayContainer: React.FC<Props> = ({ selectedGameStage }) => {
             </div>
         </div>
     );
-};
-
-export default DisplayContainer;
+}

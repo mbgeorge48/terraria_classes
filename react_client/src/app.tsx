@@ -1,13 +1,12 @@
-import classNames from "classnames";
-import React, { useState } from "react";
-
-import Body from "./ts/body";
 import "./css/index.css";
+import classNames from "classnames";
+import { useState } from "react";
+import { Body } from "./ts/body";
 import { CreditPopover } from "./ts/credit-popover";
 import { RoleProvider } from "./ts/context/RoleContext";
 import { Role } from "./ts/types";
 
-const App: React.FC = () => {
+export function App() {
     const [selectedRole, setSelectedRole] = useState<Role>();
     return (
         <RoleProvider
@@ -26,5 +25,4 @@ const App: React.FC = () => {
             </div>
         </RoleProvider>
     );
-};
-export default App;
+}

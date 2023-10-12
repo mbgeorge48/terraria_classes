@@ -1,7 +1,6 @@
 import { screen } from "@testing-library/react";
-import React from "react";
 import { fakeData } from "../../tests/utils.test";
-import ItemContainer from "../item-container";
+import { ItemContainer } from "../item-container";
 import { render } from "../../__helpers__/render";
 
 it("should render an item container when there is a selected role", () => {

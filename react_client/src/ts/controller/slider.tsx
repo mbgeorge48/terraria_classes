@@ -1,6 +1,5 @@
-import React, { ChangeEvent, useCallback, useState } from "react";
+import { ChangeEvent, useCallback, useState } from "react";
 import classNames from "classnames";
-
 import { gameStages, roleClasses } from "../constants";
 import { GameStageChangeHandler } from "../types";
 import { useRole } from "../context/RoleContext";
@@ -12,12 +11,8 @@ interface Props {
     onGameStageChange: GameStageChangeHandler;
 }
 
-const Slider: React.FC<Props> = ({
-    min,
-    max,
-    labelText,
-    onGameStageChange,
-}) => {
+export function Slider(props: Props) {
+    const { min, max, labelText, onGameStageChange } = props;
     const { selectedRole } = useRole();
     const [inputValue, setInputValue] = useState(0);
     const [gameStageText, setGameStageText] = useState(gameStages[inputValue]);
@@ -60,6 +55,4 @@ const Slider: React.FC<Props> = ({
             />
         </div>
     );
-};
-
-export default Slider;
+}

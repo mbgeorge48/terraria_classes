@@ -1,6 +1,5 @@
 import { fireEvent, screen } from "@testing-library/react";
-import React from "react";
-import Slider from "../slider";
+import { Slider } from "../slider";
 import { render } from "../../__helpers__/render";
 
 it("should render the game stage slider", () => {
