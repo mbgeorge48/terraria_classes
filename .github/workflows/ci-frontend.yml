@@ -9,13 +9,13 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - name: cd into FE dir
-              run: cd react_client
             - name: Node Setup
               uses: actions/setup-node@v3
               with:
                 node-version-file: ".nvmrc"
                 cache: yarn
+            - name: cd into FE dir
+              run: cd react_client
             - name: Yarn Install
               run: yarn install --frozen-lockfile
             - name: FE linting
