@@ -1,10 +1,8 @@
-name: build&test
+name: "CI: Test Frontend"
 on:
-    push:
-        branches: ["main"]
-    pull_request:
-        branches: ["main"]
-    workflow_dispatch:
+  pull_request:
+    paths:
+      - "react_client/**"
 
 jobs:
     test:
@@ -24,13 +22,3 @@ jobs:
               run: yarn lint --max-warnings=0
             - name: FE tests
               run: yarn test --maxWorkers=2
-
-            - name: cd into BE dir
-              run: cd flask_server
-            - name: Python Setup
-              uses: actions/setup-python@v4.2.0
-            - name: BE linting
-              run: |
-                python -m pip install black isort
-                python -m black src --check
-                python -m isort --check --diff src
