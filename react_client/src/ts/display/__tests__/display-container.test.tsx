@@ -1,8 +1,7 @@
 import { screen } from "@testing-library/react";
-
 import { render } from "../../__helpers__/render";
 import { DisplayContainer } from "../display-container";
-import * as api from "../../hooks/api/useAPI";
+import * as request from "../../api/request";
 import { item, items } from "../../types";
 
 const mockItem: item = {
@@ -18,38 +17,38 @@ const mockItems: items = [mockItem];
 
 describe("DisplayContainer", () => {
     it("API is loading", async () => {
-        jest.spyOn(api, "useAPI").mockReturnValue({
+        jest.spyOn(request, "useRequest").mockReturnValue({
             isValidating: true,
             data: undefined,
             error: undefined,
             mutate: jest.fn(),
             isLoading: true,
         });
-        render(<DisplayContainer selectedGameStage={0} />);
+        render(<DisplayContainer />);
         expect(screen.getByText("Loading…")).not.toBeNull();
     });
 
     it("API has failed", async () => {
-        jest.spyOn(api, "useAPI").mockReturnValue({
+        jest.spyOn(request, "useRequest").mockReturnValue({
             isValidating: false,
             data: undefined,
             error: { name: "test name", message: "test message" },
             mutate: jest.fn(),
             isLoading: false,
         });
-        render(<DisplayContainer selectedGameStage={0} />);
+        render(<DisplayContainer />);
         expect(screen.getByText("Something Went wrong!")).not.toBeNull();
     });
 
     it("API has returned some data", async () => {
-        jest.spyOn(api, "useAPI").mockReturnValue({
+        jest.spyOn(request, "useRequest").mockReturnValue({
             isValidating: false,
             data: mockItems,
             error: undefined,
             mutate: jest.fn(),
             isLoading: false,
         });
-        render(<DisplayContainer selectedGameStage={0} />);
+        render(<DisplayContainer />);
         expect(screen.getByText("Stick")).not.toBeNull();
     });
 });

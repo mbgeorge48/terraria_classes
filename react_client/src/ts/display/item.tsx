@@ -22,7 +22,7 @@ export function Item(props: Props) {
         >
             <img
                 src={props.item.imgPath}
-                alt="item"
+                alt=""
                 className="object-contain w-10 h-10"
             />
             <p className="text-lg">{props.item.name}</p>

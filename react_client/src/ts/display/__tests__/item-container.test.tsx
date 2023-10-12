@@ -1,5 +1,5 @@
 import { screen } from "@testing-library/react";
-import { fakeData } from "../../tests/utils.test";
+import { fakeData } from "../../__tests__/utils.test";
 import { ItemContainer } from "../item-container";
 import { render } from "../../__helpers__/render";
 
