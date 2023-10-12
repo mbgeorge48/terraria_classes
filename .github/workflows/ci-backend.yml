@@ -11,10 +11,8 @@ jobs:
             - uses: actions/checkout@v4
             - name: Python Setup
               uses: actions/setup-python@v4.2.0
-            - name: cd into BE dir
-              run: cd flask_server
             - name: BE linting
               run: |
                 python -m pip install black isort
-                python -m black src --check
-                python -m isort --check --diff src
+                python -m black flask_server/src --check
+                python -m isort --check --diff flask_server/src
