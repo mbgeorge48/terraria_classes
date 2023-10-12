@@ -41,7 +41,7 @@ const Slider: React.FC<Props> = ({
                 >
                     {labelText}
                 </label>
-                <p className="text-2xl">{gameStageText}</p>
+                <h2 className="text-2xl">{gameStageText}</h2>
             </div>
             <input
                 type="range"
