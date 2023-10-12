@@ -16,20 +16,20 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v2
-              with:
-                  node-version: ${{ matrix.node-version }}
+                uses: actions/setup-node@v2
+                with:
+                    node-version: ${{ matrix.node-version }}
             - name: build and test
-              run: |
-                  cd react_client
-                  yarn
-                  yarn run build --if-present
-                  yarn run tests
+                run: |
+                    cd react_client
+                    yarn install
+                yarn lint --max-warnings=0
+                yarn test --maxWorkers=2 --cacheDirectory .cache/jest
             - name: Setup Python
-              uses: actions/setup-python@v4.2.0
+                uses: actions/setup-python@v4.2.0
             - name: python formatting
-              run: |
-                  cd flask_server
-                  python -m pip install black isort
-                  python -m black src --check
-                  python -m isort --check --diff src
+                run: |
+                    cd flask_server
+                    python -m pip install black isort
+                    python -m black src --check
+                    python -m isort --check --diff src
