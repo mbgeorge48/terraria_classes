@@ -1,8 +1,7 @@
 name: "CI: Test Backend"
 on:
     pull_request:
-        paths:
-            - "flask_server/**"
+    workflow_dispatch:
 
 jobs:
     test:
