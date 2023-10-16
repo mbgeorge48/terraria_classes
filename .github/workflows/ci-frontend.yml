@@ -1,8 +1,7 @@
 name: "CI: Test Frontend"
 on:
     pull_request:
-        paths:
-            - "react_client/**"
+    workflow_dispatch:
 
 jobs:
     test:
