@@ -6,12 +6,11 @@ on:
 jobs:
     test:
         runs-on: ubuntu-latest
+        defaults:
+          run: working-directory: react_client
         steps:
             - name: Checkout Code
               uses: actions/checkout@v4
-
-            - name: Change Directory
-              run: cd react_client
 
             - name: Node Setup
               uses: actions/setup-node@v3
