@@ -8,13 +8,20 @@ module.exports = {
         "react-app",
         "react-app/jest",
     ],
-    ignorePatterns: ["dist", ".eslintrc.cjs"],
+    ignorePatterns: ["dist", ".eslintrc.cjs", "jest.config.ts"],
     parser: "@typescript-eslint/parser",
-    plugins: ["react-refresh"],
+    plugins: ["react"],
+    extends: ["eslint:recommended", "plugin:react/recommended"],
     rules: {
-        "react-refresh/only-export-components": [
-            "warn",
-            { allowConstantExport: true },
-        ],
+        "react/react-in-jsx-scope": 0,
+        "react/jsx-uses-react": 0,
     },
+    overrides: [
+        {
+            files: ["**/__helpers__/**", "**/__tests__/**"],
+            env: {
+                jest: true,
+            },
+        },
+    ],
 };

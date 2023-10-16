@@ -1,5 +1,5 @@
-export type RoleChangeHandler = (role: Role) => void;
-export type GameStageChangeHandler = (index: number) => void;
+// Dodgy rule
+// eslint-disable-next-line no-unused-vars
 export type ExtraClassToggleHandler = (display: boolean) => void;
 
 export type ItemCategory =

@@ -1,7 +1,5 @@
 import { Popover } from "@headlessui/react";
 
-import React from "react";
-
 export function CreditPopover() {
     return (
         <Popover className="relative">
@@ -32,12 +30,6 @@ export function CreditPopover() {
                                 />
                             </svg>
                         </div>
-                        {/* <ChevronUpIcon
-                        open={open}
-                            className={`w-5 h-5 self-center ${
-                                open && "rotate-180 transform"
-                            }`}
-                        /> */}
                     </Popover.Button>
                     <Popover.Panel
                         className={`absolute z-10 -top-16 py-2 px-4 border-2 border-gray-500 bg-white flex flex-col

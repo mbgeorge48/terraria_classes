@@ -1,7 +1,6 @@
 import classNames from "classnames";
-import React, { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { roleClasses } from "../constants";
-
 import { ExtraClassToggleHandler, Role } from "../types";
 
 interface Props {
@@ -10,11 +9,8 @@ interface Props {
     onToggle: ExtraClassToggleHandler;
 }
 
-const ExtraClassToggle: React.FC<Props> = ({
-    selectedRole,
-    onToggle,
-    initialValue = false,
-}) => {
+export function ExtraClassToggle(props: Props) {
+    const { selectedRole, onToggle, initialValue = false } = props;
     const [checkValue, setCheckValue] = useState(initialValue);
 
     const handleToggle = useCallback(() => {
@@ -39,6 +35,4 @@ const ExtraClassToggle: React.FC<Props> = ({
             />
         </div>
     );
-};
-
-export default ExtraClassToggle;
+}

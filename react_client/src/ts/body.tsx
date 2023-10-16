@@ -1,24 +1,17 @@
-import React, { useCallback, useState } from "react";
-import Slider from "./controller/slider";
-import ControllerContainer from "./controller/controller-container";
-import Header from "./controller/header";
-import DisplayContainer from "./display/display-container";
-import ExtraClassToggle from "./controller/extra-class-toggle";
+import { useCallback, useState } from "react";
+import { Slider } from "./controller/slider";
+import { ControllerContainer } from "./controller/controller-container";
+import { Header } from "./controller/header";
+import { DisplayContainer } from "./display/display-container";
+import { ExtraClassToggle } from "./controller/extra-class-toggle";
 import { roleClasses } from "./constants";
 import classNames from "classnames";
 import { useRole } from "./context/RoleContext";
 
-const Body: React.FC = () => {
+export function Body() {
     const { selectedRole } = useRole();
-    const [selectedGameStage, setSelectedGameStage] = useState(0);
-    const [displayExtraClasses, setDisplayExtraClasses] = useState(false);
 
-    const updateSelectedGameStage = useCallback(
-        (index: number) => {
-            setSelectedGameStage(index);
-        },
-        [setSelectedGameStage]
-    );
+    const [displayExtraClasses, setDisplayExtraClasses] = useState(false);
 
     const updateDisplayExtraClasses = useCallback(
         (display: boolean) => {
@@ -41,7 +34,6 @@ const Body: React.FC = () => {
                         min={0}
                         max={6}
                         labelText={"Select your game stage"}
-                        onGameStageChange={updateSelectedGameStage}
                     />
                 </div>
                 <ControllerContainer
@@ -52,11 +44,7 @@ const Body: React.FC = () => {
                     onToggle={updateDisplayExtraClasses}
                 />
             </div>
-            {selectedRole && (
-                <DisplayContainer selectedGameStage={selectedGameStage} />
-            )}
+            {selectedRole && <DisplayContainer />}
         </>
     );
-};
-
-export default Body;
+}

@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, createContext, useContext } from "react";
+import { PropsWithChildren, createContext, useContext } from "react";
 
 export type bgOptions =
     | "bg-1"
@@ -11,6 +11,7 @@ export type bgOptions =
 
 interface BackgroundContextType {
     selectedBackground: bgOptions;
+    // eslint-disable-next-line no-unused-vars
     setSelectedBackground: (value: bgOptions) => void;
 }
 

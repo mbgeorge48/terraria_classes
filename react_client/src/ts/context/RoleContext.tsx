@@ -1,9 +1,9 @@
 import { Role } from "../types";
-
-import React, { PropsWithChildren, createContext, useContext } from "react";
+import { PropsWithChildren, createContext, useContext } from "react";
 
 interface RoleContextType {
     selectedRole: Role;
+    // eslint-disable-next-line no-unused-vars
     setSelectedRole: (role: Role) => void;
 }
 

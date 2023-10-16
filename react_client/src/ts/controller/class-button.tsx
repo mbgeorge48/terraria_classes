@@ -1,6 +1,5 @@
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import classNames from "classnames";
-
 import { Role } from "../types";
 import { roleClasses } from "../constants";
 import { useRole } from "../context/RoleContext";
@@ -8,7 +7,8 @@ interface Props {
     title: Role;
 }
 
-const ClassButton: React.FC<Props> = ({ title }) => {
+export function ClassButton(props: Props) {
+    const { title } = props;
     const { selectedRole, setSelectedRole } = useRole();
 
     const handleClick = useCallback(() => {
@@ -32,6 +32,4 @@ const ClassButton: React.FC<Props> = ({ title }) => {
             {title}
         </button>
     );
-};
-
-export default ClassButton;
+}

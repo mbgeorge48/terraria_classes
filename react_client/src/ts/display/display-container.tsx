@@ -1,23 +1,20 @@
 import classNames from "classnames";
-import React from "react";
-
 import { processData } from "../utils";
 import { roleClasses } from "../constants";
-import { items } from "../types";
-import ItemContainer from "./item-container";
+import { ItemContainer } from "./item-container";
 import { useRole } from "../context/RoleContext";
-import { useAPI } from "../hooks/api/useAPI";
-interface Props {
-    selectedGameStage: number;
-}
+import { useRequest } from "../api/request";
+import { useGameStage } from "../context/GameStageContext";
 
-const DisplayContainer: React.FC<Props> = ({ selectedGameStage }) => {
+export function DisplayContainer() {
     const { selectedRole } = useRole();
-    const { data, isValidating, isLoading, error } = useAPI<items>(
-        `/api/${selectedRole}/${selectedGameStage}/`
+    const { selectedGameStage } = useGameStage();
+
+    const { data, isLoading, error } = useRequest(
+        `api/${selectedRole}/${selectedGameStage}/`
     );
 
-    if (isValidating || isLoading) {
+    if (isLoading) {
         return (
             <div
                 className={classNames(
@@ -79,6 +76,4 @@ const DisplayContainer: React.FC<Props> = ({ selectedGameStage }) => {
             </div>
         </div>
     );
-};
-
-export default DisplayContainer;
+}

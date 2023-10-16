@@ -2,7 +2,8 @@
 
 This is a single page app that helps you build your character to fit into a certain class
 
-[![Build & Test](https://github.com/mbgeorge48/terraria_classes/actions/workflows/build_and_test.yml/badge.svg)](https://github.com/mbgeorge48/terraria_classes/actions/workflows/build_and_test.yml)
+[![Python CI](https://github.com/mbgeorge48/terraria_classes/actions/workflows/ci-backend.yml/badge.svg)](https://github.com/mbgeorge48/terraria_classes/actions/workflows/ci-backend.yml)
+[![React CI](https://github.com/mbgeorge48/terraria_classes/actions/workflows/ci-frontend.yml/badge.svg)](https://github.com/mbgeorge48/terraria_classes/actions/workflows/ci-frontend.yml)
 
 ## Roles available
 
@@ -23,7 +24,20 @@ Mixed is generally an early game exclusive, while Tank and Healer are late game 
 
 ### Setup
 
-This was created using the `create-react-app` script
+This was created using the `create-react-app` script, but then I've since migrated to `vite`
+
+To start the local server you need to make sure yarn is installed
+
+```shell
+npm install --global yarn
+```
+
+Then run
+
+```shell
+yarn install
+yarn dev
+```
 
 A `JSON` file is required to fetch all the data required for the app. The file should be saved into `src/data/all-items.json` and have a structure like this:
 
@@ -66,7 +80,7 @@ _The setup for this script isn't strict so feel free to setup the way you normal
 
 1. Create your virtual env
 
-```
+```shell
 python3 -m venv env
 ```
 
@@ -76,13 +90,13 @@ python3 -m venv env
 
 2. Install any requirements
 
-```
+```shell
 pip install -r requirements.txt
 ```
 
 3. Run the script
 
-```
+```shell
 python src/game-wiki-scraper.py
 ```
 
@@ -159,8 +173,15 @@ Copy the setup steps from the 'Terraria Game Wiki Scraper' section
 
 The config for the Flask App lives in `.flaskenv` so once you've installed all the modules simply run:
 
-```
+```shell
 flask run
+```
+
+Or if you're using Gunicorn...
+
+```shell
+cd src
+gunicorn --bind 0.0.0.0:5000 wsgi:app
 ```
 
 #### Usage
@@ -185,7 +206,7 @@ There are 3 endpoints available
 
 To make it easier I convert the game stages into numbers, the mapping goes like this:
 
-```
+```yaml
 Pre-Bosses: 0
 Pre-Hardmode: 1
 Pre-Mech Bosses: 2
