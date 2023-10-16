@@ -1,4 +1,3 @@
-import { screen } from "@testing-library/react";
 import { render } from "../../__helpers__/render";
 import { DisplayContainer } from "../display-container";
 import * as request from "../../api/request";
@@ -24,8 +23,8 @@ describe("DisplayContainer", () => {
             mutate: jest.fn(),
             isLoading: true,
         });
-        render(<DisplayContainer />);
-        expect(screen.getByText("Loading…")).not.toBeNull();
+        const subject = render(<DisplayContainer />);
+        expect(subject.getByText("Loading…")).not.toBeNull();
     });
 
     it("API has failed", async () => {
@@ -36,8 +35,8 @@ describe("DisplayContainer", () => {
             mutate: jest.fn(),
             isLoading: false,
         });
-        render(<DisplayContainer />);
-        expect(screen.getByText("Something Went wrong!")).not.toBeNull();
+        const subject = render(<DisplayContainer />);
+        expect(subject.getByText("Something Went wrong!")).not.toBeNull();
     });
 
     it("API has returned some data", async () => {
@@ -48,7 +47,7 @@ describe("DisplayContainer", () => {
             mutate: jest.fn(),
             isLoading: false,
         });
-        render(<DisplayContainer />);
-        expect(screen.getByText("Stick")).not.toBeNull();
+        const subject = render(<DisplayContainer />);
+        expect(subject.getByText("Stick")).not.toBeNull();
     });
 });

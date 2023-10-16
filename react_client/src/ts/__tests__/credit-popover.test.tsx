@@ -1,12 +1,12 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import { CreditPopover } from "../credit-popover";
 
 it("should render the credits component", () => {
-    render(<CreditPopover />);
+    const subject = render(<CreditPopover />);
 
-    expect(screen.getByText("Credits")).not.toBeNull();
-    fireEvent.click(screen.getByRole("button"));
+    expect(subject.getByText("Credits")).not.toBeNull();
+    fireEvent.click(subject.getByRole("button"));
     expect(
-        screen.getByText("Designed and created by me, Matt G")
+        subject.getByText("Designed and created by me, Matt G")
     ).not.toBeNull();
 });
