@@ -11,6 +11,7 @@ export type bgOptions =
 
 interface BackgroundContextType {
     selectedBackground: bgOptions;
+    // eslint-disable-next-line no-unused-vars
     setSelectedBackground: (value: bgOptions) => void;
 }
 

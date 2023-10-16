@@ -2,6 +2,7 @@ import { PropsWithChildren, createContext, useContext } from "react";
 
 interface GameStageContextType {
     selectedGameStage: number;
+    // eslint-disable-next-line no-unused-vars
     setSelectedGameStage: (stage: number) => void;
 }
 
