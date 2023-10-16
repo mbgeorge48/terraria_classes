@@ -1,8 +1,8 @@
 name: "CI: Test Backend"
 on:
-  pull_request:
-    paths:
-      - "flask_server/**"
+    pull_request:
+        paths:
+            - "flask_server/**"
 
 jobs:
     test:
@@ -13,6 +13,6 @@ jobs:
               uses: actions/setup-python@v4.2.0
             - name: BE linting
               run: |
-                python -m pip install black isort
-                python -m black flask_server/src --check
-                python -m isort --check --diff flask_server/src
+                  python -m pip install black isort
+                  python -m black flask_server/src --check
+                  python -m isort --check --diff flask_server/src

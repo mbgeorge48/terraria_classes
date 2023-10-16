@@ -1,8 +1,8 @@
 name: "CI: Test Frontend"
 on:
-  pull_request:
-    paths:
-      - "react_client/**"
+    pull_request:
+        paths:
+            - "react_client/**"
 
 jobs:
     test:
@@ -10,12 +10,13 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             - name: Node Setup
-              uses: actions/setup-node@v3
-              with:
-                node-version-file: ".nvmrc"
-                cache: yarn
-            - name: cd into FE dir
+            - name: Change directory
               run: cd react_client
+              uses: actions/setup-node@v3
+              run: cd react_dev
+              with:
+                  node-version-file: ".nvmrc"
+                  cache: yarn
             - name: Yarn Install
               run: yarn install --frozen-lockfile
             - name: FE linting
