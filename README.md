@@ -2,7 +2,8 @@
 
 This is a single page app that helps you build your character to fit into a certain class
 
-[![Build & Test](https://github.com/mbgeorge48/terraria_classes/actions/workflows/build_and_test.yml/badge.svg)](https://github.com/mbgeorge48/terraria_classes/actions/workflows/build_and_test.yml)
+[![Python CI](https://github.com/mbgeorge48/terraria_classes/actions/workflows/ci-backend.yml/badge.svg)](https://github.com/mbgeorge48/terraria_classes/actions/workflows/ci-backend.yml)
+[![React CI](https://github.com/mbgeorge48/terraria_classes/actions/workflows/ci-frontend.yml/badge.svg)](https://github.com/mbgeorge48/terraria_classes/actions/workflows/ci-frontend.yml)
 
 ## Roles available
 
