@@ -8,9 +8,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - name: Node Setup
             - name: Change directory
               run: cd react_client
+            - name: Node Setup
               uses: actions/setup-node@v3
               run: cd react_dev
               with:
