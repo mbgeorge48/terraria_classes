@@ -228,4 +228,18 @@ Endgame: 6
 
 ---
 
+## Running with Docker
+
+### Flask
+
+cd flask_server
+docker build --tag terraria-flask .
+docker run -d -p 5000:5000 terraria-flask
+
+### React
+
+cd react_client
+docker build --tag terraria-react .
+docker run -d -p 5173:5173 terraria-react
+
 _I'm not the owner of any of the Terraira resources, this was made as a learning expirence and for love of the game_
