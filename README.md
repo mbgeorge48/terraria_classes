@@ -36,7 +36,7 @@ Then run
 
 ```shell
 yarn install
-yarn dev
+yarn start
 ```
 
 A `JSON` file is required to fetch all the data required for the app. The file should be saved into `src/data/all-items.json` and have a structure like this:
@@ -227,5 +227,19 @@ Endgame: 6
 -   Lights
 
 ---
+
+## Running with Docker
+
+### Flask
+
+cd flask_server
+docker build --tag terraria-flask .
+docker run -d -p 5000:5000 terraria-flask
+
+### React
+
+cd react_client
+docker build --tag terraria-react .
+docker run -d -p 5173:5173 terraria-react
 
 _I'm not the owner of any of the Terraira resources, this was made as a learning expirence and for love of the game_
