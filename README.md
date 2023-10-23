@@ -36,7 +36,7 @@ Then run
 
 ```shell
 yarn install
-yarn dev
+yarn start
 ```
 
 A `JSON` file is required to fetch all the data required for the app. The file should be saved into `src/data/all-items.json` and have a structure like this:
