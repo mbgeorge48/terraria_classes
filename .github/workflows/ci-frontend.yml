@@ -16,7 +16,7 @@ jobs:
             - name: Node Setup
               uses: actions/setup-node@v3
               with:
-                  node-version-file: ".nvmrc"
+                  node-version-file: "react_client/.nvmrc"
 
             - name: Yarn Install
               run: yarn install --frozen-lockfile
