@@ -169,20 +169,30 @@ Creating a Flask API endpoint wasn't necessary for this projects however this ap
 
 #### Setup
 
-Copy the setup steps from the 'Terraria Game Wiki Scraper' section
+Copy the setup steps from the 'Terraria Game Wiki Scraper' section.
+There are a few ways to run the app, if you just want to run app as if it was a live site you should build Dockerfile.
 
-The config for the Flask App lives in `.flaskenv` so once you've installed all the modules simply run:
-
-```shell
-flask run
+```sh
+docker build . --tag terraria_classes
+docker run -p 5000:5000  terraria_classes
 ```
 
-Or if you're using Gunicorn...
+If you do it that way when you make changes to the front end code they won't be reflected until you run `yarn build`.
 
-```shell
-cd src
-gunicorn --bind 0.0.0.0:5000 wsgi:app
+The next way is to run the flask server and the react app along side each other, in one terminal run:
+
+```sh
+gunicorn --bind 0.0.0.0:5000 api:app
 ```
+
+(assuming you've installed the modules in the requirments file)
+Then in another terminal from inside the react_client folder run:
+
+```sh
+yarn start
+```
+
+Finally you can run `docker-compose up` to run the server
 
 #### Usage
 

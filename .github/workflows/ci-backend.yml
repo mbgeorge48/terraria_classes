@@ -13,5 +13,5 @@ jobs:
             - name: BE linting
               run: |
                   python -m pip install black isort
-                  python -m black flask_server/src --check
-                  python -m isort --check --diff flask_server/src
+                  python -m black *.py --check
+                  python -m isort --check --diff *.py
