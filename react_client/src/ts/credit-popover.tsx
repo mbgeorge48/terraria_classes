@@ -35,7 +35,7 @@ export function CreditPopover() {
                         className={`absolute z-10 -top-16 py-2 px-4 border-2 border-gray-500 bg-white flex flex-col
             ${open ? "rounded-t-xl rounded-r-xl" : undefined}`}
                     >
-                        <span>Designed and created by me, Matt G</span>
+                        <span>Designed and created by me, MG</span>
                         <div>
                             <span>Checkout the </span>
                             <a

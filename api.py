@@ -1,19 +1,37 @@
 import json
 import os
-from pathlib import Path
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_from_directory
 from flask_cors import CORS
 from markupsafe import escape
 
 app = Flask(__name__)
 CORS(app)
 
+react_folder = "react_client"
+base_directory = os.getcwd() + f"/{react_folder}/dist/"
 
-data_path = Path(os.path.join("data", "all-items.json"))
+data_path = os.getcwd() + "/" + os.path.join("data", "all-items.json")
 f = open(os.path.normpath(data_path))
 data = json.load(f)
 f.close()
+
+
+@app.route("/")
+def index():
+    print(base_directory)
+    return send_from_directory(directory=base_directory, path="index.html")
+
+
+@app.route("/<folder>/<file>")
+def assets(folder, file):
+    path = folder + "/" + file
+    return send_from_directory(directory=base_directory, path=path)
+
+
+@app.route("/<file>")
+def files(file):
+    return send_from_directory(directory=base_directory, path=file)
 
 
 @app.route("/api/docs/")

@@ -6,7 +6,5 @@ it("should render the credits component", () => {
 
     expect(subject.getByText("Credits")).not.toBeNull();
     fireEvent.click(subject.getByRole("button"));
-    expect(
-        subject.getByText("Designed and created by me, Matt G")
-    ).not.toBeNull();
+    expect(subject.getByText("Designed and created by me, MG")).not.toBeNull();
 });
