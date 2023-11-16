@@ -253,3 +253,10 @@ docker build --tag terraria-react .
 docker run -d -p 5173:5173 terraria-react
 
 _I'm not the owner of any of the Terraira resources, this was made as a learning expirence and for love of the game_
+
+# TODOs
+
+Finish testing the scripts and ensure everything still works
+Call api.py from init
+Test out the game wiki scraper
+Test the docker containers and ensure they all still work

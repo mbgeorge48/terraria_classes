@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+export PATH="env/bin:$PATH"
+
+echo "==> Checking code style"
+flake8 project
+black project/ --check
+isort --check --diff project

@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -e
+set -m  # Enable job control
+
+cd "$(dirname "$0")/.."
+
+cleanup() {
+    echo "Cleaning up..."
+    # Kill the entire process groups
+    kill -- -$server_pid
+    kill -- -$frontend_watcher_pid
+    exit
+}
+
+trap cleanup EXIT
+
+scripts/flask run --debug &
+server_pid=$!
+
+cd react_client && yarn watch &
+frontend_watcher_pid=$!
+
+wait
