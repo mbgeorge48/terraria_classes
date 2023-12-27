@@ -12,7 +12,7 @@ class GameWikiScraper:
         self.square_bracket_trim = re.compile(r"\[.*?\]")
 
         self.base_url = "https://terraria.fandom.com"
-        self.all_items = list()
+        self.all_items = []
 
         self.fetchWebPage()
         self.filterData()
