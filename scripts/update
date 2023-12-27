@@ -1,25 +1,25 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
 cd "$(dirname "$0")/.."
 
-
-if ! [ -d ./env/ ]; then
-    echo "==> Error: virtualenv ./env/ does not exist. Run scripts/setup first"; exit 1
+if ! [ -d ./venv/ ]; then
+    echo "==> Error: virtualenv ./venv/ does not exist. Run scripts/setup first"
+    exit 1
 fi
 
-
 TARGET_PYTHON_VERSION=$(cat .python-version)
-CURRENT_PYTHON_VERSION=$(env/bin/python --version | cut -d' ' -f 2)
+CURRENT_PYTHON_VERSION=$(.venv/bin/python --version | cut -d' ' -f 2)
 
 if ! [ "$TARGET_PYTHON_VERSION" = "$CURRENT_PYTHON_VERSION" ]; then
-    echo "==> Error: found Python $CURRENT_PYTHON_VERSION in ./env/bin/python which does not match $TARGET_PYTHON_VERSION in .python-version. Run scripts/setup to rebuild environment"; exit 1
+    echo "==> Error: found Python $CURRENT_PYTHON_VERSION in ./.venv/bin/python which does not match $TARGET_PYTHON_VERSION in .python-version. Run scripts/setup to rebuild environment"
+    exit 1
     exit 0
 fi
 
 echo "==> Updating Python dependencies"
-env/bin/pip install --quiet -r requirements.txt
+.venv/bin/pip install --quiet -r requirements.txt
 
 echo "==> Installing frontend dependencies"
-cd react-frontend && yarn
+cd react_client && yarn

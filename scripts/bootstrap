@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # script/bootstrap: Resolve all dependencies that the application requires to
 #                   run.
@@ -8,25 +8,23 @@ set -e
 cd "$(dirname "$0")/.."
 
 if ! [ -f ".python-version" ]; then
-    echo "Error: .python-version not found"; exit 1;
-fi
-
-if ! [ "$(uname -s)" = "Darwin" ]; then
-    echo "Error: script currently only supports macOS"; exit 1;
+    echo "Error: .python-version not found"
+    exit 1
 fi
 
 if ! [ -x "$(command -v node)" ]; then
-    echo "Error: NodeJS not installed, use "brew install node" to install it."; exit 1;
+    echo "Error: NodeJS not installed, use "brew install node" to install it."
+    exit 1
 fi
 
 if ! [ -x "$(command -v corepack)" ]; then
-    echo "Error: Corepack not installed, use "brew install corepack" to install it."; exit 1;
+    echo "Error: Corepack not installed, use "brew install corepack" to install it."
+    exit 1
 fi
 
 PYTHON_VERSION=$(cat .python-version)
 WORKING_DIR=~/.python-build-standalone
 PYTHON_BUILD_STANDALONE_RELEASES_URL=https://api.github.com/repos/indygreg/python-build-standalone/releases
-
 
 if [ -d ./.venv/ ]; then
     echo "==> Virtualenv ./.venv/ already exists, deleting"
@@ -37,7 +35,7 @@ echo "==> Target Python version: $PYTHON_VERSION"
 mkdir -p $WORKING_DIR
 
 echo "==> Downloading python-build-standalone releases file"
-curl -s $PYTHON_BUILD_STANDALONE_RELEASES_URL > $WORKING_DIR/temp-releases.json
+curl -s $PYTHON_BUILD_STANDALONE_RELEASES_URL >$WORKING_DIR/temp-releases.json
 if ! [ -s $WORKING_DIR/temp-releases.json ]; then echo "Error: failed to fetch releases!" && exit 1; fi
 
 RELEASE=$(cat $WORKING_DIR/temp-releases.json | jq -r ".[] | select(.assets[].name | contains(\"$PYTHON_VERSION\")) | .html_url" | sort | uniq | tail -1)
@@ -52,13 +50,12 @@ echo "==> Downloading Python build"
 curl -L -s $DOWNLOAD_URL -o $WORKING_DIR/temp-download.tar.zst
 
 zstd --quiet -d $WORKING_DIR/temp-download.tar.zst -o $WORKING_DIR/temp-download.tar
-tar -xf  $WORKING_DIR/temp-download.tar -C $WORKING_DIR/$PYTHON_VERSION
+tar -xf $WORKING_DIR/temp-download.tar -C $WORKING_DIR/$PYTHON_VERSION
 
 echo "==> Installed new Python in $WORKING_DIR/$PYTHON_VERSION/"
 
 echo "==> Creating new virtualenv in ./venv/"
 $WORKING_DIR/$PYTHON_VERSION/python/install/bin/python3 -m venv .venv
-
 
 rm -r $WORKING_DIR/temp-*
 
@@ -73,5 +70,3 @@ corepack enable
 
 echo "==> Installing frontend dependencies"
 cd react_client && yarn && cd -
-
-

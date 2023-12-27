@@ -6,5 +6,5 @@ cd "$(dirname "$0")/.."
 
 export PATH=".venv/bin:$PATH"
 
-black flask_server
-isort flask_server
+gunicorn --bind 0.0.0.0:5000 api:app
+echo "this probably doesn't work"
