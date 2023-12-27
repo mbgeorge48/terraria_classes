@@ -87,7 +87,3 @@ def deduplicate_response(response):
         item_names.append(data["name"])
         items.append(data)
     return items
-
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0")
