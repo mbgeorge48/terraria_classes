@@ -186,7 +186,7 @@ gunicorn --bind 0.0.0.0:5000 api:app
 ```
 
 (assuming you've installed the modules in the requirments file)
-Then in another terminal from inside the react_client folder run:
+Then in another terminal from inside the react-client folder run:
 
 ```sh
 yarn start
@@ -248,7 +248,7 @@ docker run -d -p 5000:5000 terraria-flask
 
 ### React
 
-cd react_client
+cd react-client
 docker build --tag terraria-react .
 docker run -d -p 5173:5173 terraria-react
 

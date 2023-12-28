@@ -69,4 +69,4 @@ echo "==> Enabling corepack"
 corepack enable
 
 echo "==> Installing frontend dependencies"
-cd react_client && yarn && cd -
+cd react-client && yarn && cd -

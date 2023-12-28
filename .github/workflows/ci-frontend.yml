@@ -1,32 +1,32 @@
 name: "CI: Test Frontend"
 on:
-    pull_request:
-    workflow_dispatch:
+  pull_request:
+  workflow_dispatch:
 
 concurrency:
-    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-    cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
-    test:
-        runs-on: ubuntu-latest
-        defaults:
-            run:
-                working-directory: react_client
-        steps:
-            - name: Checkout Code
-              uses: actions/checkout@v4
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: react-client
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-            - name: Node Setup
-              uses: actions/setup-node@v3
-              with:
-                  node-version-file: ".nvmrc"
+      - name: Node Setup
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
 
-            - name: Yarn Install
-              run: yarn install --frozen-lockfile
+      - name: Yarn Install
+        run: yarn install --frozen-lockfile
 
-            - name: FE linting
-              run: yarn lint --max-warnings=0
+      - name: FE linting
+        run: yarn lint --max-warnings=0
 
-            - name: FE tests
-              run: yarn test --maxWorkers=2
+      - name: FE tests
+        run: yarn test --maxWorkers=2
