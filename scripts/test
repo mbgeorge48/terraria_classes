@@ -10,3 +10,7 @@ echo "==> Checking code style"
 flake8 flask-server
 black flask-server/ --check
 isort --check --diff flask-server
+
+echo "==> Running frontend tests"
+cd react-client
+yarn test
