@@ -9,8 +9,7 @@
         "watch": "vite build --watch",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
-        "test": "jest",
-        "watch": "vite build --watch"
+        "test": "jest"
     },
     "dependencies": {
         "@headlessui/react": "^1.7.17",
