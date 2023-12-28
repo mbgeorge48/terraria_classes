@@ -242,7 +242,7 @@ Endgame: 6
 
 ### Flask
 
-cd flask_server
+cd flask-server
 docker build --tag terraria-flask .
 docker run -d -p 5000:5000 terraria-flask
 

@@ -6,5 +6,5 @@ cd "$(dirname "$0")/.."
 
 export PATH=".venv/bin:$PATH"
 
-python flask_server/game-wiki-scraper.py
+python flask-server/game-wiki-scraper.py
 mv all-items.json data/all-items.json
