@@ -1,10 +1,10 @@
-import json
-import re
+from bs4 import BeautifulSoup
 from datetime import datetime
 from pathlib import Path
 
+import json
+import re
 import requests
-from bs4 import BeautifulSoup
 
 
 class GameWikiScraper:

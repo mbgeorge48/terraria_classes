@@ -1,9 +1,9 @@
-import json
-import os
-
 from flask import Flask, jsonify, send_from_directory
 from flask_cors import CORS
 from markupsafe import escape
+
+import json
+import os
 
 app = Flask(__name__)
 CORS(app)
