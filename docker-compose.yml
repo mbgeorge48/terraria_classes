@@ -2,13 +2,13 @@ version: "3"
 services:
     frontend:
         build:
-            context: ./react_client
+            context: ./react-client
             dockerfile: Dockerfile
         ports:
             - "5173:5173"
     backend:
         build:
-            context: ./flask_server
+            context: ./flask-server
             dockerfile: Dockerfile
         ports:
             - "5000:5000"
