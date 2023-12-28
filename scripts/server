@@ -18,7 +18,6 @@ trap cleanup EXIT
 if [ "$1" == "dev" ]; then
     scripts/flask run --debug &
 else
-    echo "not tested"
     scripts/gunicorn &
 fi
 server_pid=$!
