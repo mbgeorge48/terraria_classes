@@ -1,11 +1,10 @@
-import json
-import os
-import re
+from bs4 import BeautifulSoup
 from datetime import datetime
 from pathlib import Path
 
+import json
+import re
 import requests
-from bs4 import BeautifulSoup
 
 
 class GameWikiScraper:
@@ -13,7 +12,7 @@ class GameWikiScraper:
         self.square_bracket_trim = re.compile(r"\[.*?\]")
 
         self.base_url = "https://terraria.fandom.com"
-        self.all_items = list()
+        self.all_items = []
 
         self.fetchWebPage()
         self.filterData()

@@ -1,9 +1,9 @@
-import json
-import os
-
 from flask import Flask, jsonify, send_from_directory
 from flask_cors import CORS
 from markupsafe import escape
+
+import json
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -87,7 +87,3 @@ def deduplicate_response(response):
         item_names.append(data["name"])
         items.append(data)
     return items
-
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0")

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+export PATH=".venv/bin:$PATH"
+
+gunicorn --bind 0.0.0.0:5000 flask_server:app

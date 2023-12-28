@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+export PATH=".venv/bin:$PATH"
+
+echo "==> Checking code style"
+flake8 flask_server
+black flask_server/ --check
+isort --check --diff flask_server
