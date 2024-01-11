@@ -11,7 +11,7 @@ class GameWikiScraper:
     def __init__(self):
         self.square_bracket_trim = re.compile(r"\[.*?\]")
 
-        self.base_url = "https://terraria.fandom.com"
+        self.base_url = "https://terraria.wiki.gg"
         self.all_items = []
 
         self.fetchWebPage()
@@ -27,7 +27,9 @@ class GameWikiScraper:
         self.soup = BeautifulSoup("".join(r.text), features="lxml")
 
     def filterData(self):
-        info_cards = self.soup.find_all("div", attrs={"class": "infocard clearfix"})
+        info_cards = self.soup.find_all(
+            "div", attrs={"class": "infocard clearfix guide-class-setups"}
+        )
         for card in info_cards:
             class_container = card.find("div", attrs={"class": "hgroup"})
             if len(class_container) > 1:
@@ -68,28 +70,28 @@ class GameWikiScraper:
             category = self.convertCategory(
                 item_container.find("div", attrs={"class": "title"}).text.lower()
             )
-            for span in item_container.find("p").find_all(
-                "span", attrs={"style": "display:block;margin:0.5em 0;"}
+            for item in item_container.find("p").find_all(
+                "span", attrs={"class": ["i break", "i -w break"]}
             ):
-                spanList = span.find("span").findAll("span")
+                spanList = item.find("span").findAll("span")
                 if len(spanList) > 1:
                     if self.get_exclusivity_details(spanList):
                         continue
 
                 name = (
-                    span.find("a")
+                    item.find("a")
                     .get("title")
                     .replace("(", "")
                     .replace(")", "")
                     .rstrip()
                 )
-                url_ext = span.find("a").get("href")
-                img_path = self.compareImgSrc(span.find("a").find("img"))
+                url_ext = item.find("a").get("href")
+                img_path = self.compareImgSrc(item.find("a").find("img"))
 
                 this_item = {
                     "name": name,
                     "url": self.base_url + url_ext,
-                    "imgPath": img_path,
+                    "imgPath": self.base_url + img_path,
                     "role": role,
                     "category": category,
                     "gameStageAvailable": game_stage,
@@ -132,7 +134,7 @@ class GameWikiScraper:
         for element in spanList:
             title = element.get("title")
             if title:
-                if "pc" not in title.lower() or "console" not in title.lower():
+                if "desktop" not in title.lower() or "console" not in title.lower():
                     return title
         return None
 

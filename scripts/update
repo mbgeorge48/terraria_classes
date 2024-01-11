@@ -22,4 +22,4 @@ echo "==> Updating Python dependencies"
 .venv/bin/pip install --quiet -r requirements.txt
 
 echo "==> Installing frontend dependencies"
-cd react_client && yarn
+cd react-client && yarn

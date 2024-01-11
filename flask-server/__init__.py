@@ -8,7 +8,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-react_folder = "react_client"
+react_folder = "react-client"
 base_directory = os.getcwd() + f"/{react_folder}/dist/"
 
 data_path = os.getcwd() + "/" + os.path.join("data", "all-items.json")

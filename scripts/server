@@ -22,7 +22,7 @@ else
 fi
 server_pid=$!
 
-cd react_client && yarn watch &
+cd react-client && yarn watch &
 frontend_watcher_pid=$!
 
 wait

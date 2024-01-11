@@ -6,5 +6,5 @@ cd "$(dirname "$0")/.."
 
 export PATH=".venv/bin:$PATH"
 
-black flask_server
-isort flask_server
+black flask-server
+isort flask-server

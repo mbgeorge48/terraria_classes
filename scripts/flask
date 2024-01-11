@@ -6,4 +6,4 @@ cd "$(dirname "$0")/.."
 
 export PATH="env/bin:$PATH"
 
-flask --app flask_server "$@"
+flask --app flask-server "$@"

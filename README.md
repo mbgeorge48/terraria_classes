@@ -20,9 +20,30 @@ Mixed is generally an early game exclusive, while Tank and Healer are late game 
 
 ---
 
-## Front end
+## Quick start
 
-### Setup
+There's 2 ways of running this project.
+If you want to use docker then it can be started by running these 2 commands
+
+```sh
+docker build . --tag terraria_classes
+docker run -p 5000:5000  terraria_classes
+```
+
+To run it locally you can use the `scripts` to build and start the server
+
+```sh
+scripts/setup
+scripts/server
+```
+
+You can call `scripts/server dev` to run it in just `flask` rather than `gunicorn`
+
+---
+
+## More In-Depth Usage
+
+### Front end
 
 This was created using the `create-react-app` script, but then I've since migrated to `vite`
 
@@ -35,6 +56,7 @@ npm install --global yarn
 Then run
 
 ```shell
+cd react-client
 yarn install
 yarn start
 ```
@@ -54,53 +76,31 @@ A `JSON` file is required to fetch all the data required for the app. The file s
 ]
 ```
 
-_This is likely to change so it can either use the json file directly or use the api_
-
-~~I wrote a Python script that scrapes the game wiki, [GitHub repo](https://github.com/mbgeorge48/terraria_game_wiki_scraper)~~
-
-I have since migrated that script into this repo to keep it all as one, scroll down to read about the setup and usage of the python BE
-
-### Usage
-
-As this was created with the `create-react-app` script you can start the app by simply running `npm run start`
-
 ---
 
-## Backend
+### Backend
 
 There are 2 parts to the backend, the first is the web scrapper reffered to as 'Terraria Game Wiki Scraper' and the second is the Flask API part
 
-### Terraria Game Wiki Scraper :rabbit2:
+The simplest way to spin up the backend is to use the scripts in the `scripts` directory
 
-This is a simple script that should be paired with the single page app, Terraria Classes Guide ([GitHub repo](https://github.com/mbgeorge48/terraria_classes))
+| Script        | Function                                                                          |
+| ------------- | --------------------------------------------------------------------------------- |
+| `bootstrap`   | Sets up the enviroment and installs dependencies                                  |
+| `flask`       | Runs the flask command with the correct app so you can add args to it, i.e. `run` |
+| `format`      | Runs `black` and `isort` on the python code                                       |
+| `gunicorn`    | Starts the gunicorn server                                                        |
+| `refreshdata` | Runs the Terraria Game Wiki Scraper to refresh the item data                      |
+| `server`      | Starts the server                                                                 |
+| `setup`       | Run the bootstrap script                                                          |
+| `test`        | Checks the code style and runs the frontend tests                                 |
+| `update`      | Updates the enviroment and dependencies                                           |
 
-#### Setup
+#### Terraria Game Wiki Scraper :rabbit2:
 
-_The setup for this script isn't strict so feel free to setup the way you normally would. otherwise..._
+This is the python script that updates the data from the [official Terraria wiki](https://terraria.wiki.gg/wiki).
 
-1. Create your virtual env
-
-```shell
-python3 -m venv env
-```
-
-| Unix                      | Windows                    |
-| ------------------------- | -------------------------- |
-| `source env/bin/activate` | `env\Scripts\activate.bat` |
-
-2. Install any requirements
-
-```shell
-pip install -r requirements.txt
-```
-
-3. Run the script
-
-```shell
-python src/game-wiki-scraper.py
-```
-
-#### Example Output
+##### Example Output
 
 The output is an array of JSON objects that follow this rough format:
 
@@ -117,7 +117,7 @@ The output is an array of JSON objects that follow this rough format:
 ]
 ```
 
-#### Scraping Details
+##### Scraping Details
 
 Move items are found by traversing the HTML and looking for this section of elements:
 
@@ -163,36 +163,7 @@ Sometimes items appear in the HTML as:
 
 However the data can be extracted in quite a simular way
 
-### Flask API
-
-Creating a Flask API endpoint wasn't necessary for this projects however this app was partly a learning experience for myself so I wanted to give it ago
-
-#### Setup
-
-Copy the setup steps from the 'Terraria Game Wiki Scraper' section.
-There are a few ways to run the app, if you just want to run app as if it was a live site you should build Dockerfile.
-
-```sh
-docker build . --tag terraria_classes
-docker run -p 5000:5000  terraria_classes
-```
-
-If you do it that way when you make changes to the front end code they won't be reflected until you run `yarn build`.
-
-The next way is to run the flask server and the react app along side each other, in one terminal run:
-
-```sh
-gunicorn --bind 0.0.0.0:5000 api:app
-```
-
-(assuming you've installed the modules in the requirments file)
-Then in another terminal from inside the react_client folder run:
-
-```sh
-yarn start
-```
-
-Finally you can run `docker-compose up` to run the server
+#### Flask API
 
 #### Usage
 
@@ -232,31 +203,12 @@ Endgame: 6
 -   Armor
 -   Accessories
 -   Buffs
-    -   Encompass Buffs, Potions and Flasks
+    -   Things like Buffs, Potions and Flasks
 -   Mounts
--   Lights
+-   ~~Lights~~
 
 ---
 
-## Running with Docker
+### TODO
 
-### Flask
-
-cd flask_server
-docker build --tag terraria-flask .
-docker run -d -p 5000:5000 terraria-flask
-
-### React
-
-cd react_client
-docker build --tag terraria-react .
-docker run -d -p 5173:5173 terraria-react
-
-_I'm not the owner of any of the Terraira resources, this was made as a learning expirence and for love of the game_
-
-# TODOs
-
-Finish testing the scripts and ensure everything still works
-Call api.py from init
-Test out the game wiki scraper
-Test the docker containers and ensure they all still work
+Update the script so that it can fetch the light pets

@@ -8,8 +8,8 @@ COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 
 COPY data/ data
-COPY react_client/dist/ react_client/dist
-COPY flask_server/ flask_server
+COPY react-client/dist/ react-client/dist
+COPY flask-server/ flask-server
 
 EXPOSE 5000
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "flask_server:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "flask-server:app"]
