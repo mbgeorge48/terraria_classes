@@ -56,26 +56,30 @@ def docs():
 
 @app.route("/api/<role>/<gameStageAvailable>/")
 def filter_json(role, gameStageAvailable):
-    response = []
+    response_data = []
     for item in data:
         if (item["role"] == escape(role) or item["role"] == "mixed") and item[
             "gameStageAvailable"
         ] == int(escape(gameStageAvailable)):
-            response.append(item)
-    return jsonify(deduplicate_response(response))
+            response_data.append(item)
+    response = jsonify(deduplicate_response(response_data))
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
 
 
 @app.route("/api/<role>/<gameStageAvailable>/<category>/")
 def filter_json_full(role, gameStageAvailable, category):
-    response = []
+    response_data = []
     for item in data:
         if (
             (item["role"] == escape(role) or item["role"] == "mixed")
             and item["gameStageAvailable"] == int(escape(gameStageAvailable))
             and item["category"] == escape(category)
         ):
-            response.append(item)
-    return jsonify(deduplicate_response(response))
+            response_data.append(item)
+    response = jsonify(deduplicate_response(response_data))
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
 
 
 def deduplicate_response(response):
