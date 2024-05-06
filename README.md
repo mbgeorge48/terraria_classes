@@ -27,7 +27,7 @@ If you want to use docker then it can be started by running these 2 commands
 
 ```sh
 docker build . --tag terraria_classes
-docker run -p 5000:5000  terraria_classes
+docker run -p 8080:8080  terraria_classes
 ```
 
 To run it locally you can use the `scripts` to build and start the server
@@ -189,7 +189,7 @@ To make it easier I convert the game stages into numbers, the mapping goes like 
 
 ```yaml
 Pre-Bosses: 0
-Pre-Hardmode: 1
+Pre-Wall of Flesh: 1
 Pre-Mech Bosses: 2
 Pre-Plantera: 3
 Pre-Golem: 4

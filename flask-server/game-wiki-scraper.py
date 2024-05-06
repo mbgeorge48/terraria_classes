@@ -56,7 +56,7 @@ class GameWikiScraper:
     def gameStageConvert(self, stage):
         game_stages = {
             "pre-bosses": 0,
-            "pre-hardmode": 1,
+            "pre-wall of flesh": 1,
             "pre-mech bosses": 2,
             "pre-plantera": 3,
             "pre-golem": 4,

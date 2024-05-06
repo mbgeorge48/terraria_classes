@@ -11,5 +11,5 @@ COPY data/ data
 COPY react-client/dist/ react-client/dist
 COPY flask-server/ flask-server
 
-EXPOSE 5000
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "flask-server:app"]
+EXPOSE 8080
+CMD ["gunicorn", "--bind", ":8080", "flask-server:app"]
