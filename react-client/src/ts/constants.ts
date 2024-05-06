@@ -1,6 +1,6 @@
 export const gameStages: { [key: number]: string } = {
     0: "Pre-bosses",
-    1: "Pre-Hardmode",
+    1: "Pre-Wall of Flesh",
     2: "Pre-mech bosses",
     3: "Pre-Plantera",
     4: "Pre-Golem",

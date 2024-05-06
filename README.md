@@ -189,7 +189,7 @@ To make it easier I convert the game stages into numbers, the mapping goes like 
 
 ```yaml
 Pre-Bosses: 0
-Pre-Hardmode: 1
+Pre-Wall of Flesh: 1
 Pre-Mech Bosses: 2
 Pre-Plantera: 3
 Pre-Golem: 4
