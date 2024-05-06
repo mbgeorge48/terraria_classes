@@ -6,5 +6,5 @@ async function fetcher(url: string) {
 }
 
 export function useRequest(params: string) {
-    return useSWR("http://localhost:5000/" + params, fetcher);
+    return useSWR("http://0.0.0.0:8080/" + params, fetcher);
 }
