@@ -6,27 +6,57 @@ import json
 import re
 import requests
 
+BASE_URL = "https://terraria.wiki.gg"
+
 
 class GameWikiScraper:
     def __init__(self):
         self.square_bracket_trim = re.compile(r"\[.*?\]")
 
-        self.base_url = "https://terraria.wiki.gg"
         self.all_items = []
 
         self.fetchWebPage()
-        self.filterData()
+        self.game_stages = self.filterGameStages()
+        game_stage_file_path = Path("game-stages.json")
+        with open(game_stage_file_path, "w") as fp:
+            json.dump(self.game_stages, fp, indent=2)
+
+        self.filterItems()
         print(f"Found {len(self.all_items)} items")
 
-        file_path = Path("all-items.json")
-        with open(file_path, "w") as fp:
+        items_file_path = Path("all-items.json")
+        with open(items_file_path, "w") as fp:
             json.dump(self.all_items, fp, indent=2)
 
     def fetchWebPage(self):
-        r = requests.get(self.base_url + "/wiki/Guide:Class_setups")
+        r = requests.get(BASE_URL + "/wiki/Guide:Class_setups")
         self.soup = BeautifulSoup("".join(r.text), features="lxml")
 
-    def filterData(self):
+    def filterGameStages(self):
+        other_index = 0  # Cut everything off after "Other"
+        contents_list = self.soup.find("div", {"id": "toc"}).find("ul")
+        for index, stage in enumerate(contents_list.find_all("li")):
+            if "other" in stage.text.lower():
+                other_index = index
+                break
+
+        custom_mappings = {
+            "pre-mechanical bosses": "Pre-Mech Bosses",
+        }
+
+        formatted_stages = []
+        for stage in [
+            stage.text for stage in contents_list.find_all("li")[:other_index]
+        ]:
+            formatted_stage = " ".join(filter(lambda x: not x.isdigit(), stage.split()))
+            if formatted_stage.lower() in custom_mappings:
+                formatted_stage = custom_mappings[formatted_stage.lower()]
+                print(formatted_stage)
+            formatted_stages.append(formatted_stage)
+
+        return {stage: index for index, stage in enumerate(formatted_stages)}
+
+    def filterItems(self):
         info_cards = self.soup.find_all(
             "div", attrs={"class": "infocard clearfix guide-class-setups"}
         )
@@ -34,13 +64,15 @@ class GameWikiScraper:
             class_container = card.find("div", attrs={"class": "hgroup"})
             if len(class_container) > 1:
                 role = (
-                    class_container.findChildren()[1]
-                    .text.lower()
-                    .replace("summoning", "summoner")
+                    class_container.findChildren()[1].text.lower()
+                    # .replace("summoning", "summoner")
                 )
-                game_stage = self.gameStageConvert(
-                    class_container.findChildren()[0].text.lower()
+                game_stage = self.game_stages.get(
+                    class_container.findChildren()[0].text
                 )
+                # game_stage = self.gameStageConvert(
+                #     class_container.findChildren()[0].text.lower()
+                # )
                 for item_container in card.find_all("div", attrs={"class": "box"}):
                     self.pullItems(item_container, role, game_stage)
 
@@ -52,18 +84,6 @@ class GameWikiScraper:
                 game_stage = 0
                 for item_container in card.find_all("div", attrs={"class": "box"}):
                     self.pullItems(item_container, role, game_stage)
-
-    def gameStageConvert(self, stage):
-        game_stages = {
-            "pre-bosses": 0,
-            "pre-hardmode": 1,
-            "pre-mech bosses": 2,
-            "pre-plantera": 3,
-            "pre-golem": 4,
-            "pre-lunar events": 5,
-            "endgame": 6,
-        }
-        return game_stages.get(stage, 7)
 
     def pullItems(self, item_container, role, game_stage):
         if not item_container.find_all("li"):
@@ -90,8 +110,8 @@ class GameWikiScraper:
 
                 this_item = {
                     "name": name,
-                    "url": self.base_url + url_ext,
-                    "imgPath": self.base_url + img_path,
+                    "url": BASE_URL + url_ext,
+                    "imgPath": BASE_URL + img_path,
                     "role": role,
                     "category": category,
                     "gameStageAvailable": game_stage,
@@ -123,7 +143,7 @@ class GameWikiScraper:
                 this_item = {
                     "name": name,
                     "role": role,
-                    "url": self.base_url + url_ext,
+                    "url": BASE_URL + url_ext,
                     "imgPath": img_path,
                     "category": category,
                     "gameStageAvailable": game_stage,

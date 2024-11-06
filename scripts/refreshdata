@@ -7,4 +7,10 @@ cd "$(dirname "$0")/.."
 export PATH=".venv/bin:$PATH"
 
 python flask-server/game-wiki-scraper.py
-mv all-items.json data/all-items.json
+
+if [ -f all-items.json ]; then
+    mv all-items.json data/
+fi
+if [ -f game-stages.json ]; then
+    mv game-stages.json data/
+fi
