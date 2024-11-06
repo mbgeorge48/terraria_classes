@@ -45,10 +45,21 @@ export function DisplayContainer() {
         return null;
     }
     const processedData = processData(data);
+    console.log({ data });
+
+    const categories = data.map((item: any) => item.category);
+
+    // const processedData = data.map()
 
     return (
         <div className="m-4">
             <div className="flex flex-row flex-wrap justify-around gap-4 p-4 xs:flex-col">
+                {categories.map((category) => (
+                    <ItemContainer
+                        itemCategory={category}
+                        data={data.filter((item) => item.category == category)}
+                    />
+                ))}
                 <ItemContainer
                     itemCategory="weapons"
                     data={processedData.weaponsList}

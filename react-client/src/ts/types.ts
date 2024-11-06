@@ -1,4 +1,3 @@
-// Dodgy rule
 // eslint-disable-next-line no-unused-vars
 export type ExtraClassToggleHandler = (display: boolean) => void;
 
@@ -29,3 +28,8 @@ export interface item {
     category: ItemCategory;
     gameStageAvailable: number;
 }
+
+export type ApiGameStage = {
+    stage: string;
+    level: number;
+};
