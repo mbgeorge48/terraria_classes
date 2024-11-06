@@ -16,10 +16,14 @@ class GameWikiScraper:
         self.all_items = []
 
         self.fetchWebPage()
-        self.game_stages = self.filterGameStages()
+        game_stages = self.filterGameStages()
+        self.game_stage_dict = {stage: index for index, stage in enumerate(game_stages)}
+        game_stage_list = [
+            {"stage": stage, "level": index} for index, stage in enumerate(game_stages)
+        ]
         game_stage_file_path = Path("game-stages.json")
         with open(game_stage_file_path, "w") as fp:
-            json.dump(self.game_stages, fp, indent=2)
+            json.dump(game_stage_list, fp, indent=2)
 
         self.filterItems()
         print(f"Found {len(self.all_items)} items")
@@ -51,10 +55,8 @@ class GameWikiScraper:
             formatted_stage = " ".join(filter(lambda x: not x.isdigit(), stage.split()))
             if formatted_stage.lower() in custom_mappings:
                 formatted_stage = custom_mappings[formatted_stage.lower()]
-                print(formatted_stage)
             formatted_stages.append(formatted_stage)
-
-        return {stage: index for index, stage in enumerate(formatted_stages)}
+        return formatted_stages
 
     def filterItems(self):
         info_cards = self.soup.find_all(
@@ -63,33 +65,26 @@ class GameWikiScraper:
         for card in info_cards:
             class_container = card.find("div", attrs={"class": "hgroup"})
             if len(class_container) > 1:
-                role = (
-                    class_container.findChildren()[1].text.lower()
-                    # .replace("summoning", "summoner")
-                )
-                game_stage = self.game_stages.get(
+                role = class_container.findChildren()[1].text.lower()
+                game_stage = self.game_stage_dict.get(
                     class_container.findChildren()[0].text
                 )
-                # game_stage = self.gameStageConvert(
-                #     class_container.findChildren()[0].text.lower()
-                # )
-                for item_container in card.find_all("div", attrs={"class": "box"}):
-                    self.pullItems(item_container, role, game_stage)
+                item_containers = card.find_all(class_="box", recursive=False)
+                for item_container in item_containers:
+                    category = self.convertCategory(
+                        item_container.find(
+                            "div", attrs={"class": "title"}
+                        ).text.lower()
+                    )
+                    subcontainers = item_container.find_all(class_="box")
+                    if len(subcontainers) > 0:
+                        for subcontainer in subcontainers:
+                            self.pullItems(subcontainer, role, game_stage, category)
+                    else:
+                        self.pullItems(item_container, role, game_stage, category)
 
-            elif class_container.find("div", attrs={"class": "main"}).text in [
-                "Mixed (early)",
-                "Mixed (late)",
-            ]:
-                role = "mixed"
-                game_stage = 0
-                for item_container in card.find_all("div", attrs={"class": "box"}):
-                    self.pullItems(item_container, role, game_stage)
-
-    def pullItems(self, item_container, role, game_stage):
+    def pullItems(self, item_container, role, game_stage, category):
         if not item_container.find_all("li"):
-            category = self.convertCategory(
-                item_container.find("div", attrs={"class": "title"}).text.lower()
-            )
             for item in item_container.find("p").find_all(
                 "span", attrs={"class": ["i break", "i -w break"]}
             ):
