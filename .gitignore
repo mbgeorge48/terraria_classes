@@ -9,6 +9,9 @@ env/*
 build/*
 */env/*
 */build/*
+*storybook.log
+storybook-static
+*.d.ts
 
 # Unit test / coverage reports
 */coverage/*
@@ -37,3 +40,4 @@ npm-debug.log*
 **/.env/
 **/.venv/
 __pycache__
+
