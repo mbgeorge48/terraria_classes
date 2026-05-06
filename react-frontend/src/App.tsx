@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { SWRConfig } from "swr";
+import { fetcher } from "./api/fetcher";
 import reactLogo from "./assets/images/react.svg";
 import viteLogo from "./assets/images/vite.svg";
 import heroImg from "./assets/images/hero.png";
@@ -8,7 +10,7 @@ function App() {
     const [count, setCount] = useState(0);
 
     return (
-        <>
+        <SWRConfig value={{ fetcher }}>
             <section id="center">
                 <div className="hero">
                     <img
@@ -144,7 +146,7 @@ function App() {
 
             <div className="ticks"></div>
             <section id="spacer"></section>
-        </>
+        </SWRConfig>
     );
 }
 
