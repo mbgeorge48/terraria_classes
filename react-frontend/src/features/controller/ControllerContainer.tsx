@@ -1,11 +1,10 @@
 import { useCallback } from "react";
 import type { Selection } from "react-aria-components";
 
-import { Slider } from "../../components/Silder/Slider";
-import { Tag, TagGroup } from "../../components/TagGroup/TagGroup";
+import { Slider, Tag, TagGroup } from "../../components";
 import { useGameStage } from "../../context/GameStageContext";
 import { useRole } from "../../context/RoleContext";
-import type { Role } from "../../types/roles";
+import type { Role } from "../../types";
 import { Header } from "./Heading";
 import { containerStyles } from "./styles";
 

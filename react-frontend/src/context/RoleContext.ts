@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 
-import type { Role } from "../types/roles";
+import type { Role } from "../types";
 
 export interface RoleContextType {
     selectedRole: Role;

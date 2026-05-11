@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from "react";
 
-import type { Role } from "../../types/roles";
+import type { Role } from "../../types";
 import {
     containerBackgroundStyle,
     containerStyle,

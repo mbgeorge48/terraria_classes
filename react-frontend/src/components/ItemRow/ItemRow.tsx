@@ -3,8 +3,7 @@ import {
     type LinkProps as AriaLinkProps,
 } from "react-aria-components/Link";
 
-import type { Item } from "../../types/item";
-import type { Role } from "../../types/roles";
+import type { Item, Role } from "../../types";
 import { styles } from "./styles";
 
 interface Props extends AriaLinkProps {

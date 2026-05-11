@@ -4,7 +4,7 @@ import {
     type TagProps as AriaTagProps,
 } from "react-aria-components";
 
-import type { Role } from "../../types/roles";
+import type { Role } from "../../types";
 import { styles } from "./styles";
 
 export interface TagProps extends AriaTagProps {

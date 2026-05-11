@@ -1,11 +1,10 @@
 import { useMemo } from "react";
 
 import { useApi } from "../../api/useApi";
-import { CategoryContainer } from "../../components/CategoryContainer/CategoryContainer";
-import { ItemRow } from "../../components/ItemRow/ItemRow";
+import { CategoryContainer, ItemRow } from "../../components";
 import { useGameStage } from "../../context/GameStageContext";
 import { useRole } from "../../context/RoleContext";
-import type { Item, Items } from "../../types/item";
+import type { Item, Items } from "../../types";
 
 export function ItemWrapper() {
     const { selectedRole } = useRole();

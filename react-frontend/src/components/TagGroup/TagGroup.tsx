@@ -4,12 +4,10 @@ import {
     type TagGroupProps as AriaTagGroupProps,
 } from "react-aria-components";
 
-import { Label } from "../Label/Label";
+import { Label } from "..";
 import { TagList } from "./TagList";
 
-export { Tag } from "./Tag";
-
-export interface Props<T>
+export interface TagGroupProps<T>
     extends
         Omit<AriaTagGroupProps, "children">,
         Pick<TagListProps<T>, "children"> {
@@ -19,7 +17,7 @@ export interface Props<T>
 export function TagGroup<T extends object>({
     selectionMode = "single",
     ...props
-}: Props<T>) {
+}: TagGroupProps<T>) {
     return (
         <AriaTagGroup
             {...props}

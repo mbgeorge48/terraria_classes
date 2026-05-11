@@ -6,12 +6,12 @@ import {
     SliderTrack,
 } from "react-aria-components/Slider";
 
-import type { Role } from "../../types/roles";
-import { gameStages } from "../constants";
-import { Label } from "../Label/Label";
-import { fillStyles, thumbStyles,trackStyles } from "./styles";
+import type { Role } from "../../types";
+import { gameStages } from "../../utils/constants";
+import { Label } from "..";
+import { fillStyles, thumbStyles, trackStyles } from "./styles";
 
-export interface Props<T> extends AriaSliderProps<T> {
+export interface SliderProps<T> extends AriaSliderProps<T> {
     thumbLabels?: string[];
     selectedRole?: Role;
     label?: string;
@@ -22,7 +22,7 @@ export function Slider<T extends number>({
     minValue = 0,
     maxValue = Object.keys(gameStages).length - 1,
     ...props
-}: Props<T>) {
+}: SliderProps<T>) {
     return (
         <AriaSlider
             {...props}

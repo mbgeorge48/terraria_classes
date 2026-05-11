@@ -6,7 +6,7 @@ import { GameStageProvider } from "./context/GameStageProvider";
 import { RoleProvider } from "./context/RoleProvider";
 import { ControllerContainer } from "./features/controller/ControllerContainer";
 import { ItemWrapper } from "./features/items/ItemWrapper";
-import type { Role } from "./types/roles";
+import type { Role } from "./types";
 
 function App() {
     const [selectedRole, setSelectedRole] = useState<Role>();
