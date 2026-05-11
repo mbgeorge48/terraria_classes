@@ -1,9 +1,9 @@
 import useSWR from "swr";
 import { fetcher } from "./fetcher";
 
-export function useApi<T>(params: string) {
+export function useApi<T>(params: string | null) {
     return useSWR(
-        "http://localhost:8000/" + params,
+        params ? `http://localhost:8000/${params}` : null,
         fetcher as (url: string) => Promise<T>,
     );
 }

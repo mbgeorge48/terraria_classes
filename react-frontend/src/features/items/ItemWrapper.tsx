@@ -1,5 +1,3 @@
-import { useGameStage } from "../../context/GameStageContext";
-import { useRole } from "../../context/RoleContext";
 import { useApi } from "../../api/useApi";
 
 import { useMemo } from "react";
@@ -7,13 +5,15 @@ import { useMemo } from "react";
 import type { Item, Items } from "../../types/item";
 import { CategoryContainer } from "../../components/CategoryContainer/CategoryContainer";
 import { ItemRow } from "../../components/ItemRow/ItemRow";
+import { useGameStage } from "../../context/GameStageContext";
+import { useRole } from "../../context/RoleContext";
 
 export function ItemWrapper() {
     const { selectedRole } = useRole();
     const { selectedGameStage } = useGameStage();
 
     const { data, isLoading, error } = useApi<Items>(
-        `api/${selectedRole}/${selectedGameStage}/`,
+        selectedRole ? `api/${selectedRole}/${selectedGameStage}/` : null,
     );
 
     const memoizedData = useMemo(() => {
@@ -43,22 +43,29 @@ export function ItemWrapper() {
     console.log({ data, memoizedData });
 
     return (
-        <>
-            {Object.keys(memoizedData).map((category) => (
-                <CategoryContainer
-                    key={category}
-                    heading={category}
-                    selectedRole={selectedRole}
-                >
-                    {memoizedData[category].map((item) => (
-                        <ItemRow
-                            key={item.name}
-                            item={item}
+        <div className="max-w-6xl px-4 py-8 mx-auto">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {Object.keys(memoizedData)
+                    .sort(
+                        (a, b) =>
+                            memoizedData[a].length - memoizedData[b].length,
+                    )
+                    .map((category) => (
+                        <CategoryContainer
+                            key={category}
+                            heading={category}
                             selectedRole={selectedRole}
-                        />
+                        >
+                            {memoizedData[category].map((item) => (
+                                <ItemRow
+                                    key={item.name}
+                                    item={item}
+                                    selectedRole={selectedRole}
+                                />
+                            ))}
+                        </CategoryContainer>
                     ))}
-                </CategoryContainer>
-            ))}
-        </>
+            </div>
+        </div>
     );
 }

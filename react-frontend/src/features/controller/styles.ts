@@ -7,7 +7,7 @@ export const containerStyles = tv({
             melee: "bg-melee/20",
             ranged: "bg-ranged/20",
             magic: "bg-magic/20",
-            summoner: "bg-summoner/20",
+            summoning: "bg-summoning/20",
             mixed: "bg-mixed/20",
             healer: "bg-healer/20",
             tank: "bg-tank/20",

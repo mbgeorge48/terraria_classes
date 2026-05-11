@@ -7,7 +7,7 @@ export const styles = tv({
             melee: "decoration-melee",
             ranged: "decoration-ranged",
             magic: "decoration-magic",
-            summoner: "decoration-summoner",
+            summoning: "decoration-summoning",
             mixed: "decoration-mixed",
             healer: "decoration-healer",
             tank: "decoration-tank",

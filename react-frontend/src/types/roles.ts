@@ -2,7 +2,7 @@ export type Role =
     | "melee"
     | "ranged"
     | "magic"
-    | "summoner"
+    | "summoning"
     | "mixed"
     | "healer"
     | "tank"

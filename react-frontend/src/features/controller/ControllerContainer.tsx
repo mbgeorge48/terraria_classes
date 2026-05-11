@@ -1,12 +1,13 @@
 import { useCallback } from "react";
 import { Slider } from "../../components/Silder/Slider";
 import { Tag, TagGroup } from "../../components/TagGroup/TagGroup";
-import { useGameStage } from "../../context/GameStageContext";
-import { useRole } from "../../context/RoleContext";
+
 import type { Role } from "../../types/roles";
 import { Header } from "./Heading";
 import { containerStyles } from "./styles";
 import type { Selection } from "react-aria-components";
+import { useGameStage } from "../../context/GameStageContext";
+import { useRole } from "../../context/RoleContext";
 
 export function ControllerContainer() {
     const { selectedRole, setSelectedRole } = useRole();
@@ -37,7 +38,7 @@ export function ControllerContainer() {
                 <Tag id="melee">Melee</Tag>
                 <Tag id="ranged">Ranged</Tag>
                 <Tag id="magic">Magic</Tag>
-                <Tag id="summoner">Summoner</Tag>
+                <Tag id="summoning">Summoning</Tag>
             </TagGroup>
 
             <Slider
