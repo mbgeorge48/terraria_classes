@@ -15,7 +15,7 @@ export const trackStyles = tv({
             mixed: "bg-mixed/30",
             healer: "bg-healer/30",
             tank: "bg-tank/30",
-            default: "bg-neutral-200",
+            default: "bg-neutral-400",
         },
     },
     defaultVariants: {
@@ -38,7 +38,7 @@ export const fillStyles = tv({
             mixed: "bg-mixed",
             healer: "bg-healer",
             tank: "bg-tank",
-            default: "bg-neutral-300",
+            default: "bg-neutral-500",
         },
     },
     defaultVariants: {

@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants";
 
 export const styles = tv({
-    base: "capitalize flex flex-1 cursor-pointer px-6 py-2 flex-shrink-0 rounded-3xl border-2 duration-150 text-xl transition-colors justify-center items-center gap-1 hover:text-white [-webkit-tap-highlight-color:transparent] outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black",
+    base: "capitalize flex flex-1 cursor-pointer px-6 py-2 flex-shrink-0 rounded-3xl border-4 duration-150 text-xl transition-colors justify-center items-center gap-1 hover:text-white [-webkit-tap-highlight-color:transparent] outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black",
     variants: {
         color: {
             melee: "border-melee hover:bg-melee",

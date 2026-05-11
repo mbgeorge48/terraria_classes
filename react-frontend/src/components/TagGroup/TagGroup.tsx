@@ -4,16 +4,18 @@ import {
 } from "react-aria-components";
 import type { TagListProps } from "react-aria-components";
 import { TagList } from "./TagList";
+import { Label } from "../Label/Label";
 
 export { Tag } from "./Tag";
 
 export interface Props<T>
     extends
         Omit<AriaTagGroupProps, "children">,
-        Pick<TagListProps<T>, "children"> {}
+        Pick<TagListProps<T>, "children"> {
+    label?: string;
+}
 
 export function TagGroup<T extends object>({
-    children,
     selectionMode = "single",
     ...props
 }: Props<T>) {
@@ -21,9 +23,10 @@ export function TagGroup<T extends object>({
         <AriaTagGroup
             {...props}
             selectionMode={selectionMode}
-            className="flex flex-col gap-2"
+            className="flex flex-col"
         >
-            <TagList>{children}</TagList>
+            <Label>{props.label}</Label>
+            <TagList>{props.children}</TagList>
         </AriaTagGroup>
     );
 }

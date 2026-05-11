@@ -8,10 +8,9 @@ import { Header } from "./Heading";
 import { containerStyles } from "./styles";
 import type { Selection } from "react-aria-components";
 
-export function Container() {
+export function ControllerContainer() {
     const { selectedRole, setSelectedRole } = useRole();
-    const { selectedGameStage, setSelectedGameStage } = useGameStage();
-    console.log(selectedGameStage);
+    const { setSelectedGameStage } = useGameStage();
 
     const handleRoleChange = useCallback(
         (keys: Selection) => {
@@ -31,6 +30,7 @@ export function Container() {
 
             <TagGroup
                 aria-label="Role Selection"
+                label="Select a class"
                 onSelectionChange={handleRoleChange}
                 selectionBehavior="toggle"
             >
@@ -42,6 +42,7 @@ export function Container() {
 
             <Slider
                 aria-label="Game Stage Selection"
+                label="Select a game stage"
                 thumbLabels={[
                     "Pre-bosses",
                     "Pre-Hardmode",

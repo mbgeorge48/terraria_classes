@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Item } from "./Item";
+import { ItemRow } from "./ItemRow";
 import sampleItemImage from "../../assets/images/sample-item.png";
 
-const meta: Meta<typeof Item> = {
-    title: "Components/Item",
-    component: Item,
+const meta: Meta<typeof ItemRow> = {
+    title: "Components/ItemRow",
+    component: ItemRow,
     parameters: {
         layout: "centered",
     },
@@ -30,7 +30,7 @@ const meta: Meta<typeof Item> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Item>;
+type Story = StoryObj<typeof ItemRow>;
 
 export const Default: Story = {
     args: {},

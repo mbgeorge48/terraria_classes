@@ -11,7 +11,7 @@ interface Props extends AriaLinkProps {
     item: Item;
 }
 
-export function Item(props: Props) {
+export function ItemRow(props: Props) {
     return (
         <span className="flex flex-row px-2 space-x-4 w-fit place-items-center">
             <img

@@ -13,6 +13,9 @@ const meta: Meta<typeof TagGroup> = {
             control: "select",
             options: ["none", "single", "multiple"],
         },
+        label: {
+            control: "text",
+        },
     },
 };
 
@@ -30,5 +33,6 @@ export const Default: Story = {
     ),
     args: {
         selectionMode: "single",
+        label: "Select a class",
     },
 };
