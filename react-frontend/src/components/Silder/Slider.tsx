@@ -36,7 +36,8 @@ export function Slider<T extends number>({
                     <>
                         <div
                             className={trackStyles({
-                                ...renderProps,
+                                isDisabled: renderProps.isDisabled,
+                                selectedRole: props.selectedRole,
                             })}
                         />
                         <div
@@ -62,6 +63,9 @@ export function Slider<T extends number>({
                                         selectedRole: props.selectedRole,
                                     })
                                 }
+                                style={{
+                                    transform: "translateX(-3px) translateY(0)",
+                                }}
                             />
                         ))}
                     </>

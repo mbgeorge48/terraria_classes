@@ -1,17 +1,30 @@
 import { tv } from "tailwind-variants";
 
 export const trackStyles = tv({
-    base: "rounded-full w-full h-1",
+    base: "rounded-full w-full h-2",
     variants: {
         isDisabled: {
-            false: "bg-neutral-300 dark:bg-neutral-700 forced-colors:bg-[ButtonBorder] ",
-            true: "bg-neutral-200 dark:bg-neutral-800 forced-colors:bg-[ButtonBorder]",
+            false: "bg-neutral-300  forced-colors:bg-[ButtonBorder] ",
+            true: "bg-neutral-200 forced-colors:bg-[ButtonBorder]",
         },
+        selectedRole: {
+            melee: "bg-melee/30",
+            ranged: "bg-ranged/30",
+            magic: "bg-magic/30",
+            summoner: "bg-summoner/30",
+            mixed: "bg-mixed/30",
+            healer: "bg-healer/30",
+            tank: "bg-tank/30",
+            default: "bg-neutral-200",
+        },
+    },
+    defaultVariants: {
+        selectedRole: "default",
     },
 });
 
 export const fillStyles = tv({
-    base: "absolute rounded-full w-(--size) h-1 start-(--start,0)",
+    base: "absolute rounded-full w-(--size) h-2 start-(--start,0)",
     variants: {
         isDisabled: {
             false: "bg-blue-500 forced-colors:bg-[Highlight]",
@@ -34,7 +47,7 @@ export const fillStyles = tv({
 });
 
 export const thumbStyles = tv({
-    base: "w-4.5 h-4.5 group-orientation-horizontal:mt-5 group-orientation-vertical:ml-2.5 rounded-full bg-neutral-50 dark:bg-neutral-900 border-3",
+    base: "w-4.5 h-4.5 rounded-full bg-neutral-50  border-2",
     variants: {
         isDisabled: {
             true: "border-neutral-300 dark:border-neutral-700 ",
