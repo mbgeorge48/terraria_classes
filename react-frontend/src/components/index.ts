@@ -4,4 +4,3 @@ export * from "./Label/Label";
 export * from "./Slider/Slider";
 export * from "./TagGroup/Tag";
 export * from "./TagGroup/TagGroup";
-export * from "./TagGroup/TagList";

@@ -5,6 +5,7 @@ import { Slider, Tag, TagGroup } from "../../components";
 import { useGameStage } from "../../context/GameStageContext";
 import { useRole } from "../../context/RoleContext";
 import type { Role } from "../../types";
+import { gameStages } from "../../utils/constants";
 import { Header } from "./Heading";
 import { containerStyles } from "./styles";
 
@@ -29,7 +30,6 @@ export function ControllerContainer() {
             <Header />
 
             <TagGroup
-                aria-label="Role Selection"
                 label="Select a class"
                 onSelectionChange={handleRoleChange}
                 selectionBehavior="toggle"
@@ -41,7 +41,6 @@ export function ControllerContainer() {
             </TagGroup>
 
             <Slider
-                aria-label="Game Stage Selection"
                 label="Select a game stage"
                 thumbLabels={[
                     "Pre-bosses",
@@ -54,6 +53,8 @@ export function ControllerContainer() {
                 ]}
                 selectedRole={selectedRole}
                 onChange={setSelectedGameStage}
+                minValue={0}
+                maxValue={Object.keys(gameStages).length - 1}
             />
         </div>
     );

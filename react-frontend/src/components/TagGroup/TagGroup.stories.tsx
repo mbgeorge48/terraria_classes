@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Tag, TagGroup } from "./TagGroup";
+import { Tag } from "./Tag";
+import { TagGroup } from "./TagGroup";
 
 const meta: Meta<typeof TagGroup> = {
     title: "Components/TagGroup",
@@ -29,7 +30,7 @@ export const Default: Story = {
             <Tag id="melee">Melee</Tag>
             <Tag id="ranged">Ranged</Tag>
             <Tag id="magic">Magic</Tag>
-            <Tag id="summoner">Summoner</Tag>
+            <Tag id="summoning">Summoning</Tag>
         </TagGroup>
     ),
     args: {

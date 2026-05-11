@@ -16,9 +16,3 @@ export const Default: Story = {
         children: "Label Text",
     },
 };
-
-export const Empty: Story = {
-    args: {
-        children: undefined,
-    },
-};

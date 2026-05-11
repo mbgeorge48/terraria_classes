@@ -24,6 +24,7 @@ export function CategoryContainer(props: Props) {
                 className={containerStyle({ selectedRole: props.selectedRole })}
             >
                 <h1
+                    data-testid={`${props.heading.replaceAll(" ", "-").toLowerCase()}-heading`}
                     className={headingStyle({
                         selectedRole: props.selectedRole,
                     })}

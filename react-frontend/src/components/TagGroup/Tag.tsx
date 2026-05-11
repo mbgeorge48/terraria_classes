@@ -18,6 +18,7 @@ export function Tag({ children, color, ...props }: TagProps) {
         <AriaTag
             textValue={textValue}
             {...props}
+            data-testid={`tag-${props.id}`}
             className={composeRenderProps(
                 props.className,
                 (className, renderProps) =>

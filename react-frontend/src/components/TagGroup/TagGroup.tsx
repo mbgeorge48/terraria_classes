@@ -11,7 +11,7 @@ export interface TagGroupProps<T>
     extends
         Omit<AriaTagGroupProps, "children">,
         Pick<TagListProps<T>, "children"> {
-    label?: string;
+    label: string;
 }
 
 export function TagGroup<T extends object>({
@@ -23,6 +23,7 @@ export function TagGroup<T extends object>({
             {...props}
             selectionMode={selectionMode}
             className="flex flex-col"
+            aria-label={props.label}
         >
             <Label>{props.label}</Label>
             <TagList>{props.children}</TagList>

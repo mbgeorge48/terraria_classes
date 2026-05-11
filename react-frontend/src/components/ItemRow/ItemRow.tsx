@@ -16,8 +16,9 @@ export function ItemRow(props: Props) {
         <span className="flex flex-row px-2 space-x-4 w-fit place-items-center">
             <img
                 src={props.item.imgPath}
-                alt=""
+                alt={props.item.name}
                 className="object-contain w-10 h-10"
+                data-testid={`${props.item.name.replaceAll(" ", "-").toLowerCase()}-img`}
             />
             <AriaLink
                 {...props}
@@ -28,6 +29,7 @@ export function ItemRow(props: Props) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={props.item.name}
+                data-testid={`${props.item.name.replaceAll(" ", "-").toLowerCase()}-label`}
             >
                 {props.item.name}
             </AriaLink>
