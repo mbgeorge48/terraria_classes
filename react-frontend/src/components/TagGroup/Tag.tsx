@@ -3,8 +3,8 @@ import {
     type TagProps as AriaTagProps,
     composeRenderProps,
 } from "react-aria-components";
-import { tagStyles } from "./TagGroupStyles";
-import type { Role } from "../../../types/roles";
+import { styles } from "./styles";
+import type { Role } from "../../types/roles";
 
 export interface TagProps extends AriaTagProps {
     color?: Role;
@@ -20,7 +20,7 @@ export function Tag({ children, color, ...props }: TagProps) {
             className={composeRenderProps(
                 props.className,
                 (className, renderProps) =>
-                    tagStyles({
+                    styles({
                         ...renderProps,
                         className,
                         color: color || (props.id as Role),

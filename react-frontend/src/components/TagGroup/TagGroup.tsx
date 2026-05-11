@@ -2,19 +2,17 @@ import {
     TagGroup as AriaTagGroup,
     type TagGroupProps as AriaTagGroupProps,
 } from "react-aria-components";
-import { twMerge } from "tailwind-merge";
 import type { TagListProps } from "react-aria-components";
 import { TagList } from "./TagList";
 
-export * from "./Tag";
+export { Tag } from "./Tag";
 
 export interface Props<T>
     extends
         Omit<AriaTagGroupProps, "children">,
-        Pick<TagListProps<T>, "items" | "children" | "renderEmptyState"> {}
+        Pick<TagListProps<T>, "children"> {}
 
 export function TagGroup<T extends object>({
-    items,
     children,
     selectionMode = "single",
     ...props
@@ -23,9 +21,9 @@ export function TagGroup<T extends object>({
         <AriaTagGroup
             {...props}
             selectionMode={selectionMode}
-            className={twMerge("flex flex-col gap-2", props.className)}
+            className="flex flex-col gap-2"
         >
-            <TagList items={items}>{children}</TagList>
+            <TagList>{children}</TagList>
         </AriaTagGroup>
     );
 }
