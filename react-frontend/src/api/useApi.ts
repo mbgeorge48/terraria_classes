@@ -1,4 +1,5 @@
 import useSWR from "swr";
+
 import { fetcher } from "./fetcher";
 
 export function useApi<T>(params: string | null) {

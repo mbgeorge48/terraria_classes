@@ -1,10 +1,11 @@
 import {
+    composeRenderProps,
     Tag as AriaTag,
     type TagProps as AriaTagProps,
-    composeRenderProps,
 } from "react-aria-components";
-import { styles } from "./styles";
+
 import type { Role } from "../../types/roles";
+import { styles } from "./styles";
 
 export interface TagProps extends AriaTagProps {
     color?: Role;

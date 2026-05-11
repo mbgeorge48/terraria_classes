@@ -1,4 +1,5 @@
 import { createContext, useContext } from "react";
+
 import type { Role } from "../types/roles";
 
 export interface RoleContextType {

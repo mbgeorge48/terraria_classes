@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Tag, TagGroup } from "./TagGroup";
 
 const meta: Meta<typeof TagGroup> = {

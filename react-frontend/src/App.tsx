@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { SWRConfig } from "swr";
+
 import { fetcher } from "./api/fetcher";
-import type { Role } from "./types/roles";
+import { GameStageProvider } from "./context/GameStageProvider";
+import { RoleProvider } from "./context/RoleProvider";
 import { ControllerContainer } from "./features/controller/ControllerContainer";
 import { ItemWrapper } from "./features/items/ItemWrapper";
-import { RoleProvider } from "./context/RoleProvider";
-import { GameStageProvider } from "./context/GameStageProvider";
+import type { Role } from "./types/roles";
 
 function App() {
     const [selectedRole, setSelectedRole] = useState<Role>();

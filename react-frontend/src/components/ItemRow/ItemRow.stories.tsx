@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { ItemRow } from "./ItemRow";
+
 import sampleItemImage from "../../assets/images/sample-item.png";
+import { ItemRow } from "./ItemRow";
 
 const meta: Meta<typeof ItemRow> = {
     title: "Components/ItemRow",

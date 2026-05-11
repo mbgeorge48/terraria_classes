@@ -1,10 +1,11 @@
+import type { TagListProps } from "react-aria-components";
 import {
     TagGroup as AriaTagGroup,
     type TagGroupProps as AriaTagGroupProps,
 } from "react-aria-components";
-import type { TagListProps } from "react-aria-components";
-import { TagList } from "./TagList";
+
 import { Label } from "../Label/Label";
+import { TagList } from "./TagList";
 
 export { Tag } from "./Tag";
 

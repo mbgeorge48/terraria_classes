@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { CategoryContainer } from "./CategoryContainer";
 
 const meta: Meta<typeof CategoryContainer> = {

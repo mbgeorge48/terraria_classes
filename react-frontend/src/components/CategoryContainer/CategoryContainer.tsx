@@ -1,10 +1,11 @@
 import type { PropsWithChildren } from "react";
+
+import type { Role } from "../../types/roles";
 import {
     containerBackgroundStyle,
     containerStyle,
     headingStyle,
 } from "./styles";
-import type { Role } from "../../types/roles";
 
 interface Props extends PropsWithChildren {
     heading: string;

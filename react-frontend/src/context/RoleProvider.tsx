@@ -1,4 +1,5 @@
 import { type PropsWithChildren } from "react";
+
 import { RoleContext, type RoleContextType } from "./RoleContext";
 
 interface Props extends PropsWithChildren, RoleContextType {}

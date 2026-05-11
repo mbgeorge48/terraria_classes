@@ -1,14 +1,14 @@
 /// <reference types="vitest/config" />
-import { defineConfig } from "vite";
-import react, { reactCompilerPreset } from "@vitejs/plugin-react";
-import babel from "@rolldown/plugin-babel";
-import tailwind from "@tailwindcss/vite";
-
 // https://vite.dev/config/
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+
+import babel from "@rolldown/plugin-babel";
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
+import tailwind from "@tailwindcss/vite";
+import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import { playwright } from "@vitest/browser-playwright";
+import { defineConfig } from "vite";
 const dirname =
     typeof __dirname !== "undefined"
         ? __dirname

@@ -1,15 +1,15 @@
 import {
     Slider as AriaSlider,
-    type SliderProps as AriaSliderProps,
     SliderOutput,
+    type SliderProps as AriaSliderProps,
     SliderThumb,
     SliderTrack,
 } from "react-aria-components/Slider";
+
 import type { Role } from "../../types/roles";
 import { gameStages } from "../constants";
-
-import { trackStyles, fillStyles, thumbStyles } from "./styles";
 import { Label } from "../Label/Label";
+import { fillStyles, thumbStyles,trackStyles } from "./styles";
 
 export interface Props<T> extends AriaSliderProps<T> {
     thumbLabels?: string[];

@@ -1,13 +1,13 @@
 import { useCallback } from "react";
+import type { Selection } from "react-aria-components";
+
 import { Slider } from "../../components/Silder/Slider";
 import { Tag, TagGroup } from "../../components/TagGroup/TagGroup";
-
+import { useGameStage } from "../../context/GameStageContext";
+import { useRole } from "../../context/RoleContext";
 import type { Role } from "../../types/roles";
 import { Header } from "./Heading";
 import { containerStyles } from "./styles";
-import type { Selection } from "react-aria-components";
-import { useGameStage } from "../../context/GameStageContext";
-import { useRole } from "../../context/RoleContext";
 
 export function ControllerContainer() {
     const { selectedRole, setSelectedRole } = useRole();

@@ -2,9 +2,10 @@ import {
     Link as AriaLink,
     type LinkProps as AriaLinkProps,
 } from "react-aria-components/Link";
-import { styles } from "./styles";
-import type { Role } from "../../types/roles";
+
 import type { Item } from "../../types/item";
+import type { Role } from "../../types/roles";
+import { styles } from "./styles";
 
 interface Props extends AriaLinkProps {
     selectedRole?: Role;
@@ -24,12 +25,13 @@ export function ItemRow(props: Props) {
                 className={styles({
                     selectedRole: props.selectedRole,
                 })}
-                children={props.item.name}
                 href={props.item.url}
                 target="_blank"
                 rel="noreferrer"
                 aria-label={props.item.name}
-            />
+            >
+                {props.item.name}
+            </AriaLink>
         </span>
     );
 }
