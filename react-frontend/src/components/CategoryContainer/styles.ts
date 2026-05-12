@@ -11,7 +11,7 @@ export const containerBackgroundStyle = tv({
             mixed: "bg-mixed",
             healer: "bg-healer",
             tank: "bg-tank",
-            default: "bg-neutral-300",
+            default: "bg-neutral-600",
         },
     },
     defaultVariants: {
@@ -30,7 +30,7 @@ export const containerStyle = tv({
             mixed: "border-mixed",
             healer: "border-healer",
             tank: "border-tank",
-            default: "border-neutral-300",
+            default: "border-neutral-600",
         },
     },
     defaultVariants: {
@@ -49,7 +49,7 @@ export const headingStyle = tv({
             mixed: "bg-mixed",
             healer: "bg-healer",
             tank: "bg-tank",
-            default: "bg-neutral-300",
+            default: "bg-neutral-600",
         },
     },
     defaultVariants: {

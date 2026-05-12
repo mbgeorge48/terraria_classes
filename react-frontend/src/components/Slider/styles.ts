@@ -38,7 +38,7 @@ export const fillStyles = tv({
             mixed: "bg-mixed",
             healer: "bg-healer",
             tank: "bg-tank",
-            default: "bg-neutral-500",
+            default: "bg-neutral-600",
         },
     },
     defaultVariants: {
@@ -50,7 +50,7 @@ export const thumbStyles = tv({
     base: "w-4.5 h-4.5 rounded-full bg-neutral-50  border-2",
     variants: {
         isDisabled: {
-            true: "border-neutral-300 dark:border-neutral-700 ",
+            true: "border-neutral-600 ",
         },
         selectedRole: {
             melee: "border-melee hover:bg-melee",
@@ -60,7 +60,7 @@ export const thumbStyles = tv({
             mixed: "border-mixed hover:bg-mixed",
             healer: "border-healer hover:bg-healer",
             tank: "border-tank hover:bg-tank",
-            default: "border-neutral-300 hover:bg-neutral-300",
+            default: "border-neutral-600 hover:bg-neutral-600",
         },
     },
     defaultVariants: {

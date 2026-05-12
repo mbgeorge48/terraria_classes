@@ -11,7 +11,7 @@ export const styles = tv({
             mixed: "border-mixed hover:bg-mixed",
             healer: "border-healer hover:bg-healer",
             tank: "border-tank hover:bg-tank",
-            default: "border-neutral-300 hover:bg-neutral-300",
+            default: "border-neutral-600 hover:bg-neutral-600",
         },
         isSelected: {
             true: "text-white",
@@ -26,6 +26,6 @@ export const styles = tv({
         { color: "mixed", isSelected: true, class: "bg-mixed" },
         { color: "healer", isSelected: true, class: "bg-healer" },
         { color: "tank", isSelected: true, class: "bg-tank" },
-        { color: "default", isSelected: true, class: "bg-neutral-500" },
+        { color: "default", isSelected: true, class: "bg-neutral-600" },
     ],
 });

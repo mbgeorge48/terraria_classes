@@ -30,21 +30,48 @@ export function ItemWrapper() {
     }, [data]);
 
     if (isLoading) {
-        return <div>Loading&hellip;</div>;
+        return (
+            <div className="max-w-6xl px-4 py-8 mx-auto">
+                <div className="grid items-stretch grid-cols-1 gap-6 justify-items-center">
+                    <CategoryContainer
+                        heading="Loading"
+                        selectedRole={selectedRole}
+                    >
+                        <p className="py-4 text-center ">Loading&hellip;</p>
+                    </CategoryContainer>
+                </div>
+            </div>
+        );
     }
 
     if (error) {
         return (
-            <div className="max-w-6xl py-8 mx-auto">
-                <p>Something went wrong!</p>
+            <div className="max-w-6xl px-4 py-8 mx-auto">
+                <div className="grid items-stretch grid-cols-1 gap-6  justify-items-center">
+                    <CategoryContainer
+                        heading="Error"
+                        selectedRole={selectedRole}
+                    >
+                        <p className="py-4 text-center ">
+                            Something went wrong!
+                        </p>
+                    </CategoryContainer>
+                </div>
             </div>
         );
     }
 
     if (!data) {
         return (
-            <div className="max-w-6xl py-8 mx-auto">
-                <p>No data found</p>
+            <div className="max-w-6xl px-4 py-8 mx-auto">
+                <div className="grid items-stretch grid-cols-1 gap-6  justify-items-center">
+                    <CategoryContainer
+                        heading="No Data"
+                        selectedRole={selectedRole}
+                    >
+                        <p className="py-4 text-center">No data found</p>
+                    </CategoryContainer>
+                </div>
             </div>
         );
     }
