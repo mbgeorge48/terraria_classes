@@ -4,13 +4,13 @@ import { useApi } from "../../api/useApi";
 import { CategoryContainer, ItemRow } from "../../components";
 import { useGameStage } from "../../context/GameStageContext";
 import { useRole } from "../../context/RoleContext";
-import type { Item, Items } from "../../types";
+import type { Item } from "../../types";
 
 export function ItemWrapper() {
     const { selectedRole } = useRole();
     const { selectedGameStage } = useGameStage();
 
-    const { data, isLoading, error } = useApi<Items>(
+    const { data, isLoading, error } = useApi<Item[]>(
         selectedRole ? `api/${selectedRole}/${selectedGameStage}/` : null,
     );
 

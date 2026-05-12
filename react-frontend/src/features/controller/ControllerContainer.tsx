@@ -6,7 +6,7 @@ import { useGameStage } from "../../context/GameStageContext";
 import { useRole } from "../../context/RoleContext";
 import type { Role } from "../../types";
 import { gameStages } from "../../utils/constants";
-import { Header } from "./Heading";
+import { Header } from "./Header";
 import { containerStyles } from "./styles";
 
 export function ControllerContainer() {
