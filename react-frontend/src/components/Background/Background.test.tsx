@@ -5,19 +5,19 @@ import { Background } from "./Background";
 
 describe("Background Component", () => {
     it("renders with the correct background class", () => {
-        const { container } = render(<Background backgroundPath="1" />);
+        const { container } = render(<Background backgroundPath={1} />);
         const background = container.firstChild as HTMLElement;
         expect(background).toHaveClass("bg-1");
     });
 
     it("defaults to bg-1 if invalid path is provided", () => {
-        const { container } = render(<Background backgroundPath="invalid" />);
+        const { container } = render(<Background backgroundPath={0} />);
         const background = container.firstChild as HTMLElement;
         expect(background).toHaveClass("bg-1");
     });
 
     it("applies layout classes", () => {
-        const { container } = render(<Background backgroundPath="1" />);
+        const { container } = render(<Background backgroundPath={1} />);
         const background = container.firstChild as HTMLElement;
         expect(background).toHaveClass(
             "fixed",

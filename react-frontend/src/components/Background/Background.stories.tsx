@@ -8,14 +8,19 @@ const meta = {
     tags: ["autodocs"],
     decorators: [
         (Story) => (
-            <div className="w-96 h-96">
+            <div className="h-96">
                 <Story />
             </div>
         ),
     ],
     argTypes: {
         backgroundPath: {
-            control: { type: "range", min: 1, max: 6, step: 1 },
+            control: {
+                type: "number",
+                min: 1,
+                max: 6,
+                step: 1,
+            },
         },
     },
 } satisfies Meta<typeof Background>;
@@ -25,6 +30,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
-        backgroundPath: "1",
+        backgroundPath: 1,
     },
 };

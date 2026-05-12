@@ -1,14 +1,14 @@
 interface Props {
-    backgroundPath: string;
+    backgroundPath: number;
 }
 
-const backgroundMap: Record<string, string> = {
-    "1": "bg-1",
-    "2": "bg-2",
-    "3": "bg-3",
-    "4": "bg-4",
-    "5": "bg-5",
-    "6": "bg-6",
+const backgroundMap: Record<number, string> = {
+    1: "bg-1",
+    2: "bg-2",
+    3: "bg-3",
+    4: "bg-4",
+    5: "bg-5",
+    6: "bg-6",
 };
 
 export function Background({ backgroundPath }: Props) {

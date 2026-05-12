@@ -7,27 +7,15 @@ import { GameStageProvider } from "./context/GameStageProvider";
 import { RoleProvider } from "./context/RoleProvider";
 import { ControllerContainer } from "./features/controller/ControllerContainer";
 import { ItemWrapper } from "./features/items/ItemWrapper";
-import type { Role } from "./types";
 
 function App() {
-    const [selectedRole, setSelectedRole] = useState<Role>();
-    const [selectedGameStage, setSelectedGameStage] = useState(0);
-
-    const [randomIndex] = useState(() =>
-        Math.floor(Math.random() * 6).toString(),
-    );
+    const [randomIndex] = useState(() => Math.floor(Math.random() * 6));
 
     return (
         <SWRConfig value={{ fetcher }}>
             <Background backgroundPath={randomIndex} />
-            <RoleProvider
-                selectedRole={selectedRole}
-                setSelectedRole={setSelectedRole}
-            >
-                <GameStageProvider
-                    selectedGameStage={selectedGameStage}
-                    setSelectedGameStage={setSelectedGameStage}
-                >
+            <RoleProvider>
+                <GameStageProvider>
                     <ControllerContainer />
                     <ItemWrapper />
                 </GameStageProvider>
