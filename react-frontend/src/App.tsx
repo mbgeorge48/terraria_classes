@@ -2,6 +2,7 @@ import { useState } from "react";
 import { SWRConfig } from "swr";
 
 import { fetcher } from "./api/fetcher";
+import { Background } from "./components";
 import { GameStageProvider } from "./context/GameStageProvider";
 import { RoleProvider } from "./context/RoleProvider";
 import { ControllerContainer } from "./features/controller/ControllerContainer";
@@ -12,8 +13,13 @@ function App() {
     const [selectedRole, setSelectedRole] = useState<Role>();
     const [selectedGameStage, setSelectedGameStage] = useState(0);
 
+    const [randomIndex] = useState(() =>
+        Math.floor(Math.random() * 6).toString(),
+    );
+
     return (
         <SWRConfig value={{ fetcher }}>
+            <Background backgroundPath={randomIndex} />
             <RoleProvider
                 selectedRole={selectedRole}
                 setSelectedRole={setSelectedRole}

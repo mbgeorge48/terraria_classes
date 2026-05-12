@@ -1,3 +1,4 @@
+export * from "./Background/Background";
 export * from "./CategoryContainer/CategoryContainer";
 export * from "./ItemRow/ItemRow";
 export * from "./Label/Label";

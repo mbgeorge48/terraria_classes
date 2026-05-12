@@ -9,7 +9,12 @@
     --color-healer: #29b360;
     --color-tank: #d20000;
 
-    --font-terraria: "terraria";
+    --background-image-1: url("./assets/images/backgrounds/1.png");
+    --background-image-2: url("./assets/images/backgrounds/2.png");
+    --background-image-3: url("./assets/images/backgrounds/3.png");
+    --background-image-4: url("./assets/images/backgrounds/4.png");
+    --background-image-5: url("./assets/images/backgrounds/5.png");
+    --background-image-6: url("./assets/images/backgrounds/6.png");
 }
 
 html,
