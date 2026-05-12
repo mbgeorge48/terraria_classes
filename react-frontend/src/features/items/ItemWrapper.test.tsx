@@ -5,10 +5,8 @@ import { describe, expect, it, vi } from "vitest";
 import { useApi } from "../../api/useApi";
 import { GameStageProvider } from "../../context/GameStageProvider";
 import { RoleProvider } from "../../context/RoleProvider";
-import type { Item, Role } from "../../types";
+import type { Item } from "../../types";
 import { ItemWrapper } from "./ItemWrapper";
-
-vi.mock("../../api/useApi");
 
 const mockItems: Item[] = [
     {
@@ -29,20 +27,26 @@ const mockItems: Item[] = [
     },
 ];
 
-describe("ItemWrapper", () => {
-    const mockSetSelectedRole = vi.fn();
-    const mockSetSelectedGameStage = vi.fn();
+vi.mock("../../api/useApi");
 
-    const renderWithProviders = (selectedRole = "melee" as Role) => {
+const mockSetSelectedRole = vi.fn();
+const mockSetSelectedGameStage = vi.fn();
+vi.mock("../../context", () => ({
+    useRole: () => ({
+        selectedRole: "melee",
+        setSelectedRole: mockSetSelectedRole,
+    }),
+    useGameStage: () => ({
+        selectedGameStage: 0,
+        setSelectedGameStage: mockSetSelectedGameStage,
+    }),
+}));
+
+describe("ItemWrapper", () => {
+    const renderWithProviders = () => {
         return render(
-            <RoleProvider
-                selectedRole={selectedRole}
-                setSelectedRole={mockSetSelectedRole}
-            >
-                <GameStageProvider
-                    selectedGameStage={0}
-                    setSelectedGameStage={mockSetSelectedGameStage}
-                >
+            <RoleProvider>
+                <GameStageProvider>
                     <ItemWrapper />
                 </GameStageProvider>
             </RoleProvider>,
@@ -69,6 +73,17 @@ describe("ItemWrapper", () => {
 
         renderWithProviders();
         expect(screen.getByText(/Something Went wrong!/i)).toBeInTheDocument();
+    });
+
+    it("renders empty data state", () => {
+        vi.mocked(useApi).mockReturnValue({
+            data: undefined,
+            isLoading: false,
+            error: undefined,
+        } as SWRResponse);
+
+        renderWithProviders();
+        expect(screen.getByText(/No data found/i)).toBeInTheDocument();
     });
 
     it("renders categories and items when data is loaded", () => {

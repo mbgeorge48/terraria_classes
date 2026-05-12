@@ -2,8 +2,7 @@ import { useCallback } from "react";
 import type { Selection } from "react-aria-components";
 
 import { Slider, Tag, TagGroup } from "../../components";
-import { useGameStage } from "../../context/GameStageContext";
-import { useRole } from "../../context/RoleContext";
+import { useGameStage, useRole } from "../../context";
 import type { Role } from "../../types";
 import { gameStages } from "../../utils/constants";
 import { Header } from "./Header";

@@ -14,14 +14,14 @@ interface Props extends PropsWithChildren {
 
 export function CategoryContainer(props: Props) {
     return (
-        <div className="relative w-3/4 mb-auto lg:w-auto group sm:w-2/3">
+        <div className="relative flex flex-col w-full h-full group">
             <div
                 className={containerBackgroundStyle({
                     selectedRole: props.selectedRole,
                 })}
             />
             <div
-                className={containerStyle({ selectedRole: props.selectedRole })}
+                className={`${containerStyle({ selectedRole: props.selectedRole })} flex-1 flex flex-col`}
             >
                 <h1
                     data-testid={`${props.heading.replaceAll(" ", "-").toLowerCase()}-heading`}
@@ -31,7 +31,7 @@ export function CategoryContainer(props: Props) {
                 >
                     {props.heading}
                 </h1>
-                <div className="flex flex-col px-2 space-y-2">
+                <div className="flex flex-col flex-1 px-2 space-y-2">
                     {props.children}
                 </div>
             </div>

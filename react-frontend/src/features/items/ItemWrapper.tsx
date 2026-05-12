@@ -2,8 +2,7 @@ import { useMemo } from "react";
 
 import { useApi } from "../../api/useApi";
 import { CategoryContainer, ItemRow } from "../../components";
-import { useGameStage } from "../../context/GameStageContext";
-import { useRole } from "../../context/RoleContext";
+import { useGameStage, useRole } from "../../context";
 import type { Item } from "../../types";
 
 export function ItemWrapper() {
@@ -35,14 +34,24 @@ export function ItemWrapper() {
     }
 
     if (error) {
-        console.error(error);
-        return <div>Something Went wrong!</div>;
+        return (
+            <div className="max-w-6xl py-8 mx-auto">
+                <p>Something went wrong!</p>
+            </div>
+        );
     }
-    console.log({ data, memoizedData });
+
+    if (!data) {
+        return (
+            <div className="max-w-6xl py-8 mx-auto">
+                <p>No data found</p>
+            </div>
+        );
+    }
 
     return (
         <div className="max-w-6xl px-4 py-8 mx-auto">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid items-stretch grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
                 {Object.keys(memoizedData)
                     .sort(
                         (a, b) =>

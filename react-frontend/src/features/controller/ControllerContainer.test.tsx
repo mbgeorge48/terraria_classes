@@ -1,24 +1,28 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import { GameStageProvider } from "../../context/GameStageProvider";
 import { RoleProvider } from "../../context/RoleProvider";
 import { ControllerContainer } from "./ControllerContainer";
 
-describe("ControllerContainer", () => {
-    const mockSetSelectedRole = vi.fn();
-    const mockSetSelectedGameStage = vi.fn();
+const mockSetSelectedRole = vi.fn();
+const mockSetSelectedGameStage = vi.fn();
+vi.mock("../../context", () => ({
+    useRole: () => ({
+        selectedRole: undefined,
+        setSelectedRole: mockSetSelectedRole,
+    }),
+    useGameStage: () => ({
+        selectedGameStage: 0,
+        setSelectedGameStage: mockSetSelectedGameStage,
+    }),
+}));
 
-    const renderWithProviders = (selectedRole = undefined) => {
+describe("ControllerContainer", () => {
+    const renderWithProviders = () => {
         return render(
-            <RoleProvider
-                selectedRole={selectedRole}
-                setSelectedRole={mockSetSelectedRole}
-            >
-                <GameStageProvider
-                    selectedGameStage={0}
-                    setSelectedGameStage={mockSetSelectedGameStage}
-                >
+            <RoleProvider>
+                <GameStageProvider>
                     <ControllerContainer />
                 </GameStageProvider>
             </RoleProvider>,
@@ -42,16 +46,38 @@ describe("ControllerContainer", () => {
     it("calls setSelectedRole when a class is selected", () => {
         renderWithProviders();
         const meleeTag = screen.getByText("Melee");
+        const rangedTag = screen.getByText("Ranged");
+        const magicTag = screen.getByText("Magic");
+        const summoningTag = screen.getByText("Summoning");
 
-        meleeTag.click();
+        act(() => {
+            meleeTag.click();
+        });
         expect(mockSetSelectedRole).toHaveBeenCalledWith("melee");
+
+        act(() => {
+            rangedTag.click();
+        });
+        expect(mockSetSelectedRole).toHaveBeenCalledWith("ranged");
+
+        act(() => {
+            magicTag.click();
+        });
+        expect(mockSetSelectedRole).toHaveBeenCalledWith("magic");
+
+        act(() => {
+            summoningTag.click();
+        });
+        expect(mockSetSelectedRole).toHaveBeenCalledWith("summoning");
     });
 
     it("calls setSelectedGameStage when a game stage slider is targetted", () => {
         renderWithProviders();
         const sliderInput = screen.getByRole("slider");
 
-        fireEvent.change(sliderInput, { target: { value: "2" } });
+        act(() => {
+            fireEvent.change(sliderInput, { target: { value: "2" } });
+        });
         expect(mockSetSelectedGameStage).toHaveBeenCalledWith([2]);
     });
 });
