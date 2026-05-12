@@ -1,6 +1,7 @@
 /// <reference types="vitest/config" />
 // https://vite.dev/config/
 import babel from "@rolldown/plugin-babel";
+import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 import tailwind from "@tailwindcss/vite";
 import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
@@ -13,6 +14,7 @@ export default defineConfig({
         babel({
             presets: [reactCompilerPreset()],
         }),
+        storybookTest(),
     ],
     test: {
         environment: "jsdom",
