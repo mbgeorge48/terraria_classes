@@ -1,13 +1,14 @@
-import { type PropsWithChildren } from "react";
+import { type PropsWithChildren, useState } from "react";
 
-import { RoleContext, type RoleContextType } from "./RoleContext";
+import type { Role } from "../types";
+import { RoleContext } from "./RoleContext";
 
-interface Props extends PropsWithChildren, RoleContextType {}
-
-export function RoleProvider(props: Props) {
-    const { children, ...value } = props;
+export function RoleProvider(props: PropsWithChildren) {
+    const [selectedRole, setSelectedRole] = useState<Role>();
 
     return (
-        <RoleContext.Provider value={value}>{children}</RoleContext.Provider>
+        <RoleContext.Provider value={{ selectedRole, setSelectedRole }}>
+            {props.children}
+        </RoleContext.Provider>
     );
 }

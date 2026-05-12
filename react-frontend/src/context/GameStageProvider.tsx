@@ -1,18 +1,15 @@
-import { type PropsWithChildren } from "react";
+import { type PropsWithChildren, useState } from "react";
 
-import {
-    GameStageContext,
-    type GameStageContextType,
-} from "./GameStageContext";
+import { GameStageContext } from "./GameStageContext";
 
-interface Props extends PropsWithChildren, GameStageContextType {}
-
-export function GameStageProvider(props: Props) {
-    const { children, ...value } = props;
+export function GameStageProvider(props: PropsWithChildren) {
+    const [selectedGameStage, setSelectedGameStage] = useState(0);
 
     return (
-        <GameStageContext.Provider value={value}>
-            {children}
+        <GameStageContext.Provider
+            value={{ selectedGameStage, setSelectedGameStage }}
+        >
+            {props.children}
         </GameStageContext.Provider>
     );
 }

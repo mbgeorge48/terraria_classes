@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 
-export interface GameStageContextType {
+interface GameStageContextType {
     selectedGameStage: number;
     setSelectedGameStage: (stage: number) => void;
 }

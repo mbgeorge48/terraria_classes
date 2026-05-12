@@ -2,7 +2,7 @@ import { createContext, useContext } from "react";
 
 import type { Role } from "../types";
 
-export interface RoleContextType {
+interface RoleContextType {
     selectedRole: Role;
     setSelectedRole: (role: Role) => void;
 }
