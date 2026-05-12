@@ -16,7 +16,7 @@ describe("Slider Component", () => {
             <Slider label="Slider Label" thumbLabels={["1", "2", "3", "4"]} />,
         );
         expect(screen.getByText("Slider Label")).toBeInTheDocument();
-        expect(screen.getByText("1")).toBeInTheDocument();
+        expect(screen.getByRole("slider", { name: /1/i })).toBeInTheDocument();
     });
 
     it("calls onChange when slider value changes", () => {

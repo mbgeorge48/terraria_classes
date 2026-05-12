@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import type { SWRResponse } from "swr";
-import { describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useApi } from "../../api/useApi";
 import { GameStageProvider } from "../../context/GameStageProvider";
@@ -43,6 +43,10 @@ vi.mock("../../context", () => ({
 }));
 
 describe("ItemWrapper", () => {
+    beforeEach(() => {
+        vi.clearAllMocks();
+    });
+
     const renderWithProviders = () => {
         return render(
             <RoleProvider>
@@ -61,7 +65,10 @@ describe("ItemWrapper", () => {
         } as SWRResponse);
 
         renderWithProviders();
-        expect(screen.getByText(/Loading/i)).toBeInTheDocument();
+        expect(
+            screen.getByRole("heading", { name: /loading/i }),
+        ).toBeInTheDocument();
+        expect(screen.getByText("Loading…")).toBeInTheDocument();
     });
 
     it("renders error state", () => {
@@ -72,6 +79,9 @@ describe("ItemWrapper", () => {
         } as SWRResponse);
 
         renderWithProviders();
+        expect(
+            screen.getByRole("heading", { name: /error/i }),
+        ).toBeInTheDocument();
         expect(screen.getByText(/Something Went wrong!/i)).toBeInTheDocument();
     });
 
@@ -83,6 +93,9 @@ describe("ItemWrapper", () => {
         } as SWRResponse);
 
         renderWithProviders();
+        expect(
+            screen.getByRole("heading", { name: /no data/i }),
+        ).toBeInTheDocument();
         expect(screen.getByText(/No data found/i)).toBeInTheDocument();
     });
 
@@ -95,9 +108,22 @@ describe("ItemWrapper", () => {
 
         renderWithProviders();
 
-        expect(screen.getByText("single-target weapons")).toBeInTheDocument();
-        expect(screen.getByText("Volcano")).toBeInTheDocument();
-        expect(screen.getByText("crowd-control weapons")).toBeInTheDocument();
-        expect(screen.getByText("Hive-Five")).toBeInTheDocument();
+        expect(
+            screen.getByRole("heading", { name: "single-target weapons" }),
+        ).toBeInTheDocument();
+        expect(
+            screen.getByRole("link", {
+                name: /volcano/i,
+            }),
+        ).toBeInTheDocument();
+
+        expect(
+            screen.getByRole("heading", { name: "crowd-control weapons" }),
+        ).toBeInTheDocument();
+        expect(
+            screen.getByRole("link", {
+                name: /hive-five/i,
+            }),
+        ).toBeInTheDocument();
     });
 });

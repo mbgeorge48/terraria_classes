@@ -31,13 +31,23 @@ describe("ControllerContainer", () => {
 
     it("renders the screen", () => {
         renderWithProviders();
-        expect(screen.getByText("terraria classes guide")).toBeInTheDocument();
+        expect(
+            screen.getByRole("heading", { name: /terraria classes guide/i }),
+        ).toBeInTheDocument();
 
         expect(screen.getByText("Select a class")).toBeInTheDocument();
-        expect(screen.getByText("Melee")).toBeInTheDocument();
-        expect(screen.getByText("Ranged")).toBeInTheDocument();
-        expect(screen.getByText("Magic")).toBeInTheDocument();
-        expect(screen.getByText("Summoning")).toBeInTheDocument();
+        expect(
+            screen.getByRole("gridcell", { name: /melee/i }),
+        ).toBeInTheDocument();
+        expect(
+            screen.getByRole("gridcell", { name: /ranged/i }),
+        ).toBeInTheDocument();
+        expect(
+            screen.getByRole("gridcell", { name: /magic/i }),
+        ).toBeInTheDocument();
+        expect(
+            screen.getByRole("gridcell", { name: /summoning/i }),
+        ).toBeInTheDocument();
 
         expect(screen.getByText("Select a game stage")).toBeInTheDocument();
         expect(screen.getByText("Pre-bosses")).toBeInTheDocument();
@@ -45,29 +55,23 @@ describe("ControllerContainer", () => {
 
     it("calls setSelectedRole when a class is selected", () => {
         renderWithProviders();
-        const meleeTag = screen.getByText("Melee");
-        const rangedTag = screen.getByText("Ranged");
-        const magicTag = screen.getByText("Magic");
-        const summoningTag = screen.getByText("Summoning");
-
-        act(() => {
-            meleeTag.click();
+        const meleeTag = screen.getByRole("gridcell", { name: "Melee" });
+        const rangedTag = screen.getByRole("gridcell", { name: "Ranged" });
+        const magicTag = screen.getByRole("gridcell", { name: "Magic" });
+        const summoningTag = screen.getByRole("gridcell", {
+            name: "Summoning",
         });
+
+        fireEvent.click(meleeTag);
         expect(mockSetSelectedRole).toHaveBeenCalledWith("melee");
 
-        act(() => {
-            rangedTag.click();
-        });
+        fireEvent.click(rangedTag);
         expect(mockSetSelectedRole).toHaveBeenCalledWith("ranged");
 
-        act(() => {
-            magicTag.click();
-        });
+        fireEvent.click(magicTag);
         expect(mockSetSelectedRole).toHaveBeenCalledWith("magic");
 
-        act(() => {
-            summoningTag.click();
-        });
+        fireEvent.click(summoningTag);
         expect(mockSetSelectedRole).toHaveBeenCalledWith("summoning");
     });
 

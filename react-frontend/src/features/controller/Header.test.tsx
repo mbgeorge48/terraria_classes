@@ -6,6 +6,6 @@ import { Header } from "./Header";
 describe("Header Component", () => {
     it("renders header correctly saying terraria classes guide", () => {
         render(<Header />);
-        expect(screen.getByText("terraria classes guide")).toBeInTheDocument();
+        expect(screen.getByRole("heading", { name: /terraria classes guide/i })).toBeInTheDocument();
     });
 });

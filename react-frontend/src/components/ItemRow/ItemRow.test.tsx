@@ -21,7 +21,7 @@ const mockItem: Item = {
 describe("ItemRow Component", () => {
     it("renders heading and children correctly", () => {
         render(<ItemRow item={mockItem} />);
-        expect(screen.getByText("Flamethrower")).toBeInTheDocument();
+        expect(screen.getByRole("link", { name: "Flamethrower" })).toBeInTheDocument();
         expect(screen.getByAltText("Flamethrower")).toBeInTheDocument();
     });
 });

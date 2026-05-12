@@ -21,7 +21,7 @@ describe("CategoryContainer Component", () => {
                 Example Body
             </CategoryContainer>,
         );
-        expect(screen.getByText("Example Heading")).toBeInTheDocument();
+        expect(screen.getByRole("heading", { name: "Example Heading" })).toBeInTheDocument();
         expect(screen.getByText("Example Body")).toBeInTheDocument();
     });
 });

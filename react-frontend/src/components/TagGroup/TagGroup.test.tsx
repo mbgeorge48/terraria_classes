@@ -24,9 +24,9 @@ describe("TagGroup Component", () => {
                 <Tag id="magic">Magic</Tag>
             </TagGroup>,
         );
-        expect(screen.getByText("Melee")).toBeInTheDocument();
-        expect(screen.getByText("Ranged")).toBeInTheDocument();
-        expect(screen.getByText("Magic")).toBeInTheDocument();
+        expect(screen.getByRole("gridcell", { name: "Melee" })).toBeInTheDocument();
+        expect(screen.getByRole("gridcell", { name: "Ranged" })).toBeInTheDocument();
+        expect(screen.getByRole("gridcell", { name: "Magic" })).toBeInTheDocument();
     });
 
     it("calls onSelectionChange when a tag is clicked", () => {
@@ -43,7 +43,7 @@ describe("TagGroup Component", () => {
             </TagGroup>,
         );
 
-        const meleeTag = screen.getByText("Melee");
+        const meleeTag = screen.getByRole("gridcell", { name: "Melee" });
         fireEvent.click(meleeTag);
 
         expect(onSelectionChange).toHaveBeenCalledWith(expect.any(Set));
