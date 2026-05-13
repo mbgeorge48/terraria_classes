@@ -12,21 +12,21 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: react-client
+        working-directory: react-frontend
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Node Setup
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v5
         with:
           node-version-file: ".nvmrc"
 
-      - name: Yarn Install
-        run: yarn install --frozen-lockfile
+      - name: NPM Install
+        run: npm ci
 
       - name: FE linting
-        run: yarn lint --max-warnings=0
+        run: npm run lint -- --max-warnings=0
 
       - name: FE tests
-        run: yarn test --maxWorkers=2
+        run: npm test -- --maxWorkers=2
