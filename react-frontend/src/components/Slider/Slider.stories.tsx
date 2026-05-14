@@ -32,8 +32,6 @@ const meta: Meta<typeof Slider> = {
     ],
     args: {
         step: 1,
-        minValue: 0,
-        maxValue: 6,
         thumbLabels: [
             "Pre-bosses",
             "Pre-Hardmode",
@@ -42,7 +40,10 @@ const meta: Meta<typeof Slider> = {
             "Pre-Golem",
             "Pre-Lunar Events",
             "Endgame",
+            "Endgame+",
+            "Endgame++",
         ],
+        label: "Label goes here",
     },
 };
 

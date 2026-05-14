@@ -24,8 +24,11 @@ export function Slider<T extends number>({
         <AriaSlider
             {...props}
             step={step}
-            minValue={props.minValue}
-            maxValue={props.maxValue}
+            maxValue={
+                (props.thumbLabels
+                    ? props.thumbLabels.length - 1
+                    : undefined) || props.maxValue
+            }
             className="orientation-horizontal:grid orientation-vertical:flex grid-cols-[1fr_auto] flex-col items-center gap-2 orientation-horizontal:w-64 orientation-horizontal:max-w-[calc(100%-10px)]"
             aria-label={props.label}
         >

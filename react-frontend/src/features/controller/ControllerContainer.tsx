@@ -41,18 +41,9 @@ export function ControllerContainer() {
 
             <Slider
                 label="Select a game stage"
-                thumbLabels={[
-                    "Pre-bosses",
-                    "Pre-Hardmode",
-                    "Pre-mech bosses",
-                    "Pre-Plantera",
-                    "Pre-Golem",
-                    "Pre-Lunar Events",
-                    "Endgame",
-                ]}
+                thumbLabels={Object.values(gameStages).map((stage) => stage)}
                 selectedRole={selectedRole}
                 onChange={setSelectedGameStage}
-                minValue={0}
                 maxValue={Object.keys(gameStages).length - 1}
             />
         </div>
