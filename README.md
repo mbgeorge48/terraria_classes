@@ -7,13 +7,13 @@ This is a single page app that helps you build your character to fit into a cert
 
 ## Roles available
 
--   Melee
--   Ranged
--   Magic
--   Summoner
--   _Tank_
--   _Healer_
--   _Mixed_
+- Melee
+- Ranged
+- Magic
+- Summoner
+- _Tank_
+- _Healer_
+- _Mixed_
 
 The last three aren't fully fleshed out roles.
 Mixed is generally an early game exclusive, while Tank and Healer are late game (usually coop) builds.
@@ -21,6 +21,10 @@ Mixed is generally an early game exclusive, while Tank and Healer are late game 
 ---
 
 ## Quick start
+
+### TODO
+
+This section needs updating to match the new formats, the docker container hasn't been updated yet
 
 There's 2 ways of running this project.
 If you want to use docker then it can be started by running these 2 commands
@@ -45,20 +49,20 @@ You can call `scripts/server dev` to run it in just `flask` rather than `gunicor
 
 ### Front end
 
-This was created using the `create-react-app` script, but then I've since migrated to `vite`
+The react app was created using `vite` and `npm`.
 
-To start the local server you need to make sure yarn is installed
+Ensure you're using the correct version of node before running this app, I recommend `nvm` to manage this
 
 ```shell
-npm install --global yarn
+nvm use
 ```
 
-Then run
+Then run the following to run the app in a local env
 
 ```shell
-cd react-client
-yarn install
-yarn start
+cd react-frontend
+npm install
+npm run dev
 ```
 
 A `JSON` file is required to fetch all the data required for the app. The file should be saved into `src/data/all-items.json` and have a structure like this:
@@ -75,6 +79,8 @@ A `JSON` file is required to fetch all the data required for the app. The file s
     }
 ]
 ```
+
+More infomation on where to get this from can be found further into the README
 
 ---
 
@@ -169,17 +175,15 @@ However the data can be extracted in quite a simular way
 
 There are 3 endpoints available
 
--   `/api/docs/`
-    -   This returns a summary of the other two endpoints
--   `/api/<role>/<gameStageAvailable>/`
+- `/api/docs/`
+    - This returns a summary of the other two endpoints
+- `/api/<role>/<gameStageAvailable>/`
+    - Takes in a [game role](#roles-available) and a [game stage](#game-stage-mapping)
+    - Returns a JSON array containing all the items that fit into those two parameters that looks like [this example output](#example-output)
 
-    -   Takes in a [game role](#roles-available) and a [game stage](#game-stage-mapping)
-    -   Returns a JSON array containing all the items that fit into those two parameters that looks like [this example output](#example-output)
-
--   `/api/<role>/<gameStageAvailable>/<category>/`
-
-    -   Takes in a [game role](#roles-available), a [game stage](#game-stage-mapping) and a [category](#categories-available)
-    -   Returns a JSON array containing all the items that fit into all three parameters that looks like [this example output](#example-output)
+- `/api/<role>/<gameStageAvailable>/<category>/`
+    - Takes in a [game role](#roles-available), a [game stage](#game-stage-mapping) and a [category](#categories-available)
+    - Returns a JSON array containing all the items that fit into all three parameters that looks like [this example output](#example-output)
 
 ---
 
@@ -199,13 +203,13 @@ Endgame: 6
 
 #### Categories available
 
--   Weapons
--   Armor
--   Accessories
--   Buffs
-    -   Things like Buffs, Potions and Flasks
--   Mounts
--   ~~Lights~~
+- Weapons
+- Armor
+- Accessories
+- Buffs
+    - Things like Buffs, Potions and Flasks
+- Mounts
+- ~~Lights~~
 
 ---
 
